@@ -44,7 +44,7 @@
     id <Animal> rover = [AnimalModel name:@"Rover"
                                  nickName:@"Peanut"
                              favoriteFood:@"kibbles"
-                                      age:[NSNumber numberWithInt:6]];
+                                      age:@6];
     id <Animal> tucker = [AnimalModel name:@"Tucker"
                                   nickName:@"Tuckey"
                                     friend:rover];
