@@ -18,8 +18,8 @@
 @end
 
 @protocol RFMutableOrderedDictionary <RFOrderedDictionary>
-- (void)setObject:(id)object forKey:(id<NSCopying>)key;
-- (void)setObject:(id)object forKeyedSubscript:(id<NSCopying>)key;
+- (void)setObject:(id<NSCopying>)object forKey:(id<NSCopying>)key;
+- (void)setObject:(id<NSCopying>)object forKeyedSubscript:(id<NSCopying>)key;
 @end
 
 // RFOrderedDictionary is a reactive, mutable associative collection. It

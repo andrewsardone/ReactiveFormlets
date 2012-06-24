@@ -7,7 +7,6 @@
 //
 
 #import "RFFormlet.h"
-#import "RFOrderedDictionary_Private.h"
 #import <ReactiveCocoa/ReactiveCocoa.h>
 
 @implementation RFFormlet
@@ -41,14 +40,6 @@
     {
         [self[key] setCurrentValue:value[key]];
     }
-}
-
-
-#pragma mark -
-
-- (void)setObject:(id)object forKey:(id<NSCopying>)key
-{
-    [super setObject:[object copy] forKey:key];
 }
 
 #pragma mark -

@@ -7,8 +7,10 @@
 //
 
 #import "RFOrderedDictionary.h"
-#import "RFOrderedDictionary_Private.h"
 #import <ReactiveCocoa/RACSubject.h>
+
+@interface RFOrderedDictionary () <RFMutableOrderedDictionary>
+@end
 
 @implementation RFOrderedDictionary {
     NSMutableArray *_keys;
@@ -82,7 +84,7 @@
         [_keys addObject:key];
     }
 
-    [_dictionary setObject:object forKey:key];
+    [_dictionary setObject:[object copy] forKey:key];
     [_reactiveSubject sendNext:self];
 }
 
