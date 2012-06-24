@@ -14,8 +14,8 @@
 #import "GHGitHubClient.h"
 
 @protocol GHCredentials <NSObject>
-- (NSString *)username;
-- (NSString *)password;
+- (id<Text>)username;
+- (id<Text>)password;
 + username:name password:pass;
 @end
 
