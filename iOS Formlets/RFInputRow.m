@@ -18,7 +18,6 @@
 
 @interface RFInputRow () <UITextFieldDelegate>
 @property (strong, readonly) UITextField *textField;
-@property (copy) NSString *placeholder;
 @end
 
 @implementation RFInputRow
@@ -31,6 +30,13 @@
     return [JSTextInputRow new];
 }
 
++ (instancetype)secureText
+{
+    return [[JSTextInputRow new] modifyTextField:^(UITextField *field) {
+        field.secureTextEntry = YES;
+    }];
+}
+
 + (instancetype)number
 {
     return [JSNumberInputRow new];
@@ -39,16 +45,25 @@
 - (id)copyWithZone:(NSZone *)zone
 {
     RFInputRow *row = [self.class new];
-    row->_placeholder = _placeholder;
     row.textField.text = self.textField.text;
+    row.textField.placeholder = self.textField.placeholder;
+    row.textField.secureTextEntry = self.textField.secureTextEntry;
+    row.textField.autocorrectionType = self.textField.autocorrectionType;
+    row.textField.autocapitalizationType = self.textField.autocapitalizationType;
     return row;
 }
 
 - (instancetype)placeholder:(NSString *)placeholder
 {
+    return [self modifyTextField:^(UITextField *field) {
+        field.placeholder = placeholder;
+    }];
+}
+
+- (instancetype)modifyTextField:(void (^)(UITextField *field))block
+{
     RFInputRow *copy = [self copy];
-    copy->_placeholder = placeholder;
-    copy.textField.text = self.textField.text;
+    block(copy.textField);
     return copy;
 }
 
@@ -74,8 +89,6 @@
 
         _cell.accessoryView = self.textField;
     }
-
-    _textField.placeholder = _placeholder;
     return _cell;
 }
 

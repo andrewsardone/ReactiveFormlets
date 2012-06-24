@@ -10,6 +10,21 @@
 		FC2511CA1588614700534933 /* RFTableSection.m in Sources */ = {isa = PBXBuildFile; fileRef = FC2511C91588614700534933 /* RFTableSection.m */; };
 		FC2511CD158862F700534933 /* RFTableForm.m in Sources */ = {isa = PBXBuildFile; fileRef = FC2511CC158862F700534933 /* RFTableForm.m */; };
 		FC2511D01588649E00534933 /* RFInputRow.m in Sources */ = {isa = PBXBuildFile; fileRef = FC2511CF1588649E00534933 /* RFInputRow.m */; };
+		FC3E5FB01596FDC3005F3F56 /* GHGitHubClient.m in Sources */ = {isa = PBXBuildFile; fileRef = FC3E5FA71596FDC3005F3F56 /* GHGitHubClient.m */; };
+		FC3E5FB11596FDC3005F3F56 /* GHGitHubObject.m in Sources */ = {isa = PBXBuildFile; fileRef = FC3E5FA91596FDC3005F3F56 /* GHGitHubObject.m */; };
+		FC3E5FB21596FDC3005F3F56 /* GHGitHubOrg.m in Sources */ = {isa = PBXBuildFile; fileRef = FC3E5FAB1596FDC3005F3F56 /* GHGitHubOrg.m */; };
+		FC3E5FB31596FDC3005F3F56 /* GHGitHubTeam.m in Sources */ = {isa = PBXBuildFile; fileRef = FC3E5FAD1596FDC3005F3F56 /* GHGitHubTeam.m */; };
+		FC3E5FB41596FDC3005F3F56 /* GHGitHubUser.m in Sources */ = {isa = PBXBuildFile; fileRef = FC3E5FAF1596FDC3005F3F56 /* GHGitHubUser.m */; };
+		FC3E60441596FE5C005F3F56 /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = FC3E60301596FE5C005F3F56 /* AFHTTPClient.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		FC3E60451596FE5C005F3F56 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = FC3E60321596FE5C005F3F56 /* AFHTTPRequestOperation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		FC3E60461596FE5C005F3F56 /* AFImageRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = FC3E60341596FE5C005F3F56 /* AFImageRequestOperation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		FC3E60471596FE5C005F3F56 /* AFJSONRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = FC3E60361596FE5C005F3F56 /* AFJSONRequestOperation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		FC3E60481596FE5C005F3F56 /* AFJSONUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = FC3E60381596FE5C005F3F56 /* AFJSONUtilities.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		FC3E60491596FE5C005F3F56 /* AFNetworkActivityIndicatorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FC3E603A1596FE5C005F3F56 /* AFNetworkActivityIndicatorManager.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		FC3E604A1596FE5C005F3F56 /* AFPropertyListRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = FC3E603D1596FE5C005F3F56 /* AFPropertyListRequestOperation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		FC3E604B1596FE5C005F3F56 /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = FC3E603F1596FE5C005F3F56 /* AFURLConnectionOperation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		FC3E604C1596FE5C005F3F56 /* AFXMLRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = FC3E60411596FE5C005F3F56 /* AFXMLRequestOperation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		FC3E60601596FECF005F3F56 /* JSGHLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC3E605F1596FECF005F3F56 /* JSGHLoginViewController.m */; };
 		FC648CD3157AC81D007E2872 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC648CD2157AC81D007E2872 /* UIKit.framework */; };
 		FC648CD5157AC81D007E2872 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC648CD4157AC81D007E2872 /* Foundation.framework */; };
 		FC648CD7157AC81D007E2872 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC648CD6157AC81D007E2872 /* CoreGraphics.framework */; };
@@ -77,6 +92,39 @@
 		FC2511CE1588649E00534933 /* RFInputRow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFInputRow.h; sourceTree = "<group>"; };
 		FC2511CF1588649E00534933 /* RFInputRow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFInputRow.m; sourceTree = "<group>"; };
 		FC2BB4011596F5FD00E89B72 /* RFTableForm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFTableForm.h; sourceTree = "<group>"; };
+		FC3E5FA61596FDC3005F3F56 /* GHGitHubClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GHGitHubClient.h; path = lib/ReactiveCocoa/GHAPIDemo/GHAPIDemo/GHGitHubClient.h; sourceTree = "<group>"; };
+		FC3E5FA71596FDC3005F3F56 /* GHGitHubClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GHGitHubClient.m; path = lib/ReactiveCocoa/GHAPIDemo/GHAPIDemo/GHGitHubClient.m; sourceTree = "<group>"; };
+		FC3E5FA81596FDC3005F3F56 /* GHGitHubObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GHGitHubObject.h; path = lib/ReactiveCocoa/GHAPIDemo/GHAPIDemo/GHGitHubObject.h; sourceTree = "<group>"; };
+		FC3E5FA91596FDC3005F3F56 /* GHGitHubObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GHGitHubObject.m; path = lib/ReactiveCocoa/GHAPIDemo/GHAPIDemo/GHGitHubObject.m; sourceTree = "<group>"; };
+		FC3E5FAA1596FDC3005F3F56 /* GHGitHubOrg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GHGitHubOrg.h; path = lib/ReactiveCocoa/GHAPIDemo/GHAPIDemo/GHGitHubOrg.h; sourceTree = "<group>"; };
+		FC3E5FAB1596FDC3005F3F56 /* GHGitHubOrg.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GHGitHubOrg.m; path = lib/ReactiveCocoa/GHAPIDemo/GHAPIDemo/GHGitHubOrg.m; sourceTree = "<group>"; };
+		FC3E5FAC1596FDC3005F3F56 /* GHGitHubTeam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GHGitHubTeam.h; path = lib/ReactiveCocoa/GHAPIDemo/GHAPIDemo/GHGitHubTeam.h; sourceTree = "<group>"; };
+		FC3E5FAD1596FDC3005F3F56 /* GHGitHubTeam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GHGitHubTeam.m; path = lib/ReactiveCocoa/GHAPIDemo/GHAPIDemo/GHGitHubTeam.m; sourceTree = "<group>"; };
+		FC3E5FAE1596FDC3005F3F56 /* GHGitHubUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GHGitHubUser.h; path = lib/ReactiveCocoa/GHAPIDemo/GHAPIDemo/GHGitHubUser.h; sourceTree = "<group>"; };
+		FC3E5FAF1596FDC3005F3F56 /* GHGitHubUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GHGitHubUser.m; path = lib/ReactiveCocoa/GHAPIDemo/GHAPIDemo/GHGitHubUser.m; sourceTree = "<group>"; };
+		FC3E602F1596FE5C005F3F56 /* AFHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPClient.h; sourceTree = "<group>"; };
+		FC3E60301596FE5C005F3F56 /* AFHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPClient.m; sourceTree = "<group>"; };
+		FC3E60311596FE5C005F3F56 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
+		FC3E60321596FE5C005F3F56 /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperation.m; sourceTree = "<group>"; };
+		FC3E60331596FE5C005F3F56 /* AFImageRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFImageRequestOperation.h; sourceTree = "<group>"; };
+		FC3E60341596FE5C005F3F56 /* AFImageRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFImageRequestOperation.m; sourceTree = "<group>"; };
+		FC3E60351596FE5C005F3F56 /* AFJSONRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFJSONRequestOperation.h; sourceTree = "<group>"; };
+		FC3E60361596FE5C005F3F56 /* AFJSONRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFJSONRequestOperation.m; sourceTree = "<group>"; };
+		FC3E60371596FE5C005F3F56 /* AFJSONUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFJSONUtilities.h; sourceTree = "<group>"; };
+		FC3E60381596FE5C005F3F56 /* AFJSONUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFJSONUtilities.m; sourceTree = "<group>"; };
+		FC3E60391596FE5C005F3F56 /* AFNetworkActivityIndicatorManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworkActivityIndicatorManager.h; sourceTree = "<group>"; };
+		FC3E603A1596FE5C005F3F56 /* AFNetworkActivityIndicatorManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNetworkActivityIndicatorManager.m; sourceTree = "<group>"; };
+		FC3E603B1596FE5C005F3F56 /* AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworking.h; sourceTree = "<group>"; };
+		FC3E603C1596FE5C005F3F56 /* AFPropertyListRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFPropertyListRequestOperation.h; sourceTree = "<group>"; };
+		FC3E603D1596FE5C005F3F56 /* AFPropertyListRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFPropertyListRequestOperation.m; sourceTree = "<group>"; };
+		FC3E603E1596FE5C005F3F56 /* AFURLConnectionOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLConnectionOperation.h; sourceTree = "<group>"; };
+		FC3E603F1596FE5C005F3F56 /* AFURLConnectionOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLConnectionOperation.m; sourceTree = "<group>"; };
+		FC3E60401596FE5C005F3F56 /* AFXMLRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFXMLRequestOperation.h; sourceTree = "<group>"; };
+		FC3E60411596FE5C005F3F56 /* AFXMLRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFXMLRequestOperation.m; sourceTree = "<group>"; };
+		FC3E60421596FE5C005F3F56 /* UIImageView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+AFNetworking.h"; sourceTree = "<group>"; };
+		FC3E60431596FE5C005F3F56 /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
+		FC3E605E1596FECF005F3F56 /* JSGHLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSGHLoginViewController.h; sourceTree = "<group>"; };
+		FC3E605F1596FECF005F3F56 /* JSGHLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSGHLoginViewController.m; sourceTree = "<group>"; };
 		FC648CCE157AC81D007E2872 /* iOS Formlets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS Formlets.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC648CD2157AC81D007E2872 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		FC648CD4157AC81D007E2872 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -154,9 +202,57 @@
 			name = "Table Stuff";
 			sourceTree = "<group>";
 		};
+		FC3E5F961596FDA3005F3F56 /* GitHub API */ = {
+			isa = PBXGroup;
+			children = (
+				FC3E5FA61596FDC3005F3F56 /* GHGitHubClient.h */,
+				FC3E5FA71596FDC3005F3F56 /* GHGitHubClient.m */,
+				FC3E5FA81596FDC3005F3F56 /* GHGitHubObject.h */,
+				FC3E5FA91596FDC3005F3F56 /* GHGitHubObject.m */,
+				FC3E5FAA1596FDC3005F3F56 /* GHGitHubOrg.h */,
+				FC3E5FAB1596FDC3005F3F56 /* GHGitHubOrg.m */,
+				FC3E5FAC1596FDC3005F3F56 /* GHGitHubTeam.h */,
+				FC3E5FAD1596FDC3005F3F56 /* GHGitHubTeam.m */,
+				FC3E5FAE1596FDC3005F3F56 /* GHGitHubUser.h */,
+				FC3E5FAF1596FDC3005F3F56 /* GHGitHubUser.m */,
+			);
+			name = "GitHub API";
+			sourceTree = "<group>";
+		};
+		FC3E602E1596FE5C005F3F56 /* AFNetworking */ = {
+			isa = PBXGroup;
+			children = (
+				FC3E602F1596FE5C005F3F56 /* AFHTTPClient.h */,
+				FC3E60301596FE5C005F3F56 /* AFHTTPClient.m */,
+				FC3E60311596FE5C005F3F56 /* AFHTTPRequestOperation.h */,
+				FC3E60321596FE5C005F3F56 /* AFHTTPRequestOperation.m */,
+				FC3E60331596FE5C005F3F56 /* AFImageRequestOperation.h */,
+				FC3E60341596FE5C005F3F56 /* AFImageRequestOperation.m */,
+				FC3E60351596FE5C005F3F56 /* AFJSONRequestOperation.h */,
+				FC3E60361596FE5C005F3F56 /* AFJSONRequestOperation.m */,
+				FC3E60371596FE5C005F3F56 /* AFJSONUtilities.h */,
+				FC3E60381596FE5C005F3F56 /* AFJSONUtilities.m */,
+				FC3E60391596FE5C005F3F56 /* AFNetworkActivityIndicatorManager.h */,
+				FC3E603A1596FE5C005F3F56 /* AFNetworkActivityIndicatorManager.m */,
+				FC3E603B1596FE5C005F3F56 /* AFNetworking.h */,
+				FC3E603C1596FE5C005F3F56 /* AFPropertyListRequestOperation.h */,
+				FC3E603D1596FE5C005F3F56 /* AFPropertyListRequestOperation.m */,
+				FC3E603E1596FE5C005F3F56 /* AFURLConnectionOperation.h */,
+				FC3E603F1596FE5C005F3F56 /* AFURLConnectionOperation.m */,
+				FC3E60401596FE5C005F3F56 /* AFXMLRequestOperation.h */,
+				FC3E60411596FE5C005F3F56 /* AFXMLRequestOperation.m */,
+				FC3E60421596FE5C005F3F56 /* UIImageView+AFNetworking.h */,
+				FC3E60431596FE5C005F3F56 /* UIImageView+AFNetworking.m */,
+			);
+			name = AFNetworking;
+			path = lib/ReactiveCocoa/GHAPIDemo/external/AFNetworking/AFNetworking;
+			sourceTree = "<group>";
+		};
 		FC648CC3157AC81D007E2872 = {
 			isa = PBXGroup;
 			children = (
+				FC3E602E1596FE5C005F3F56 /* AFNetworking */,
+				FC3E5F961596FDA3005F3F56 /* GitHub API */,
 				FC648CD8157AC81D007E2872 /* iOS Formlets */,
 				FC648CF8157AC81E007E2872 /* iOS FormletsTests */,
 				FC648CD1157AC81D007E2872 /* Frameworks */,
@@ -188,6 +284,8 @@
 		FC648CD8157AC81D007E2872 /* iOS Formlets */ = {
 			isa = PBXGroup;
 			children = (
+				FC3E605E1596FECF005F3F56 /* JSGHLoginViewController.h */,
+				FC3E605F1596FECF005F3F56 /* JSGHLoginViewController.m */,
 				FC648CE9157AC81D007E2872 /* JSViewController.h */,
 				FC648CEA157AC81D007E2872 /* JSViewController.m */,
 				FC2511C71588612800534933 /* Table Stuff */,
@@ -405,6 +503,21 @@
 				FC2511D01588649E00534933 /* RFInputRow.m in Sources */,
 				FC9153F01588847500C657D3 /* RFMenuRow.m in Sources */,
 				FC9153F615888B7400C657D3 /* RFTableFormViewController.m in Sources */,
+				FC3E5FB01596FDC3005F3F56 /* GHGitHubClient.m in Sources */,
+				FC3E5FB11596FDC3005F3F56 /* GHGitHubObject.m in Sources */,
+				FC3E5FB21596FDC3005F3F56 /* GHGitHubOrg.m in Sources */,
+				FC3E5FB31596FDC3005F3F56 /* GHGitHubTeam.m in Sources */,
+				FC3E5FB41596FDC3005F3F56 /* GHGitHubUser.m in Sources */,
+				FC3E60441596FE5C005F3F56 /* AFHTTPClient.m in Sources */,
+				FC3E60451596FE5C005F3F56 /* AFHTTPRequestOperation.m in Sources */,
+				FC3E60461596FE5C005F3F56 /* AFImageRequestOperation.m in Sources */,
+				FC3E60471596FE5C005F3F56 /* AFJSONRequestOperation.m in Sources */,
+				FC3E60481596FE5C005F3F56 /* AFJSONUtilities.m in Sources */,
+				FC3E60491596FE5C005F3F56 /* AFNetworkActivityIndicatorManager.m in Sources */,
+				FC3E604A1596FE5C005F3F56 /* AFPropertyListRequestOperation.m in Sources */,
+				FC3E604B1596FE5C005F3F56 /* AFURLConnectionOperation.m in Sources */,
+				FC3E604C1596FE5C005F3F56 /* AFXMLRequestOperation.m in Sources */,
+				FC3E60601596FECF005F3F56 /* JSGHLoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

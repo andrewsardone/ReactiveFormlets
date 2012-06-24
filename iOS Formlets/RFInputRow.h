@@ -10,5 +10,6 @@
 
 // JSInputRow is a table row with a text field.
 @interface RFInputRow : RFFormlet <RFTableRow, Text, Number>
+- (instancetype)modifyTextField:(void (^)(UITextField *field))block;
 - (instancetype)placeholder:(NSString *)placeholder;
 @end

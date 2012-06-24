@@ -80,21 +80,3 @@
 }
 
 @end
-
-@implementation NSString (Text)
-
-+ (instancetype)text
-{
-    return @"";
-}
-
-@end
-
-@implementation NSNumber (Number)
-
-+ (instancetype)number
-{
-    return [NSDecimalNumber zero];
-}
-
-@end
