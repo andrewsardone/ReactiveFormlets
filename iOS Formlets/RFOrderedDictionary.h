@@ -9,18 +9,23 @@
 #import <Foundation/Foundation.h>
 #import <ReactiveCocoa/RACSubscribable.h>
 
-// RFOrderedDictionary is a reactive, mutable associative collection. It
-// is almost exactly like an NSMutableDictionary, except that
-// keys are always kept in the order they are inserted.
-@interface RFOrderedDictionary : RACSubscribable <NSFastEnumeration, NSCopying>
-- (id)initWithOrderedDictionary:(RFOrderedDictionary *)dictionary;
-
-- (id)objectForKey:(id <NSCopying>)key;
-- (id)objectForKeyedSubscript:(id <NSCopying>)key;
+@protocol RFOrderedDictionary <NSObject>
+- (id)objectForKey:(id<NSCopying>)key;
+- (id)objectForKeyedSubscript:(id<NSCopying>)key;
 - (NSArray *)allKeys;
 - (NSArray *)allValues;
 - (NSUInteger)count;
+@end
 
-- (void)setObject:(id)object forKey:(id <NSCopying>)key;
+@protocol RFMutableOrderedDictionary <RFOrderedDictionary>
+- (void)setObject:(id)object forKey:(id<NSCopying>)key;
 - (void)setObject:(id)object forKeyedSubscript:(id<NSCopying>)key;
+@end
+
+// RFOrderedDictionary is a reactive, mutable associative collection. It
+// is almost exactly like an NSMutableDictionary, except that
+// keys are always kept in the order they are inserted.
+@interface RFOrderedDictionary : RACSubscribable <RFOrderedDictionary, NSFastEnumeration, NSCopying>
+- (id)initWithOrderedDictionary:(RFOrderedDictionary *)dictionary;
+- (instancetype)modify:(void(^)(id<RFMutableOrderedDictionary> mutableDictionary))block;
 @end

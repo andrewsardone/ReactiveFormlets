@@ -71,12 +71,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		FC2511C81588614700534933 /* RFTableSection.h */ = {isa = PBXFileReference; fileEncoding = 4; path = RFTableSection.h; sourceTree = "<group>"; };
+		FC2511C81588614700534933 /* RFTableSection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFTableSection.h; sourceTree = "<group>"; };
 		FC2511C91588614700534933 /* RFTableSection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFTableSection.m; sourceTree = "<group>"; };
 		FC2511CC158862F700534933 /* RFTableForm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFTableForm.m; sourceTree = "<group>"; };
-		FC2511CE1588649E00534933 /* RFInputRow.h */ = {isa = PBXFileReference; fileEncoding = 4; path = RFInputRow.h; sourceTree = "<group>"; };
+		FC2511CE1588649E00534933 /* RFInputRow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFInputRow.h; sourceTree = "<group>"; };
 		FC2511CF1588649E00534933 /* RFInputRow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFInputRow.m; sourceTree = "<group>"; };
 		FC2BB4011596F5FD00E89B72 /* RFTableForm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFTableForm.h; sourceTree = "<group>"; };
+		FC2BB4031596F9AA00E89B72 /* RFOrderedDictionary_Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RFOrderedDictionary_Private.h; sourceTree = "<group>"; };
 		FC648CCE157AC81D007E2872 /* iOS Formlets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS Formlets.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC648CD2157AC81D007E2872 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		FC648CD4157AC81D007E2872 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -99,15 +100,15 @@
 		FC648CFF157AC81E007E2872 /* iOS_FormletsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iOS_FormletsTests.m; sourceTree = "<group>"; };
 		FC648D0E157AC84E007E2872 /* ReactiveCocoa.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ReactiveCocoa.xcodeproj; path = lib/ReactiveCocoa/ReactiveCocoaFramework/ReactiveCocoa.xcodeproj; sourceTree = "<group>"; };
 		FC648D2A157AC924007E2872 /* RFFormlet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFFormlet.m; sourceTree = "<group>"; };
-		FC648D2B157AC924007E2872 /* RFFormlet.h */ = {isa = PBXFileReference; fileEncoding = 4; path = RFFormlet.h; sourceTree = "<group>"; };
-		FC8CA6DF1587FCF1002B6EEA /* RFReifiedProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; path = RFReifiedProtocol.h; sourceTree = "<group>"; };
+		FC648D2B157AC924007E2872 /* RFFormlet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFFormlet.h; sourceTree = "<group>"; };
+		FC8CA6DF1587FCF1002B6EEA /* RFReifiedProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFReifiedProtocol.h; sourceTree = "<group>"; };
 		FC8CA6E01587FCF1002B6EEA /* RFReifiedProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFReifiedProtocol.m; sourceTree = "<group>"; };
-		FC9153EE1588847500C657D3 /* RFMenuRow.h */ = {isa = PBXFileReference; fileEncoding = 4; path = RFMenuRow.h; sourceTree = "<group>"; };
+		FC9153EE1588847500C657D3 /* RFMenuRow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFMenuRow.h; sourceTree = "<group>"; };
 		FC9153EF1588847500C657D3 /* RFMenuRow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFMenuRow.m; sourceTree = "<group>"; };
-		FC9153F11588853400C657D3 /* RFTableRow.h */ = {isa = PBXFileReference; fileEncoding = 4; path = RFTableRow.h; sourceTree = "<group>"; };
-		FC9153F415888B7400C657D3 /* RFTableFormViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; path = RFTableFormViewController.h; sourceTree = "<group>"; };
+		FC9153F11588853400C657D3 /* RFTableRow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFTableRow.h; sourceTree = "<group>"; };
+		FC9153F415888B7400C657D3 /* RFTableFormViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFTableFormViewController.h; sourceTree = "<group>"; };
 		FC9153F515888B7400C657D3 /* RFTableFormViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFTableFormViewController.m; sourceTree = "<group>"; };
-		FCC7F95E1587F4020008558B /* RFOrderedDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; path = RFOrderedDictionary.h; sourceTree = "<group>"; };
+		FCC7F95E1587F4020008558B /* RFOrderedDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFOrderedDictionary.h; sourceTree = "<group>"; };
 		FCC7F95F1587F4020008558B /* RFOrderedDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFOrderedDictionary.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -248,6 +249,7 @@
 				FC648D2A157AC924007E2872 /* RFFormlet.m */,
 				FC8CA6DF1587FCF1002B6EEA /* RFReifiedProtocol.h */,
 				FC8CA6E01587FCF1002B6EEA /* RFReifiedProtocol.m */,
+				FC2BB4031596F9AA00E89B72 /* RFOrderedDictionary_Private.h */,
 				FCC7F95E1587F4020008558B /* RFOrderedDictionary.h */,
 				FCC7F95F1587F4020008558B /* RFOrderedDictionary.m */,
 			);

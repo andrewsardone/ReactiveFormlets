@@ -7,10 +7,8 @@
 //
 
 #import "RFOrderedDictionary.h"
+#import "RFOrderedDictionary_Private.h"
 #import <ReactiveCocoa/RACSubject.h>
-
-@interface RFOrderedDictionary ()
-@end
 
 @implementation RFOrderedDictionary {
     NSMutableArray *_keys;
@@ -49,6 +47,13 @@
         copy[key] = [self[key] copyWithZone:zone];
     }
 
+    return copy;
+}
+
+- (instancetype)modify:(void(^)(id<RFMutableOrderedDictionary> mutableDictionary))block
+{
+    RFOrderedDictionary *copy = [self copy];
+    block(copy);
     return copy;
 }
 

@@ -64,19 +64,19 @@
     [invocation retainArguments];
     NSArray *keys = [self keysFromConstructor:invocation.selector];
 
-    RFOrderedDictionary *dictionary = [RFOrderedDictionary new];
-    for (int i = 2; i < invocation.methodSignature.numberOfArguments; ++i)
-    {
-        __autoreleasing id outArgument = nil;
-        [invocation getArgument:&outArgument atIndex:i];
+    RFOrderedDictionary *dictionary = [[RFOrderedDictionary new] modify:^(id<RFMutableOrderedDictionary> dictionary) {
+        for (int i = 2; i < invocation.methodSignature.numberOfArguments; ++i)
+        {
+            __autoreleasing id outArgument = nil;
+            [invocation getArgument:&outArgument atIndex:i];
 
-        NSString *key = [keys objectAtIndex:i-2];
-        dictionary[key] = outArgument;
-    }
+            NSString *key = [keys objectAtIndex:i-2];
+            dictionary[key] = outArgument;
+        }
+    }];
 
     __autoreleasing RFReifiedProtocol *modelObject = [[self alloc] initWithOrderedDictionary:dictionary];
-
-    invocation.returnValue = (__autoreleasing id *)(&modelObject);
+    invocation.returnValue = &modelObject;
 }
 
 - (NSMethodSignature *)methodSignatureForSelector:(SEL)aSelector

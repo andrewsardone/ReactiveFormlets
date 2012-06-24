@@ -47,12 +47,12 @@
     if (_menuForm == nil)
     {
         Class MenuForm = [JSSingleSectionTableForm model:self.class.model];
-        _menuForm = [MenuForm new];
-
-        for (id key in self)
-        {
-            _menuForm[key] = self[key];
-        }
+        _menuForm = [[MenuForm new] modify:^(id<RFMutableOrderedDictionary> form) {
+            for (id key in self)
+            {
+                form[key] = self[key];
+            }
+        }];
     }
 
     return _menuForm;

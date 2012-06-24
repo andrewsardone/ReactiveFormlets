@@ -7,6 +7,7 @@
 //
 
 #import "RFFormlet.h"
+#import "RFOrderedDictionary_Private.h"
 #import <ReactiveCocoa/ReactiveCocoa.h>
 
 @implementation RFFormlet
@@ -22,12 +23,14 @@
 - (id)currentValue
 {
     RFOrderedDictionary *modelData = [[RFReifiedProtocol model:self.class.model] new];
-    for (id key in self)
-    {
-        id currentValue = [self[key] currentValue];
-        if (currentValue)
-            modelData[key] = currentValue;
-    }
+    return [modelData modify:^void(id<RFMutableOrderedDictionary> dict) {
+        for (id key in self)
+        {
+            id currentValue = [self[key] currentValue];
+            if (currentValue)
+                dict[key] = currentValue;
+        }
+    }];
 
     return modelData;
 }
