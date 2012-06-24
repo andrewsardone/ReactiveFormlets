@@ -6,7 +6,7 @@
 //  Copyright (c) 2012 Jon Sterling. All rights reserved.
 //
 
-#import "JSTableRow.h"
+#import "RFTableRow.h"
 
 // JSMenuRow is for implementing subforms that start with a disclosure
 // cell, yielding a new view. This one is rather poorly implemented and
@@ -15,12 +15,12 @@
 
 @protocol JSMenuRowDelegate;
 
-@interface JSMenuRow : Formlet <JSTableRow>
+@interface RFMenuRow : RFFormlet <RFTableRow>
 @property (weak) id <JSMenuRowDelegate> delegate;
 @property (copy, readonly) NSString *title;
 - (instancetype)withTitle:(NSString *)title;
 @end
 
 @protocol JSMenuRowDelegate <NSObject>
-- (void)menuRow:(JSMenuRow *)row displayViewController:(UITableViewController *)controller;
+- (void)menuRow:(RFMenuRow *)row displayViewController:(UITableViewController *)controller;
 @end

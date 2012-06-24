@@ -8,13 +8,13 @@
 
 #import <Foundation/Foundation.h>
 #import <ReactiveCocoa/RACSubscribable.h>
-#import "JSReifiedProtocol.h"
+#import "RFReifiedProtocol.h"
 
 #define keypath(object, property) selector(self) ? RAC_KEYPATH(object,property) : nil
 #define selfpath(property) keypath(self,property)
 
 // Formlets are reactive and copyable.
-@protocol Formlet <RACSubscribable, NSCopying>
+@protocol RFFormlet <RACSubscribable, NSCopying>
 @property (copy) id currentValue;
 - (instancetype)withValue:(id)value;
 - (RACDisposable *)subscribeNext:(void (^)(id x))nextBlock;
@@ -22,7 +22,7 @@
 - (RACSubscribable *)select:(id (^)(id x))selectBlock;
 @end
 
-@interface Formlet : JSReifiedProtocol <Formlet>
+@interface RFFormlet : RFReifiedProtocol <RFFormlet>
 @end
 
 

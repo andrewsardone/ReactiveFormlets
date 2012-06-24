@@ -1,19 +1,19 @@
 //
-//  JSTableFormViewController.m
+//  RFTableFormViewController.m
 //  iOS Formlets
 //
 //  Created by Jon Sterling on 6/13/12.
 //  Copyright (c) 2012 Jon Sterling. All rights reserved.
 //
 
-#import "JSTableFormViewController.h"
-#import "JSTableForm.h"
+#import "RFTableFormViewController.h"
+#import "RFTableForm.h"
 
-@implementation JSTableFormViewController {
-    JSTableForm *_form;
+@implementation RFTableFormViewController {
+    RFTableForm *_form;
 }
 
-- (id)initWithForm:(JSTableForm *)form
+- (id)initWithForm:(RFTableForm *)form
 {
     if ((self = [self init]))
     {

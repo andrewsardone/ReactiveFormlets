@@ -7,15 +7,15 @@
 //
 
 #import "JSViewController.h"
-#import "Formlet.h"
-#import "JSTableForm.h"
-#import "JSInputRow.h"
-#import "JSTableSection.h"
-#import "JSMenuRow.h"
+#import "RFFormlet.h"
+#import "RFTableForm.h"
+#import "RFInputRow.h"
+#import "RFTableSection.h"
+#import "RFMenuRow.h"
 
 #import <ReactiveCocoa/ReactiveCocoa.h>
 
-@protocol Animal <Formlet>
+@protocol Animal <RFFormlet>
 @property (readonly) id <Text> name;
 @property (readonly) id <Text> nickName;
 @property (readonly) id <Text> favoriteFood;
@@ -25,7 +25,7 @@
 + (instancetype)name:(id <Text>)name nickName:(id <Text>)nickName friend:(id <Animal>)friend;
 @end
 
-@protocol Pets <Formlet>
+@protocol Pets <RFFormlet>
 @property (strong, readonly) id <Animal> dog;
 @property (strong, readonly) id <Animal> cat;
 + (instancetype)dog:(id<Animal>)dog cat:(id<Animal>)cat;
@@ -35,12 +35,12 @@
 @end
 
 @implementation JSViewController {
-    JSTableForm <Pets> *_form;
+    RFTableForm <Pets> *_form;
 }
 
 - (void)loadView
 {
-    Class AnimalModel = [JSReifiedProtocol model:@protocol(Animal)];
+    Class AnimalModel = [RFReifiedProtocol model:@protocol(Animal)];
     id <Animal> rover = [AnimalModel name:@"Rover"
                                  nickName:@"Peanut"
                              favoriteFood:@"kibbles"
@@ -49,21 +49,21 @@
                                   nickName:@"Tuckey"
                                     friend:rover];
 
-    JSInputRow <Text> *textRow = [JSInputRow text];
+    RFInputRow <Text> *textRow = [RFInputRow text];
 
-    Class AnimalMenu = [JSMenuRow model:@protocol(Animal)];
-    JSMenuRow <Animal> *animalMenu = [AnimalMenu name:[textRow placeholder:@"name"]
+    Class AnimalMenu = [RFMenuRow model:@protocol(Animal)];
+    RFMenuRow <Animal> *animalMenu = [AnimalMenu name:[textRow placeholder:@"name"]
                                              nickName:[textRow placeholder:@"nickname"]
                                          favoriteFood:[textRow placeholder:@"favoriteFood"]
-                                                  age:[[JSInputRow number] placeholder:@"age"]];
+                                                  age:[[RFInputRow number] placeholder:@"age"]];
     animalMenu.delegate = self;
 
-    Class AnimalSection = [JSTableSection model:@protocol(Animal)];
-    JSTableSection <Animal> *animalSection = [AnimalSection name:[textRow placeholder:@"name"]
+    Class AnimalSection = [RFTableSection model:@protocol(Animal)];
+    RFTableSection <Animal> *animalSection = [AnimalSection name:[textRow placeholder:@"name"]
                                                         nickName:[textRow placeholder:@"nickname"]
                                                           friend:[animalMenu withTitle:@"friend"]];
 
-    Class PetsTable = [JSTableForm model:@protocol(Pets)];
+    Class PetsTable = [RFTableForm model:@protocol(Pets)];
     _form = [PetsTable dog:[[animalSection title:@"Doggy"] withValue:tucker]
                        cat:[animalSection title:@"Kitty"]];
 
@@ -81,7 +81,7 @@
 
 #pragma mark - JSMenuRowDelegate
 
-- (void)menuRow:(JSMenuRow *)row displayViewController:(UITableViewController *)controller
+- (void)menuRow:(RFMenuRow *)row displayViewController:(UITableViewController *)controller
 {
     [self.navigationController pushViewController:controller animated:YES];
 }

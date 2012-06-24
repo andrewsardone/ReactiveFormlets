@@ -1,5 +1,5 @@
 //
-//  JSTableSection.h
+//  RFTableSection.h
 //  iOS Formlets
 //
 //  Created by Jon Sterling on 6/12/12.
@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Formlet.h"
+#import "RFFormlet.h"
 
-@interface JSTableSection : Formlet
+@interface RFTableSection : RFFormlet
 @property (copy, readonly) NSString *title;
 
 - (instancetype)title:(NSString *)title;

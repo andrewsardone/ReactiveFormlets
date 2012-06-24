@@ -6,22 +6,22 @@
 //  Copyright (c) 2012 Jon Sterling. All rights reserved.
 //
 
-#import "JSInputRow.h"
+#import "RFInputRow.h"
 #import <ReactiveCocoa/ReactiveCocoa.h>
 
-@interface JSTextInputRow : JSInputRow
+@interface JSTextInputRow : RFInputRow
 @end
 
-@interface JSNumberInputRow : JSInputRow
+@interface JSNumberInputRow : RFInputRow
 @end
 
 
-@interface JSInputRow () <UITextFieldDelegate>
+@interface RFInputRow () <UITextFieldDelegate>
 @property (strong, readonly) UITextField *textField;
 @property (copy) NSString *placeholder;
 @end
 
-@implementation JSInputRow
+@implementation RFInputRow
 @synthesize textField = _textField;
 @synthesize cell = _cell;
 @dynamic currentValue;
@@ -38,7 +38,7 @@
 
 - (id)copyWithZone:(NSZone *)zone
 {
-    JSInputRow *row = [self.class new];
+    RFInputRow *row = [self.class new];
     row->_placeholder = _placeholder;
     row.textField.text = self.textField.text;
     return row;
@@ -46,7 +46,7 @@
 
 - (instancetype)placeholder:(NSString *)placeholder
 {
-    JSInputRow *copy = [self copy];
+    RFInputRow *copy = [self copy];
     copy->_placeholder = placeholder;
     copy.textField.text = self.textField.text;
     return copy;

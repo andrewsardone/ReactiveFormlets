@@ -1,21 +1,21 @@
 //
-//  JSReifiedProtocol.m
+//  RFReifiedProtocol.m
 //  iOS Formlets
 //
 //  Created by Jon Sterling on 6/12/12.
 //  Copyright (c) 2012 Jon Sterling. All rights reserved.
 //
 
-#import "JSReifiedProtocol.h"
-#import "JSOrderedDictionary.h"
+#import "RFReifiedProtocol.h"
+#import "RFOrderedDictionary.h"
 #import <ReactiveCocoa/RACBehaviorSubject.h>
 #import <objc/runtime.h>
 
-@interface JSReifiedProtocol ()
+@interface RFReifiedProtocol ()
 + (NSArray *)keysFromConstructor:(SEL)selector;
 @end
 
-@implementation JSReifiedProtocol
+@implementation RFReifiedProtocol
 
 + (Class)model:(Protocol *)model
 {
@@ -64,7 +64,7 @@
     [invocation retainArguments];
     NSArray *keys = [self keysFromConstructor:invocation.selector];
 
-    JSOrderedDictionary *dictionary = [JSOrderedDictionary new];
+    RFOrderedDictionary *dictionary = [RFOrderedDictionary new];
     for (int i = 2; i < invocation.methodSignature.numberOfArguments; ++i)
     {
         __autoreleasing id outArgument = nil;
@@ -74,7 +74,7 @@
         dictionary[key] = outArgument;
     }
 
-    __autoreleasing JSReifiedProtocol *modelObject = [[self alloc] initWithOrderedDictionary:dictionary];
+    __autoreleasing RFReifiedProtocol *modelObject = [[self alloc] initWithOrderedDictionary:dictionary];
 
     invocation.returnValue = (__autoreleasing id *)(&modelObject);
 }

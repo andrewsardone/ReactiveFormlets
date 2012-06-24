@@ -1,20 +1,20 @@
 //
-//  JSTableForm.m
+//  RFTableForm.m
 //  iOS Formlets
 //
 //  Created by Jon Sterling on 6/12/12.
 //  Copyright (c) 2012 Jon Sterling. All rights reserved.
 //
 
-#import "JSTableForm.h"
-#import "JSTableSection.h"
-#import "JSInputRow.h"
-#import "JSTableRow.h"
+#import "RFTableForm.h"
+#import "RFTableSection.h"
+#import "RFInputRow.h"
+#import "RFTableRow.h"
 
-@interface JSTableForm () <UITableViewDataSource, UITableViewDelegate>
+@interface RFTableForm () <UITableViewDataSource, UITableViewDelegate>
 @end
 
-@implementation JSTableForm
+@implementation RFTableForm
 
 - (UITableView *)view
 {

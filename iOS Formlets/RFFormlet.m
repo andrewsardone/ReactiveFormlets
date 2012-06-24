@@ -6,22 +6,22 @@
 //  Copyright (c) 2012 Jon Sterling. All rights reserved.
 //
 
-#import "Formlet.h"
+#import "RFFormlet.h"
 #import <ReactiveCocoa/ReactiveCocoa.h>
 
-@implementation Formlet
+@implementation RFFormlet
 @dynamic currentValue;
 
 - (instancetype)withValue:(id)value
 {
-    Formlet *copy = [self copy];
+    RFFormlet *copy = [self copy];
     copy.currentValue = value;
     return copy;
 }
 
 - (id)currentValue
 {
-    JSOrderedDictionary *modelData = [[JSReifiedProtocol model:self.class.model] new];
+    RFOrderedDictionary *modelData = [[RFReifiedProtocol model:self.class.model] new];
     for (id key in self)
     {
         id currentValue = [self[key] currentValue];
@@ -55,7 +55,7 @@
     NSMutableSet *disposables = [NSMutableSet setWithCapacity:self.count];
     NSMutableSet *completedSubscribables = [NSMutableSet setWithCapacity:self.count];
 
-    id modelData = [[JSReifiedProtocol model:self.class.model] new];
+    id modelData = [[RFReifiedProtocol model:self.class.model] new];
 
     for (id key in self)
     {

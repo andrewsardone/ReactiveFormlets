@@ -1,5 +1,5 @@
 //
-//  JSReifiedProtocol.h
+//  RFReifiedProtocol.h
 //  iOS Formlets
 //
 //  Created by Jon Sterling on 6/12/12.
@@ -8,9 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import <ReactiveCocoa/RACSubscribable.h>
-#import "JSOrderedDictionary.h"
+#import "RFOrderedDictionary.h"
 
-// JSReifiedProtocol is a way to generate model classes from protocols,
+// RFReifiedProtocol is a way to generate model classes from protocols,
 // to do away with following kinds of boilerplate:
 //
 //   * defining model classes and their storage
@@ -41,11 +41,11 @@
 //
 // A model class can be generated from that as follows:
 //
-//     Class Boy = [JSReifiedProtocol model:@protocol(Boy)];
+//     Class Boy = [RFReifiedProtocol model:@protocol(Boy)];
 //     id <Boy> steve = [Boy name:@"Steve" age:@7];
 //     id <Boy> dan = [Boy name:@"Dan" age:@9 buddy:steve];
 //
-@interface JSReifiedProtocol : JSOrderedDictionary <RACSubscribable>
+@interface RFReifiedProtocol : RFOrderedDictionary <RACSubscribable>
 + (Class)model:(Protocol *)model;
 + (Protocol *)model;
 @end

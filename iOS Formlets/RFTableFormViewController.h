@@ -1,5 +1,5 @@
 //
-//  JSTableFormViewController.h
+//  RFTableFormViewController.h
 //  iOS Formlets
 //
 //  Created by Jon Sterling on 6/13/12.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@class JSTableForm;
-@interface JSTableFormViewController : UITableViewController
-- (id)initWithForm:(JSTableForm *)form;
+@class RFTableForm;
+@interface RFTableFormViewController : UITableViewController
+- (id)initWithForm:(RFTableForm *)form;
 @end

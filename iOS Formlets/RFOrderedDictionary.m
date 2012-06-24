@@ -1,18 +1,18 @@
 //
-//  JSOrderedDictionary.m
+//  RFOrderedDictionary.m
 //  iOS Formlets
 //
 //  Created by Jon Sterling on 6/12/12.
 //  Copyright (c) 2012 Jon Sterling. All rights reserved.
 //
 
-#import "JSOrderedDictionary.h"
+#import "RFOrderedDictionary.h"
 #import <ReactiveCocoa/RACSubject.h>
 
-@interface JSOrderedDictionary ()
+@interface RFOrderedDictionary ()
 @end
 
-@implementation JSOrderedDictionary {
+@implementation RFOrderedDictionary {
     NSMutableArray *_keys;
     NSMutableDictionary *_dictionary;
     RACSubject *_reactiveSubject;
@@ -30,7 +30,7 @@
     return self;
 }
 
-- (id)initWithOrderedDictionary:(JSOrderedDictionary *)dictionary
+- (id)initWithOrderedDictionary:(RFOrderedDictionary *)dictionary
 {
     if (self = [super init])
     {
@@ -43,7 +43,7 @@
 
 - (id)copyWithZone:(NSZone *)zone
 {
-    JSOrderedDictionary *copy = [[self class] new];
+    RFOrderedDictionary *copy = [[self class] new];
     for (id key in self)
     {
         copy[key] = [self[key] copyWithZone:zone];

@@ -6,15 +6,15 @@
 //  Copyright (c) 2012 Jon Sterling. All rights reserved.
 //
 
-#import "JSMenuRow.h"
-#import "JSTableFormViewController.h"
-#import "JSTableForm.h"
+#import "RFMenuRow.h"
+#import "RFTableFormViewController.h"
+#import "RFTableForm.h"
 
-@interface JSMenuRow ()
+@interface RFMenuRow ()
 @property (strong, readonly) JSSingleSectionTableForm *menuForm;
 @end
 
-@implementation JSMenuRow {
+@implementation RFMenuRow {
     NSString *_title;
 }
 
@@ -23,7 +23,7 @@
 
 - (id)copyWithZone:(NSZone *)zone
 {
-    JSMenuRow *copy = [super copyWithZone:zone];
+    RFMenuRow *copy = [super copyWithZone:zone];
     copy->_title = _title;
     copy->_delegate = _delegate;
     copy->_menuForm = [_menuForm copy];
@@ -60,7 +60,7 @@
 
 - (void)rowWasSelected
 {
-    JSTableFormViewController *formController = [[JSTableFormViewController alloc] initWithForm:self.menuForm];
+    RFTableFormViewController *formController = [[RFTableFormViewController alloc] initWithForm:self.menuForm];
     formController.title = _title;
     [self.delegate menuRow:self displayViewController:formController];
 }
@@ -74,7 +74,7 @@
 
 - (instancetype)withTitle:(NSString *)title
 {
-    JSMenuRow *copy = [self copy];
+    RFMenuRow *copy = [self copy];
     copy->_title = title;
     return copy;
 }
