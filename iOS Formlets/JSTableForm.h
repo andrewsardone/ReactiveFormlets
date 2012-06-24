@@ -6,10 +6,10 @@
 //  Copyright (c) 2012 Jon Sterling. All rights reserved.
 //
 
-#import "ValidatingFormlet.h"
+#import "Formlet.h"
 
 // Many JSTableSection
-@interface JSTableForm : ValidatingFormlet
+@interface JSTableForm : Formlet
 - (UITableView *)view;
 @end
 

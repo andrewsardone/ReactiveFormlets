@@ -49,11 +49,7 @@
                                   nickName:@"Tuckey"
                                     friend:rover];
 
-    JSInputRow <Text> *textRow = [[JSInputRow text] satisfies:^BOOL(NSString *value) {
-        NSMutableCharacterSet *allowed = [NSMutableCharacterSet letterCharacterSet];
-        [allowed formUnionWithCharacterSet:[NSCharacterSet whitespaceCharacterSet]];
-        return [value rangeOfCharacterFromSet:allowed.invertedSet].location == NSNotFound;
-    }];
+    JSInputRow <Text> *textRow = [JSInputRow text];
 
     Class AnimalMenu = [JSMenuRow model:@protocol(Animal)];
     JSMenuRow <Animal> *animalMenu = [AnimalMenu name:[textRow placeholder:@"name"]
@@ -68,7 +64,7 @@
                                                           friend:[animalMenu withTitle:@"friend"]];
 
     Class PetsTable = [JSTableForm model:@protocol(Pets)];
-    _form = [PetsTable dog:[[animalSection title:@"Doggy"] initialData:tucker]
+    _form = [PetsTable dog:[[animalSection title:@"Doggy"] withValue:tucker]
                        cat:[animalSection title:@"Kitty"]];
 
     [self rac_bind:@selfpath(title) to:[_form.dog.friend select:^(id <Animal> buddy) {

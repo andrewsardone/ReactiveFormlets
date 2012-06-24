@@ -11,7 +11,7 @@
 
 // JSOrderedDictionary is a reactive, mutable associative collection. It
 // is almost exactly like an NSMutableDictionary, except that
-// keys are always kept int he order they are inserted.
+// keys are always kept in the order they are inserted.
 @interface JSOrderedDictionary : RACSubscribable <NSFastEnumeration, NSCopying>
 - (id)initWithOrderedDictionary:(JSOrderedDictionary *)dictionary;
 

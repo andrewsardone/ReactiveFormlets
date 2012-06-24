@@ -6,7 +6,6 @@
 //  Copyright (c) 2012 Jon Sterling. All rights reserved.
 //
 
-#import "ValidatingFormlet.h"
 #import "JSTableRow.h"
 
 // JSMenuRow is for implementing subforms that start with a disclosure
@@ -16,7 +15,7 @@
 
 @protocol JSMenuRowDelegate;
 
-@interface JSMenuRow : ValidatingFormlet <JSTableRow>
+@interface JSMenuRow : Formlet <JSTableRow>
 @property (weak) id <JSMenuRowDelegate> delegate;
 @property (copy, readonly) NSString *title;
 - (instancetype)withTitle:(NSString *)title;

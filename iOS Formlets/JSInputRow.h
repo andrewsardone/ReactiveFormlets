@@ -6,10 +6,9 @@
 //  Copyright (c) 2012 Jon Sterling. All rights reserved.
 //
 
-#import "ValidatingFormlet.h"
 #import "JSTableRow.h"
 
 // JSInputRow is a table row with a text field.
-@interface JSInputRow : ValidatingFormlet <JSTableRow, Text, Number>
+@interface JSInputRow : Formlet <JSTableRow, Text, Number>
 - (instancetype)placeholder:(NSString *)placeholder;
 @end

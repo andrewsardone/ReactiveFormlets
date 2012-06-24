@@ -58,13 +58,6 @@
     return _menuForm;
 }
 
-- (instancetype)initialData:(id)data
-{
-    JSMenuRow *copy = [self copy];
-    copy->_menuForm = [_menuForm initialData:data];
-    return copy;
-}
-
 - (void)rowWasSelected
 {
     JSTableFormViewController *formController = [[JSTableFormViewController alloc] initWithForm:self.menuForm];

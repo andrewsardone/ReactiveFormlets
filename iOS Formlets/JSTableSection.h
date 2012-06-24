@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ValidatingFormlet.h"
+#import "Formlet.h"
 
-@interface JSTableSection : ValidatingFormlet
+@interface JSTableSection : Formlet
 @property (copy, readonly) NSString *title;
 
 - (instancetype)title:(NSString *)title;

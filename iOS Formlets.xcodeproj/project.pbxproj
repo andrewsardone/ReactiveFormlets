@@ -25,7 +25,6 @@
 		FC648CFD157AC81E007E2872 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FC648CFB157AC81E007E2872 /* InfoPlist.strings */; };
 		FC648D00157AC81E007E2872 /* iOS_FormletsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FC648CFF157AC81E007E2872 /* iOS_FormletsTests.m */; };
 		FC648D26157AC8F9007E2872 /* libReactiveCocoa-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FC648D1C157AC84E007E2872 /* libReactiveCocoa-iOS.a */; };
-		FC648D2C157AC924007E2872 /* ValidatingFormlet.m in Sources */ = {isa = PBXBuildFile; fileRef = FC648D29157AC924007E2872 /* ValidatingFormlet.m */; };
 		FC648D2D157AC924007E2872 /* Formlet.m in Sources */ = {isa = PBXBuildFile; fileRef = FC648D2A157AC924007E2872 /* Formlet.m */; };
 		FC8CA6E11587FCF1002B6EEA /* JSReifiedProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = FC8CA6E01587FCF1002B6EEA /* JSReifiedProtocol.m */; };
 		FC9153F01588847500C657D3 /* JSMenuRow.m in Sources */ = {isa = PBXBuildFile; fileRef = FC9153EF1588847500C657D3 /* JSMenuRow.m */; };
@@ -99,8 +98,6 @@
 		FC648CFE157AC81E007E2872 /* iOS_FormletsTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iOS_FormletsTests.h; sourceTree = "<group>"; };
 		FC648CFF157AC81E007E2872 /* iOS_FormletsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iOS_FormletsTests.m; sourceTree = "<group>"; };
 		FC648D0E157AC84E007E2872 /* ReactiveCocoa.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ReactiveCocoa.xcodeproj; path = lib/ReactiveCocoa/ReactiveCocoaFramework/ReactiveCocoa.xcodeproj; sourceTree = "<group>"; };
-		FC648D28157AC924007E2872 /* ValidatingFormlet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ValidatingFormlet.h; sourceTree = "<group>"; };
-		FC648D29157AC924007E2872 /* ValidatingFormlet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ValidatingFormlet.m; sourceTree = "<group>"; };
 		FC648D2A157AC924007E2872 /* Formlet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Formlet.m; sourceTree = "<group>"; };
 		FC648D2B157AC924007E2872 /* Formlet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Formlet.h; sourceTree = "<group>"; };
 		FC8CA6DF1587FCF1002B6EEA /* JSReifiedProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSReifiedProtocol.h; sourceTree = "<group>"; };
@@ -249,8 +246,6 @@
 			children = (
 				FC648D2B157AC924007E2872 /* Formlet.h */,
 				FC648D2A157AC924007E2872 /* Formlet.m */,
-				FC648D28157AC924007E2872 /* ValidatingFormlet.h */,
-				FC648D29157AC924007E2872 /* ValidatingFormlet.m */,
 				FC8CA6DF1587FCF1002B6EEA /* JSReifiedProtocol.h */,
 				FC8CA6E01587FCF1002B6EEA /* JSReifiedProtocol.m */,
 				FCC7F95E1587F4020008558B /* JSOrderedDictionary.h */,
@@ -402,7 +397,6 @@
 				FC648CDF157AC81D007E2872 /* main.m in Sources */,
 				FC648CE3157AC81D007E2872 /* JSAppDelegate.m in Sources */,
 				FC648CEB157AC81D007E2872 /* JSViewController.m in Sources */,
-				FC648D2C157AC924007E2872 /* ValidatingFormlet.m in Sources */,
 				FC648D2D157AC924007E2872 /* Formlet.m in Sources */,
 				FCC7F9601587F4020008558B /* JSOrderedDictionary.m in Sources */,
 				FC8CA6E11587FCF1002B6EEA /* JSReifiedProtocol.m in Sources */,

@@ -8,17 +8,21 @@
 
 #import <Foundation/Foundation.h>
 #import <ReactiveCocoa/RACSubscribable.h>
+#import "JSReifiedProtocol.h"
 
 #define keypath(object, property) selector(self) ? RAC_KEYPATH(object,property) : nil
 #define selfpath(property) keypath(self,property)
 
 // Formlets are reactive and copyable.
 @protocol Formlet <RACSubscribable, NSCopying>
+@property (copy) id currentValue;
+- (instancetype)withValue:(id)value;
 - (RACDisposable *)subscribeNext:(void (^)(id x))nextBlock;
-- (instancetype)initialData:(id)data;
-
 @optional
 - (RACSubscribable *)select:(id (^)(id x))selectBlock;
+@end
+
+@interface Formlet : JSReifiedProtocol <Formlet>
 @end
 
 
@@ -26,11 +30,11 @@
 // can unify the building blocks of formlets and their data under a
 // single type. That is, an NSString is <Text>, as is a formlet that
 // deals with text.
-@protocol Text <Formlet>
+@protocol Text
 + (instancetype)text;
 @end
 
-@protocol Number <Formlet>
+@protocol Number
 + (instancetype)number;
 @end
 

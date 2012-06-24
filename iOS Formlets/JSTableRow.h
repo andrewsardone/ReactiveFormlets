@@ -6,9 +6,9 @@
 //  Copyright (c) 2012 Jon Sterling. All rights reserved.
 //
 
-#import "ValidatingFormlet.h"
+#import "Formlet.h"
 
-@protocol JSTableRow
+@protocol JSTableRow <Formlet>
 @property (strong, readonly) UITableViewCell *cell;
 - (void)rowWasSelected;
 @end

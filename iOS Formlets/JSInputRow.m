@@ -7,6 +7,7 @@
 //
 
 #import "JSInputRow.h"
+#import <ReactiveCocoa/ReactiveCocoa.h>
 
 @interface JSTextInputRow : JSInputRow
 @end
@@ -23,6 +24,7 @@
 @implementation JSInputRow
 @synthesize textField = _textField;
 @synthesize cell = _cell;
+@dynamic currentValue;
 
 + (instancetype)text
 {
@@ -36,7 +38,7 @@
 
 - (id)copyWithZone:(NSZone *)zone
 {
-    JSInputRow *row = [super copyWithZone:zone];
+    JSInputRow *row = [self.class new];
     row->_placeholder = _placeholder;
     row.textField.text = self.textField.text;
     return row;
@@ -77,22 +79,10 @@
     return _cell;
 }
 
-- (void)displayValidation:(BOOL)isValid
-{
-    self.cell.backgroundColor = isValid ? [UIColor whiteColor] : [UIColor redColor];
-}
-
 - (RACDisposable *)subscribe:(id<RACSubscriber>)subscriber
 {
     [subscriber sendNext:self.textField.text];
     return [self.textField.rac_textSubscribable subscribe:subscriber];
-}
-
-- (instancetype)initialData:(id)data
-{
-    JSTextInputRow *copy = [self copy];
-    copy.textField.text = data;
-    return copy;
 }
 
 #pragma mark - UITextFieldDelegate
@@ -114,6 +104,17 @@
 
 
 @implementation JSTextInputRow
+
+- (id)currentValue
+{
+    return self.textField.text;
+}
+
+- (void)setCurrentValue:(id)currentValue
+{
+    self.textField.text = currentValue;
+}
+
 @end
 
 @implementation JSNumberInputRow
@@ -125,18 +126,21 @@
     return textField;
 }
 
-- (instancetype)initialData:(id)data
+- (id)currentValue
 {
-    JSNumberInputRow *copy = [self copy];
-    copy.textField.text = [data stringValue];
-    return copy;
+    return [NSDecimalNumber decimalNumberWithString:self.textField.text];
+}
+
+- (void)setCurrentValue:(id)currentValue
+{
+    self.textField.text = [currentValue stringValue];
 }
 
 - (RACDisposable *)subscribe:(id<RACSubscriber>)subscriber
 {
     if (self.textField.text)
     {
-        [subscriber sendNext:[NSDecimalNumber decimalNumberWithString:self.textField.text]];
+        [subscriber sendNext:self.currentValue];
     }
 
     return [[self.textField.rac_textSubscribable select:^id(NSString *text) {
