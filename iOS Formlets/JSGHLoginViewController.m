@@ -29,7 +29,6 @@
 
 @implementation JSGHLoginViewController {
     RFSingleSectionTableForm *_form;
-    UIBarButtonItem *_loginButtonItem, *_activityItem;
 }
 
 - (void)loadView
@@ -47,20 +46,20 @@
 
 
     // And you're done!
-    _loginButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Login"
-                                                        style:UIBarButtonItemStyleDone
-                                                       target:self
-                                                       action:@selector(login:)];
+    id loginButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Login"
+                                                          style:UIBarButtonItemStyleDone
+                                                         target:self
+                                                         action:@selector(login:)];
 
 
     UIActivityIndicatorView *indicatorView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
     [indicatorView startAnimating];
 
-    _activityItem = [[UIBarButtonItem alloc] initWithCustomView:indicatorView];
+    id activityItem = [[UIBarButtonItem alloc] initWithCustomView:indicatorView];
 
     [self rac_bind:@selfpath(navigationItem.rightBarButtonItem) to:[RACAbleSelfWithStart(loading) select:^id(NSNumber *loading) {
         BOOL isLoading = loading.boolValue;
-        return !isLoading ? _loginButtonItem : _activityItem;
+        return !isLoading ? loginButtonItem : activityItem;
     }]];
 
     [self rac_bind:@selfpath(navigationItem.rightBarButtonItem.enabled) to:[[_form select:^id(id<GHCredentials> credentials) {
