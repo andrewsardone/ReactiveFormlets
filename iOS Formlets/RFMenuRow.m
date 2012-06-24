@@ -11,7 +11,7 @@
 #import "RFTableForm.h"
 
 @interface RFMenuRow ()
-@property (strong, readonly) JSSingleSectionTableForm *menuForm;
+@property (strong, readonly) RFSingleSectionTableForm *menuForm;
 @end
 
 @implementation RFMenuRow {
@@ -42,11 +42,11 @@
     return _cell;
 }
 
-- (JSSingleSectionTableForm *)menuForm
+- (RFSingleSectionTableForm *)menuForm
 {
     if (_menuForm == nil)
     {
-        Class MenuForm = [JSSingleSectionTableForm model:self.class.model];
+        Class MenuForm = [RFSingleSectionTableForm model:self.class.model];
         _menuForm = [[MenuForm new] modify:^(id<RFMutableOrderedDictionary> form) {
             for (id key in self)
             {

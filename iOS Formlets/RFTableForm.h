@@ -14,5 +14,5 @@
 @end
 
 // Many RFTableRow
-@interface JSSingleSectionTableForm : RFTableForm
+@interface RFSingleSectionTableForm : RFTableForm
 @end

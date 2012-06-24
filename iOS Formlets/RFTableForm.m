@@ -58,7 +58,7 @@
 @end
 
 
-@implementation JSSingleSectionTableForm
+@implementation RFSingleSectionTableForm
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {

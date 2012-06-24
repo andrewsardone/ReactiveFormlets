@@ -28,14 +28,14 @@
 @end
 
 @implementation JSGHLoginViewController {
-    JSSingleSectionTableForm *_form;
+    RFSingleSectionTableForm *_form;
     UIBarButtonItem *_loginButtonItem, *_activityItem;
 }
 
 - (void)loadView
 {
     // This is all the code you need to make a login form!
-    Class<GHCredentials> LoginForm = [JSSingleSectionTableForm model:@protocol(GHCredentials)];
+    Class<GHCredentials> LoginForm = [RFSingleSectionTableForm model:@protocol(GHCredentials)];
 
     RFInputRow<Text> *usernameField = [[RFInputRow text] modifyTextField:^(UITextField *field) {
         field.autocapitalizationType = UITextAutocapitalizationTypeNone;
