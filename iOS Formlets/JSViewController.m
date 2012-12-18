@@ -18,10 +18,8 @@
 - (id<Text>)name;
 - (id<Text>)nickName;
 - (id<Text>)favoriteFood;
-- (id<Animal>)friend;
 - (id<Number>)age;
 + (instancetype)name:(id<Text>)name nickName:(id<Text>)nickName favoriteFood:(id<Text>)food age:(id<Number>)age;
-+ (instancetype)name:(id<Text>)name nickName:(id<Text>)nickName friend:(id<Animal>)friend;
 @end
 
 @protocol Pets
