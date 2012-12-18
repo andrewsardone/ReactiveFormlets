@@ -32,9 +32,9 @@
 // single type. That is, an NSString is <Text>, as is a formlet that
 // deals with text.
 @protocol Text
-@optional
 + (instancetype)text;
 + (instancetype)secureText;
+- (NSString *)stringValue;
 @end
 
 @protocol Number

@@ -98,6 +98,11 @@
     return [self.textField.rac_textSignal subscribe:subscriber];
 }
 
+- (NSString *)stringValue
+{
+    return self.textField.text;
+}
+
 #pragma mark - UITextFieldDelegate
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
