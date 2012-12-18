@@ -65,7 +65,7 @@
 	return _cell;
 }
 
-- (id<RACSignal>)signal {
+- (id<RACSignal>)rf_signal {
 	return self.textField.rac_textSignal;
 }
 

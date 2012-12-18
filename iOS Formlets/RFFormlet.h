@@ -9,12 +9,9 @@
 #import <Foundation/Foundation.h>
 #import <ReactiveCocoa/libextobjc/extobjc/EXTConcreteProtocol.h>
 #import "RFReifiedProtocol.h"
+#import "RFSignalSource.h"
 
-@protocol RACSignal;
-
-@protocol RFFormlet
-- (id<RACSignal>)signal;
-
+@protocol RFFormlet <RFSignalSource>
 @property (strong, nonatomic) id pureData;
 
 @concrete

@@ -7,9 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "RFSignalSource.h"
 
-@protocol Text @end
-@protocol Number @end
+@protocol RFModel <RFSignalSource> @end
+
+@protocol Text <RFModel> @end
+@protocol Number <RFModel> @end
 
 @interface NSString (Text) <Text>
 @end

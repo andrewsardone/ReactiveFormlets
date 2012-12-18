@@ -12,7 +12,7 @@
 @concreteprotocol(RFFormlet)
 @dynamic pureData;
 
-- (id<RACSignal>)signal { return nil; }
+- (id<RACSignal>)rf_signal { return nil; }
 
 #pragma mark - Concrete
 
@@ -39,19 +39,19 @@
 @implementation RFPrimitiveFormlet
 @dynamic pureData;
 
-- (id<RACSignal>)signal {
+- (id<RACSignal>)rf_signal {
     @throw [NSException exceptionWithName:NSGenericException
-                                   reason:@"Subclasses of RFPrimitiveFormlet must override -signal"
+                                   reason:@"Subclasses of RFPrimitiveFormlet must override -rf_signal"
                                  userInfo:nil];
     return nil;
 }
 
 - (NSMethodSignature *)methodSignatureForSelector:(SEL)aSelector {
-	return [(id)self.signal methodSignatureForSelector:aSelector];
+	return [(id)self.rf_signal methodSignatureForSelector:aSelector];
 }
 
 - (void)forwardInvocation:(NSInvocation *)anInvocation {
-    [anInvocation invokeWithTarget:self.signal];
+    [anInvocation invokeWithTarget:self.rf_signal];
 }
 
 @end
@@ -76,7 +76,7 @@
 	}
 }
 
-- (id<RACSignal>)signal {
+- (id<RACSignal>)rf_signal {
 	if (!_signal) {
 		_signal = [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
 			NSMutableSet *disposables = [NSMutableSet setWithCapacity:self.count];
@@ -116,14 +116,14 @@
 #pragma mark - Forwarding
 
 - (NSMethodSignature *)methodSignatureForSelector:(SEL)aSelector {
-	return [super methodSignatureForSelector:aSelector] ?: [(id)self.signal methodSignatureForSelector:aSelector];
+	return [super methodSignatureForSelector:aSelector] ?: [(id)self.rf_signal methodSignatureForSelector:aSelector];
 }
 
 - (void)forwardInvocation:(NSInvocation *)anInvocation {
 	if ([self respondsToSelector:anInvocation.selector]) {
 		[super forwardInvocation:anInvocation];
     } else {
-		[anInvocation invokeWithTarget:self.signal];
+		[anInvocation invokeWithTarget:self.rf_signal];
     }
 }
 

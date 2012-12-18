@@ -7,4 +7,15 @@
 //
 
 #import "RFFormletModels.h"
+#import <ReactiveCocoa/RACSignal.h>
 
+@interface NSObject (RFModel) <RFModel>
+@end
+
+@implementation NSObject (RFModel)
+
+- (id<RACSignal>)rf_signal {
+	return [RACSignal return:self];
+}
+
+@end

@@ -14,7 +14,7 @@
 
 #import <ReactiveCocoa/ReactiveCocoa.h>
 
-@protocol Animal
+@protocol Animal <RFSignalSource>
 - (id<Text>)name;
 - (id<Text>)nickName;
 - (id<Text>)favoriteFood;
@@ -22,7 +22,7 @@
 + (instancetype)name:(id<Text>)name nickName:(id<Text>)nickName favoriteFood:(id<Text>)food age:(id<Number>)age;
 @end
 
-@protocol Pets
+@protocol Pets <RFSignalSource>
 - (id<Animal>)dog;
 - (id<Animal>)cat;
 + (instancetype)dog:(id<Animal>)dog cat:(id<Animal>)cat;
@@ -53,6 +53,9 @@
 					   cat:[animalSection title:@"Kitty"]];
 
 	RAC(self.title) = _form.dog.name;
+	[_form.dog.rf_signal subscribeNext:^(id x) {
+		NSLog(@"%@", x);
+	}];
 
 	self.view = _form.view;
 }

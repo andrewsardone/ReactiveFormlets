@@ -61,7 +61,7 @@
 		return !isLoading ? loginButtonItem : activityItem;
 	}];
 
-	RAC(self.navigationItem.rightBarButtonItem.enabled) = [[_form.signal map:^(id<GHCredentials> credentials) {
+	RAC(self.navigationItem.rightBarButtonItem.enabled) = [[_form.rf_signal map:^(id<GHCredentials> credentials) {
 		BOOL ready = [(id)credentials.username length] > 0 && [(id)credentials.password length] > 0;
 		return @(ready);
 	}] startWith:@NO];
