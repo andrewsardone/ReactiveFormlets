@@ -8,6 +8,9 @@
 
 #import "RFOrderedDictionary.h"
 #import <ReactiveCocoa/RACSubject.h>
+#import <ReactiveCocoa/RACSequence.h>
+#import <ReactiveCocoa/RACTuple.h>
+#import <ReactiveCocoa/NSArray+RACSequenceAdditions.h>
 
 @interface RFOrderedDictionary () <RFMutableOrderedDictionary>
 @property (strong) RACSubject *signal;
@@ -113,5 +116,16 @@
 
     return [values copy];
 }
+
+- (RACSequence *)sequence
+{
+	NSDictionary *immutableDict = [self copy];
+
+	return [immutableDict.allKeys.rac_sequence map:^(id key) {
+		id value = immutableDict[key];
+		return [RACTuple tupleWithObjects:key, value, nil];
+	}];
+}
+
 
 @end

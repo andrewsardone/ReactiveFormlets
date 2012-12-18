@@ -27,11 +27,18 @@ typedef void (^RFOrderedDictionaryModifyBlock)(id<RFMutableOrderedDictionary> di
 @end
 
 @protocol RACSignal;
+@class RACSequence;
 
 // RFOrderedDictionary is a reactive, mutable associative collection. It
 // is almost exactly like an NSMutableDictionary, except that
 // keys are always kept in the order they are inserted.
 @interface RFOrderedDictionary : NSObject <RFOrderedDictionary, NSFastEnumeration, NSCopying>
 - (id)initWithOrderedDictionary:(RFOrderedDictionary *)dictionary;
+
+// A signal of changes to the mutable dictionary.
 - (id<RACSignal>)signal;
+
+// Turn the dictionary into a sequence of (key,value) RACTuples.
+- (RACSequence *)sequence;
+
 @end
