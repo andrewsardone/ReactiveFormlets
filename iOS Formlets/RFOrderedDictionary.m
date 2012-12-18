@@ -10,12 +10,12 @@
 #import <ReactiveCocoa/RACSubject.h>
 
 @interface RFOrderedDictionary () <RFMutableOrderedDictionary>
+@property (strong) RACSubject *signal;
 @end
 
 @implementation RFOrderedDictionary {
     NSMutableArray *_keys;
     NSMutableDictionary *_dictionary;
-    RACSubject *_reactiveSubject;
 }
 
 - (id)init
@@ -24,7 +24,7 @@
     {
         _keys = [NSMutableArray new];
         _dictionary = [NSMutableDictionary new];
-        _reactiveSubject = [RACSubject subject];
+        _signal = [RACSubject subject];
     }
 
     return self;
@@ -52,7 +52,7 @@
     return copy;
 }
 
-- (instancetype)modify:(void(^)(id<RFMutableOrderedDictionary> mutableDictionary))block
+- (instancetype)modify:(RFOrderedDictionaryModifyBlock)block
 {
     RFOrderedDictionary *copy = [self copy];
     block(copy);
@@ -85,7 +85,7 @@
     }
 
     [_dictionary setObject:[object copy] forKey:key];
-    [_reactiveSubject sendNext:self];
+    [_signal sendNext:self];
 }
 
 - (void)setObject:(id)object forKeyedSubscript:(id<NSCopying>)key
@@ -112,11 +112,6 @@
     }
 
     return [values copy];
-}
-
-- (RACDisposable *)subscribe:(id<RACSubscriber>)subscriber
-{
-    return [_reactiveSubject subscribe:subscriber];
 }
 
 @end

@@ -11,10 +11,6 @@
 #import <ReactiveCocoa/RACBehaviorSubject.h>
 #import <objc/runtime.h>
 
-@interface RFReifiedProtocol ()
-+ (NSArray *)keysFromConstructor:(SEL)selector;
-@end
-
 @implementation RFReifiedProtocol
 
 + (Class)model:(Protocol *)model
@@ -31,7 +27,7 @@
     Class metaclass = object_getClass(modelClass);
 
     Protocol *(^model_block)() = ^{ return model; };
-    IMP model_imp = imp_implementationWithBlock((__bridge void *)(model_block));
+    IMP model_imp = imp_implementationWithBlock(model_block);
 
     const char *typeEncoding = method_getTypeEncoding(class_getClassMethod(modelClass, @selector(model)));
     class_replaceMethod(metaclass, @selector(model), model_imp, typeEncoding);
@@ -78,6 +74,7 @@
     __autoreleasing RFReifiedProtocol *modelObject = [[self alloc] initWithOrderedDictionary:dictionary];
     invocation.returnValue = &modelObject;
 }
+
 
 - (NSMethodSignature *)methodSignatureForSelector:(SEL)aSelector
 {

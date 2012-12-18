@@ -14,8 +14,8 @@
 #import "GHGitHubClient.h"
 
 @protocol GHCredentials <NSObject>
-- (id<Text>)username;
-- (id<Text>)password;
+- (NSString<Text> *)username;
+- (NSString<Text> *)password;
 + username:name password:pass;
 @end
 
@@ -57,12 +57,12 @@
 
     id activityItem = [[UIBarButtonItem alloc] initWithCustomView:indicatorView];
 
-    [self rac_bind:@selfpath(navigationItem.rightBarButtonItem) to:[RACAbleSelfWithStart(loading) select:^id(NSNumber *loading) {
+    [self rac_bind:@selfpath(navigationItem.rightBarButtonItem) to:[RACAbleWithStart(loading) map:^id(NSNumber *loading) {
         BOOL isLoading = loading.boolValue;
         return !isLoading ? loginButtonItem : activityItem;
     }]];
 
-    [self rac_bind:@selfpath(navigationItem.rightBarButtonItem.enabled) to:[[_form select:^id(id<GHCredentials> credentials) {
+    [self rac_bind:@selfpath(navigationItem.rightBarButtonItem.enabled) to:[[_form map:^id(id<GHCredentials> credentials) {
         BOOL ready = credentials.username.length > 0 && credentials.password.length > 0;
         return [NSNumber numberWithBool:ready];
     }] startWith:[NSNumber numberWithBool:NO]]];
@@ -80,7 +80,7 @@
 
     self.loading = YES;
 
-    RACSubscribable *loginResult = [self.client login];
+    id<RACSignal> loginResult = [self.client login];
 
     __weak JSGHLoginViewController *weakSelf = self;
     [loginResult subscribeNext:^(id x) {

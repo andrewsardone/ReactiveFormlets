@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FC1386A8167FF6DD0022A146 /* libReactiveCocoa-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FC13869C167FF6CF0022A146 /* libReactiveCocoa-iOS.a */; };
 		FC2511CA1588614700534933 /* RFTableSection.m in Sources */ = {isa = PBXBuildFile; fileRef = FC2511C91588614700534933 /* RFTableSection.m */; };
 		FC2511CD158862F700534933 /* RFTableForm.m in Sources */ = {isa = PBXBuildFile; fileRef = FC2511CC158862F700534933 /* RFTableForm.m */; };
 		FC2511D01588649E00534933 /* RFInputRow.m in Sources */ = {isa = PBXBuildFile; fileRef = FC2511CF1588649E00534933 /* RFInputRow.m */; };
@@ -39,7 +40,6 @@
 		FC648CF5157AC81E007E2872 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC648CD4157AC81D007E2872 /* Foundation.framework */; };
 		FC648CFD157AC81E007E2872 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FC648CFB157AC81E007E2872 /* InfoPlist.strings */; };
 		FC648D00157AC81E007E2872 /* iOS_FormletsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FC648CFF157AC81E007E2872 /* iOS_FormletsTests.m */; };
-		FC648D26157AC8F9007E2872 /* libReactiveCocoa-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FC648D1C157AC84E007E2872 /* libReactiveCocoa-iOS.a */; };
 		FC648D2D157AC924007E2872 /* RFFormlet.m in Sources */ = {isa = PBXBuildFile; fileRef = FC648D2A157AC924007E2872 /* RFFormlet.m */; };
 		FC8CA6E11587FCF1002B6EEA /* RFReifiedProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = FC8CA6E01587FCF1002B6EEA /* RFReifiedProtocol.m */; };
 		FC9153F01588847500C657D3 /* RFMenuRow.m in Sources */ = {isa = PBXBuildFile; fileRef = FC9153EF1588847500C657D3 /* RFMenuRow.m */; };
@@ -48,6 +48,34 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		FC138699167FF6CF0022A146 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FC138688167FF6CE0022A146 /* ReactiveCocoa.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 88037F8315056328001A5B19;
+			remoteInfo = ReactiveCocoa;
+		};
+		FC13869B167FF6CF0022A146 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FC138688167FF6CE0022A146 /* ReactiveCocoa.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 88F440AB153DAC820097B4C3;
+			remoteInfo = "ReactiveCocoa-iOS";
+		};
+		FC13869D167FF6CF0022A146 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FC138688167FF6CE0022A146 /* ReactiveCocoa.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 88CDF7DC15000FCF00163A9F;
+			remoteInfo = ReactiveCocoaTests;
+		};
+		FC1386A6167FF6D30022A146 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FC138688167FF6CE0022A146 /* ReactiveCocoa.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 88F440AA153DAC820097B4C3;
+			remoteInfo = "ReactiveCocoa-iOS";
+		};
 		FC648CF6157AC81E007E2872 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = FC648CC5157AC81D007E2872 /* Project object */;
@@ -55,37 +83,10 @@
 			remoteGlobalIDString = FC648CCD157AC81D007E2872;
 			remoteInfo = "iOS Formlets";
 		};
-		FC648D19157AC84E007E2872 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = FC648D0E157AC84E007E2872 /* ReactiveCocoa.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 88037F8315056328001A5B19;
-			remoteInfo = ReactiveCocoa;
-		};
-		FC648D1B157AC84E007E2872 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = FC648D0E157AC84E007E2872 /* ReactiveCocoa.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 88F440AB153DAC820097B4C3;
-			remoteInfo = "ReactiveCocoa-iOS";
-		};
-		FC648D1D157AC84E007E2872 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = FC648D0E157AC84E007E2872 /* ReactiveCocoa.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 88CDF7DC15000FCF00163A9F;
-			remoteInfo = ReactiveCocoaTests;
-		};
-		FC648D24157AC8D3007E2872 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = FC648D0E157AC84E007E2872 /* ReactiveCocoa.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 88F440AA153DAC820097B4C3;
-			remoteInfo = "ReactiveCocoa-iOS";
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FC138688167FF6CE0022A146 /* ReactiveCocoa.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ReactiveCocoa.xcodeproj; path = lib/ReactiveCocoa/ReactiveCocoaFramework/ReactiveCocoa.xcodeproj; sourceTree = "<group>"; };
 		FC2511C81588614700534933 /* RFTableSection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFTableSection.h; sourceTree = "<group>"; };
 		FC2511C91588614700534933 /* RFTableSection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFTableSection.m; sourceTree = "<group>"; };
 		FC2511CC158862F700534933 /* RFTableForm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFTableForm.m; sourceTree = "<group>"; };
@@ -145,7 +146,6 @@
 		FC648CFC157AC81E007E2872 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		FC648CFE157AC81E007E2872 /* iOS_FormletsTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iOS_FormletsTests.h; sourceTree = "<group>"; };
 		FC648CFF157AC81E007E2872 /* iOS_FormletsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iOS_FormletsTests.m; sourceTree = "<group>"; };
-		FC648D0E157AC84E007E2872 /* ReactiveCocoa.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ReactiveCocoa.xcodeproj; path = lib/ReactiveCocoa/ReactiveCocoaFramework/ReactiveCocoa.xcodeproj; sourceTree = "<group>"; };
 		FC648D2A157AC924007E2872 /* RFFormlet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFFormlet.m; sourceTree = "<group>"; };
 		FC648D2B157AC924007E2872 /* RFFormlet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFFormlet.h; sourceTree = "<group>"; };
 		FC8CA6DF1587FCF1002B6EEA /* RFReifiedProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFReifiedProtocol.h; sourceTree = "<group>"; };
@@ -164,7 +164,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FC648D26157AC8F9007E2872 /* libReactiveCocoa-iOS.a in Frameworks */,
+				FC1386A8167FF6DD0022A146 /* libReactiveCocoa-iOS.a in Frameworks */,
 				FC648CD3157AC81D007E2872 /* UIKit.framework in Frameworks */,
 				FC648CD5157AC81D007E2872 /* Foundation.framework in Frameworks */,
 				FC648CD7157AC81D007E2872 /* CoreGraphics.framework in Frameworks */,
@@ -184,6 +184,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FC138689167FF6CE0022A146 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FC13869A167FF6CF0022A146 /* ReactiveCocoa.framework */,
+				FC13869C167FF6CF0022A146 /* libReactiveCocoa-iOS.a */,
+				FC13869E167FF6CF0022A146 /* ReactiveCocoaTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		FC2511C71588612800534933 /* Table Stuff */ = {
 			isa = PBXGroup;
 			children = (
@@ -272,7 +282,7 @@
 		FC648CD1157AC81D007E2872 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				FC648D0E157AC84E007E2872 /* ReactiveCocoa.xcodeproj */,
+				FC138688167FF6CE0022A146 /* ReactiveCocoa.xcodeproj */,
 				FC648CD2157AC81D007E2872 /* UIKit.framework */,
 				FC648CD4157AC81D007E2872 /* Foundation.framework */,
 				FC648CD6157AC81D007E2872 /* CoreGraphics.framework */,
@@ -329,16 +339,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		FC648D0F157AC84E007E2872 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				FC648D1A157AC84E007E2872 /* ReactiveCocoa.framework */,
-				FC648D1C157AC84E007E2872 /* libReactiveCocoa-iOS.a */,
-				FC648D1E157AC84E007E2872 /* ReactiveCocoaTests.octest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		FC648D27157AC914007E2872 /* Formlets */ = {
 			isa = PBXGroup;
 			children = (
@@ -366,7 +366,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				FC648D25157AC8D3007E2872 /* PBXTargetDependency */,
+				FC1386A7167FF6D30022A146 /* PBXTargetDependency */,
 			);
 			name = "iOS Formlets";
 			productName = "iOS Formlets";
@@ -414,8 +414,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = FC648D0F157AC84E007E2872 /* Products */;
-					ProjectRef = FC648D0E157AC84E007E2872 /* ReactiveCocoa.xcodeproj */;
+					ProductGroup = FC138689167FF6CE0022A146 /* Products */;
+					ProjectRef = FC138688167FF6CE0022A146 /* ReactiveCocoa.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -427,25 +427,25 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		FC648D1A157AC84E007E2872 /* ReactiveCocoa.framework */ = {
+		FC13869A167FF6CF0022A146 /* ReactiveCocoa.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = ReactiveCocoa.framework;
-			remoteRef = FC648D19157AC84E007E2872 /* PBXContainerItemProxy */;
+			remoteRef = FC138699167FF6CF0022A146 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		FC648D1C157AC84E007E2872 /* libReactiveCocoa-iOS.a */ = {
+		FC13869C167FF6CF0022A146 /* libReactiveCocoa-iOS.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = "libReactiveCocoa-iOS.a";
-			remoteRef = FC648D1B157AC84E007E2872 /* PBXContainerItemProxy */;
+			remoteRef = FC13869B167FF6CF0022A146 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		FC648D1E157AC84E007E2872 /* ReactiveCocoaTests.octest */ = {
+		FC13869E167FF6CF0022A146 /* ReactiveCocoaTests.octest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = ReactiveCocoaTests.octest;
-			remoteRef = FC648D1D157AC84E007E2872 /* PBXContainerItemProxy */;
+			remoteRef = FC13869D167FF6CF0022A146 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -532,15 +532,15 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		FC1386A7167FF6D30022A146 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "ReactiveCocoa-iOS";
+			targetProxy = FC1386A6167FF6D30022A146 /* PBXContainerItemProxy */;
+		};
 		FC648CF7157AC81E007E2872 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = FC648CCD157AC81D007E2872 /* iOS Formlets */;
 			targetProxy = FC648CF6157AC81E007E2872 /* PBXContainerItemProxy */;
-		};
-		FC648D25157AC8D3007E2872 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "ReactiveCocoa-iOS";
-			targetProxy = FC648D24157AC8D3007E2872 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -628,7 +628,10 @@
 				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/lib/ReactiveCocoa/ReactiveCocoaFramework";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iOS Formlets/iOS Formlets-Prefix.pch";
-				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/lib/ReactiveCocoa/ReactiveCocoaFramework";
+				HEADER_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/lib/ReactiveCocoa/ReactiveCocoaFramework/",
+					"$(PROJECT_DIR)/lib/ReactiveCocoa/ReactiveCocoaFramework/ReactiveCocoa/libextobjc/extobjc/",
+				);
 				INFOPLIST_FILE = "iOS Formlets/iOS Formlets-Info.plist";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -645,7 +648,10 @@
 				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/lib/ReactiveCocoa/ReactiveCocoaFramework";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iOS Formlets/iOS Formlets-Prefix.pch";
-				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/lib/ReactiveCocoa/ReactiveCocoaFramework";
+				HEADER_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/lib/ReactiveCocoa/ReactiveCocoaFramework/",
+					"$(PROJECT_DIR)/lib/ReactiveCocoa/ReactiveCocoaFramework/ReactiveCocoa/libextobjc/extobjc/",
+				);
 				INFOPLIST_FILE = "iOS Formlets/iOS Formlets-Info.plist";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";

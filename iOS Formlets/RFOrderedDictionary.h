@@ -7,7 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <ReactiveCocoa/RACSubscribable.h>
+
+@protocol RFMutableOrderedDictionary;
+typedef void (^RFOrderedDictionaryModifyBlock)(id<RFMutableOrderedDictionary> dict);
 
 @protocol RFOrderedDictionary <NSObject>
 - (id)objectForKey:(id<NSCopying>)key;
@@ -15,6 +17,8 @@
 - (NSArray *)allKeys;
 - (NSArray *)allValues;
 - (NSUInteger)count;
+
+- (instancetype)modify:(RFOrderedDictionaryModifyBlock)block;
 @end
 
 @protocol RFMutableOrderedDictionary <RFOrderedDictionary>
@@ -22,10 +26,12 @@
 - (void)setObject:(id<NSCopying>)object forKeyedSubscript:(id<NSCopying>)key;
 @end
 
+@protocol RACSignal;
+
 // RFOrderedDictionary is a reactive, mutable associative collection. It
 // is almost exactly like an NSMutableDictionary, except that
 // keys are always kept in the order they are inserted.
-@interface RFOrderedDictionary : RACSubscribable <RFOrderedDictionary, NSFastEnumeration, NSCopying>
+@interface RFOrderedDictionary : NSObject <RFOrderedDictionary, NSFastEnumeration, NSCopying>
 - (id)initWithOrderedDictionary:(RFOrderedDictionary *)dictionary;
-- (instancetype)modify:(void(^)(id<RFMutableOrderedDictionary> mutableDictionary))block;
+- (id<RACSignal>)signal;
 @end

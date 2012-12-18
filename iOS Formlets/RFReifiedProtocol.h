@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <ReactiveCocoa/RACSubscribable.h>
 #import "RFOrderedDictionary.h"
 
 // RFReifiedProtocol is a way to generate model classes from protocols,
@@ -45,7 +44,8 @@
 //     id <Boy> steve = [Boy name:@"Steve" age:@7];
 //     id <Boy> dan = [Boy name:@"Dan" age:@9 buddy:steve];
 //
-@interface RFReifiedProtocol : RFOrderedDictionary <RACSubscribable>
+
+@interface RFReifiedProtocol : RFOrderedDictionary
 + (Class)model:(Protocol *)model;
 + (Protocol *)model;
 @end

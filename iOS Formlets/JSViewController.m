@@ -67,7 +67,7 @@
     _form = [PetsTable dog:[[animalSection title:@"Doggy"] withValue:tucker]
                        cat:[animalSection title:@"Kitty"]];
 
-    [self rac_bind:@selfpath(title) to:[_form.dog.friend select:^(id <Animal> buddy) {
+    [self rac_bind:@selfpath(title) to:[_form.dog.friend map:^(id <Animal> buddy) {
         return [NSString stringWithFormat:@"%@ is %@", buddy.name, buddy.age];
     }]];
 

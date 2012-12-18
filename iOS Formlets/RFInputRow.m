@@ -95,7 +95,7 @@
 - (RACDisposable *)subscribe:(id<RACSubscriber>)subscriber
 {
     [subscriber sendNext:self.textField.text];
-    return [self.textField.rac_textSubscribable subscribe:subscriber];
+    return [self.textField.rac_textSignal subscribe:subscriber];
 }
 
 #pragma mark - UITextFieldDelegate
@@ -156,7 +156,7 @@
         [subscriber sendNext:self.currentValue];
     }
 
-    return [[self.textField.rac_textSubscribable select:^id(NSString *text) {
+    return [[self.textField.rac_textSignal map:^id(NSString *text) {
         return [NSDecimalNumber decimalNumberWithString:text];
     }] subscribe:subscriber];
 }
