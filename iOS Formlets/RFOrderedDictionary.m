@@ -13,7 +13,6 @@
 #import <ReactiveCocoa/NSArray+RACSequenceAdditions.h>
 
 @interface RFOrderedDictionary () <RFMutableOrderedDictionary>
-@property (strong) RACSubject *signal;
 @end
 
 @implementation RFOrderedDictionary {
@@ -25,7 +24,6 @@
 	if (self = [super init]) {
 		_keys = [NSMutableArray new];
 		_dictionary = [NSMutableDictionary new];
-		_signal = [RACSubject subject];
 	}
 
 	return self;
@@ -76,7 +74,6 @@
 	}
 
 	[_dictionary setObject:[object copy] forKey:key];
-	[_signal sendNext:self];
 }
 
 - (void)setObject:(id)object forKeyedSubscript:(id<NSCopying>)key {
