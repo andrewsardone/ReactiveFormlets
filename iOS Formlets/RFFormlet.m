@@ -10,18 +10,11 @@
 #import <ReactiveCocoa/ReactiveCocoa.h>
 
 @interface RFFormlet ()
-@property (strong, nonatomic) RFReifiedProtocol *reify;
+@property (strong, nonatomic) RACSignal *signal;
 @end
 
 @implementation RFFormlet
 @dynamic currentValue;
-
-- (id)copyWithZone:(NSZone *)zone
-{
-    RFFormlet *copy = [[self class] new];
-    copy.reify = [self.reify copyWithZone:zone];
-    return copy;
-}
 
 - (instancetype)withValue:(id)value
 {
@@ -55,117 +48,60 @@
 
 #pragma mark -
 
-- (RACDisposable *)subscribe:(id<RACSubscriber>)subscriber
+- (RACSignal *)signal
 {
-    NSMutableSet *disposables = [NSMutableSet setWithCapacity:self.count];
-    NSMutableSet *completedSignals = [NSMutableSet setWithCapacity:self.count];
-
-    id modelData = [[RFReifiedProtocol model:self.class.model] new];
-
-    for (id key in self)
+    if (!_signal)
     {
-        id<RACSignal> signal = self[key];
-        RACDisposable *disposable = [signal subscribeNext:^(id x) {
-            if (x != nil)
-                modelData[key] = x;
-            [subscriber sendNext:modelData];
-        } error:^(NSError *error) {
-            [subscriber sendError:error];
-        } completed:^{
-            [completedSignals addObject:signal];
-            if(completedSignals.count == self.count) {
-                [subscriber sendCompleted];
+        _signal = [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+            NSMutableSet *disposables = [NSMutableSet setWithCapacity:self.count];
+            NSMutableSet *completedSignals = [NSMutableSet setWithCapacity:self.count];
+
+            id modelData = [[RFReifiedProtocol model:self.class.model] new];
+
+            for (id key in self)
+            {
+                id<RACSignal> signal = self[key];
+                RACDisposable *disposable = [signal subscribeNext:^(id x) {
+                    if (x != nil)
+                        modelData[key] = x;
+                    [subscriber sendNext:modelData];
+                } error:^(NSError *error) {
+                    [subscriber sendError:error];
+                } completed:^{
+                    [completedSignals addObject:signal];
+                    if(completedSignals.count == self.count) {
+                        [subscriber sendCompleted];
+                    }
+                }];
+
+                if(disposable != nil) {
+                    [disposables addObject:disposable];
+                }
             }
+
+            return [RACDisposable disposableWithBlock:^{
+                for(RACDisposable *disposable in disposables) {
+                    [disposable dispose];
+                }
+            }];
         }];
-
-        if(disposable != nil) {
-            [disposables addObject:disposable];
-        }
     }
-
-    return [RACDisposable disposableWithBlock:^{
-        for(RACDisposable *disposable in disposables) {
-            [disposable dispose];
-        }
-    }];
+    return _signal;
 }
 
+#pragma mark -
 
-#pragma mark - 
-
-- (RFOrderedDictionary *)reify
+- (NSMethodSignature *)methodSignatureForSelector:(SEL)aSelector
 {
-    if (!_reify)
-    {
-        _reify = [[RFReifiedProtocol model:self.class.model] new];
-    }
-
-    return _reify;
+    return [super methodSignatureForSelector:aSelector] ?: [self.signal methodSignatureForSelector:aSelector];
 }
 
-- (instancetype)modify:(RFOrderedDictionaryModifyBlock)block
+- (void)forwardInvocation:(NSInvocation *)anInvocation
 {
-    RFFormlet *copy = [self copy];
-    copy.reify = [copy.reify modify:block];
-    return copy;
-}
-
-+ (Class)model:(Protocol *)model
-{
-    NSString *className = [NSString stringWithFormat:@"%@_%s", self, protocol_getName(model)];
-    Class modelClass = objc_getClass(className.UTF8String);
-    if (modelClass != nil)
-        return modelClass;
-
-    modelClass = objc_allocateClassPair([self class], className.UTF8String, 0);
-    objc_registerClassPair(modelClass);
-    class_addProtocol(modelClass, model);
-
-    Class metaclass = object_getClass(modelClass);
-
-    Protocol *(^model_block)() = ^{ return model; };
-    IMP model_imp = imp_implementationWithBlock(model_block);
-
-    const char *typeEncoding = method_getTypeEncoding(class_getClassMethod(modelClass, @selector(model)));
-    class_replaceMethod(metaclass, @selector(model), model_imp, typeEncoding);
-
-    return modelClass;
-}
-
-+ (Protocol *)model
-{
-    return nil;
-}
-
-+ (NSMethodSignature *)methodSignatureForSelector:(SEL)aSelector
-{
-    return [[RFReifiedProtocol model:self.model] methodSignatureForSelector:aSelector];
-}
-
-+ (void)forwardInvocation:(NSInvocation *)invocation
-{
-    [invocation retainArguments];
-    Class Reified = [RFReifiedProtocol model:self.class.model];
-
-    [invocation invokeWithTarget:Reified];
-
-    __autoreleasing RFReifiedProtocol *model = nil;
-    __autoreleasing RFFormlet *formlet = [self new];
-
-    [invocation getReturnValue:&model];
-    formlet.reify = model;
-
-    invocation.returnValue = &formlet;
-}
-
-- (id)forwardingTargetForSelector:(SEL)aSelector
-{
-    return self.reify;
-}
-
-- (NSString *)description
-{
-    return self.reify.description;
+    if ([self respondsToSelector:anInvocation.selector])
+        [super forwardInvocation:anInvocation];
+    else
+        [anInvocation invokeWithTarget:self.signal];
 }
 
 @end

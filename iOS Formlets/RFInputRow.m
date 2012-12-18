@@ -92,15 +92,19 @@
     return _cell;
 }
 
-- (RACDisposable *)subscribe:(id<RACSubscriber>)subscriber
+- (RACSignal *)signal
 {
-    [subscriber sendNext:self.textField.text];
-    return [self.textField.rac_textSignal subscribe:subscriber];
+    return self.textField.rac_textSignal;
 }
 
 - (NSString *)stringValue
 {
     return self.textField.text;
+}
+
+- (NSNumber *)number
+{
+    return [NSDecimalNumber decimalNumberWithString:self.textField.text];
 }
 
 #pragma mark - UITextFieldDelegate
@@ -123,6 +127,18 @@
 
 @implementation JSTextInputRow
 
++ (Protocol *)model
+{
+    return @protocol(Text);
+}
+
++ (instancetype)stringValue:(NSString *)string
+{
+    JSTextInputRow *row = [self new];
+    row.textField.text = string;
+    return row;
+}
+
 - (id)currentValue
 {
     return self.textField.text;
@@ -137,6 +153,18 @@
 
 @implementation JSNumberInputRow
 
++ (Protocol *)model
+{
+    return @protocol(Number);
+}
+
++ (instancetype)number:(NSNumber *)number
+{
+    JSNumberInputRow *row = [self new];
+    row.textField.text = number.stringValue;
+    return row;
+}
+
 - (UITextField *)textField
 {
     UITextField *textField = [super textField];
@@ -146,7 +174,7 @@
 
 - (id)currentValue
 {
-    return [NSDecimalNumber decimalNumberWithString:self.textField.text];
+    return self.number;
 }
 
 - (void)setCurrentValue:(id)currentValue
@@ -154,16 +182,11 @@
     self.textField.text = [currentValue stringValue];
 }
 
-- (RACDisposable *)subscribe:(id<RACSubscriber>)subscriber
+- (RACSignal *)signal
 {
-    if (self.textField.text)
-    {
-        [subscriber sendNext:self.currentValue];
-    }
-
-    return [[self.textField.rac_textSignal map:^id(NSString *text) {
+    return [self.textField.rac_textSignal map:^id(NSString *text) {
         return [NSDecimalNumber decimalNumberWithString:text];
-    }] subscribe:subscriber];
+    }];
 }
 
 @end

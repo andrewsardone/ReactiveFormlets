@@ -79,6 +79,9 @@
 - (NSMethodSignature *)methodSignatureForSelector:(SEL)aSelector
 {
     struct objc_method_description method = protocol_getMethodDescription(self.class.model, aSelector, YES, YES);
+    if (method.name == nil)
+        return nil;
+    
     return [NSMethodSignature signatureWithObjCTypes:method.types];
 }
 
@@ -87,6 +90,12 @@
     NSString *key = NSStringFromSelector(anInvocation.selector);
     id value = [self valueForKey:key];
     anInvocation.returnValue = (__strong id *)&value;
+}
+
+- (BOOL)respondsToSelector:(SEL)aSelector
+{
+    BOOL responds = [self.allKeys containsObject:NSStringFromSelector(aSelector)] || [super respondsToSelector:aSelector];
+    return responds;
 }
 
 - (id)valueForUndefinedKey:(NSString *)key

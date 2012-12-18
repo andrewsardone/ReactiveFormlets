@@ -13,14 +13,15 @@
 #define selfpath(property) keypath(self,property)
 
 // Formlets are reactive and copyable.
-@protocol RFFormlet <RACSignal, NSCopying>
+@protocol RFFormlet <NSCopying>
 @property (copy) id currentValue;
 - (instancetype)withValue:(id)value;
 @end
 
-@interface RFFormlet : RACSignal <RFFormlet>
+@interface RFFormlet : RFReifiedProtocol <RFFormlet>
 + (Class)model:(Protocol *)model;
 + (Protocol *)model;
+- (RACSignal *)signal;
 @end
 
 @interface RFFormlet (Dictionary) <RFMutableOrderedDictionary, NSFastEnumeration>
@@ -34,7 +35,6 @@
 @protocol Text
 + (instancetype)text;
 + (instancetype)secureText;
-- (NSString *)stringValue;
 @end
 
 @protocol Number
