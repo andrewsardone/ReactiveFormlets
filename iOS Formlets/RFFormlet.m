@@ -16,42 +16,34 @@
 @implementation RFFormlet
 @dynamic currentValue;
 
-- (instancetype)withValue:(id)value
-{
+- (instancetype)withValue:(id)value {
 	RFFormlet *copy = [self copy];
 	copy.currentValue = value;
 	return copy;
 }
 
-- (id)currentValue
-{
+- (id)currentValue {
 	RFOrderedDictionary *modelData = [[RFReifiedProtocol model:self.class.model] new];
 	return [modelData modify:^void(id<RFMutableOrderedDictionary> dict) {
-		for (id key in self)
-		{
+		for (id key in self) {
 			id currentValue = [self[key] currentValue];
-			if (currentValue)
-				dict[key] = currentValue;
+			if (currentValue) dict[key] = currentValue;
 		}
 	}];
 
 	return modelData;
 }
 
-- (void)setCurrentValue:(id)value
-{
-	for (id key in value)
-	{
+- (void)setCurrentValue:(id)value {
+	for (id key in value) {
 		[self[key] setCurrentValue:value[key]];
 	}
 }
 
 #pragma mark -
 
-- (RACSignal *)signal
-{
-	if (!_signal)
-	{
+- (RACSignal *)signal {
+	if (!_signal) {
 		_signal = [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
 			NSMutableSet *disposables = [NSMutableSet setWithCapacity:self.count];
 			NSMutableSet *completedSignals = [NSMutableSet setWithCapacity:self.count];
@@ -62,8 +54,7 @@
 			{
 				id<RACSignal> signal = self[key];
 				RACDisposable *disposable = [signal subscribeNext:^(id value) {
-					if (value != nil)
-						modelData[key] = value;
+					if (value) modelData[key] = value;
 					[subscriber sendNext:modelData];
 				} error:^(NSError *error) {
 					[subscriber sendError:error];
@@ -90,17 +81,17 @@
 
 #pragma mark -
 
-- (NSMethodSignature *)methodSignatureForSelector:(SEL)aSelector
-{
+- (NSMethodSignature *)methodSignatureForSelector:(SEL)aSelector {
 	return [super methodSignatureForSelector:aSelector] ?: [self.signal methodSignatureForSelector:aSelector];
 }
 
 - (void)forwardInvocation:(NSInvocation *)anInvocation
 {
-	if ([self respondsToSelector:anInvocation.selector])
+	if ([self respondsToSelector:anInvocation.selector]) {
 		[super forwardInvocation:anInvocation];
-	else
+    } else {
 		[anInvocation invokeWithTarget:self.signal];
+    }
 }
 
 @end

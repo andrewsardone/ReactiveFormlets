@@ -31,8 +31,7 @@
 	RFSingleSectionTableForm *_form;
 }
 
-- (void)loadView
-{
+- (void)loadView {
 	// This is all the code you need to make a login form!
 	Class<GHCredentials> LoginForm = [RFSingleSectionTableForm model:@protocol(GHCredentials)];
 
@@ -57,12 +56,12 @@
 
 	id activityItem = [[UIBarButtonItem alloc] initWithCustomView:indicatorView];
 
-	RAC(self.navigationItem.rightBarButtonItem) = [RACAbleWithStart(loading) map:^id(NSNumber *loading) {
+	RAC(self.navigationItem.rightBarButtonItem) = [RACAbleWithStart(loading) map:^(NSNumber *loading) {
 		BOOL isLoading = loading.boolValue;
 		return !isLoading ? loginButtonItem : activityItem;
 	}];
 
-	RAC(self.navigationItem.rightBarButtonItem.enabled) = [[_form.signal map:^id(id<GHCredentials> credentials) {
+	RAC(self.navigationItem.rightBarButtonItem.enabled) = [[_form.signal map:^(id<GHCredentials> credentials) {
 		BOOL ready = [(id)credentials.username length] > 0 && [(id)credentials.password length] > 0;
 		return @(ready);
 	}] startWith:@NO];
@@ -72,19 +71,17 @@
 
 #pragma mark -
 
-- (void)login:(id)sender
-{
+- (void)login:(id)sender {
 	id<GHCredentials> credentials = _form.currentValue;
-	self.user = [GHGitHubUser userWithUsername:(id)credentials.username
-									  password:(id)credentials.password];
+	self.user = [GHGitHubUser userWithUsername:(id)credentials.username password:(id)credentials.password];
 	self.client = [GHGitHubClient clientForUser:self.user];
-
 	self.loading = YES;
 
 	id<RACSignal> loginResult = [self.client login];
 
 	__weak JSGHLoginViewController *weakSelf = self;
 	[loginResult subscribeNext:^(id x) {
+
 	} error:^(NSError *error) {
 		weakSelf.loading = NO;
 		[[[UIAlertView alloc] initWithTitle:@"Failed!" message:[error description] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];

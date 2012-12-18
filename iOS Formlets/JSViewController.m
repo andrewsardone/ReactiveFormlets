@@ -34,8 +34,7 @@
 	RFTableForm <Pets> *_form;
 }
 
-- (void)loadView
-{
+- (void)loadView {
 	Class AnimalModel = [RFReifiedProtocol model:@protocol(Animal)];
 	id<Animal> tucker = [AnimalModel name:@"Tucker"
 								 nickName:@"Tuckey"

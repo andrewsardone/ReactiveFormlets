@@ -41,8 +41,8 @@
 // A model class can be generated from that as follows:
 //
 //	 Class Boy = [RFReifiedProtocol model:@protocol(Boy)];
-//	 id <Boy> steve = [Boy name:@"Steve" age:@7];
-//	 id <Boy> dan = [Boy name:@"Dan" age:@9 buddy:steve];
+//	 id<Boy> steve = [Boy name:@"Steve" age:@7];
+//	 id<Boy> dan = [Boy name:@"Dan" age:@9 buddy:steve];
 //
 
 @interface RFReifiedProtocol : RFOrderedDictionary

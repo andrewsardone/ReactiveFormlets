@@ -13,27 +13,23 @@
 
 @implementation RFTableSection
 
-- (id)copyWithZone:(NSZone *)zone
-{
+- (id)copyWithZone:(NSZone *)zone {
 	RFTableSection *copy = [super copyWithZone:zone];
 	copy->_title = _title;
 	return copy;
 }
 
-- (instancetype)title:(NSString *)title
-{
+- (instancetype)title:(NSString *)title {
 	RFTableSection *copy = [self copy];
 	copy->_title = title;
 	return copy;
 }
 
-- (NSUInteger)numberOfRows
-{
+- (NSUInteger)numberOfRows {
 	return self.count;
 }
 
-- (UITableViewCell *)cellForRow:(NSUInteger)row
-{
+- (UITableViewCell *)cellForRow:(NSUInteger)row {
 	return [[self.allValues objectAtIndex:row] cell];
 }
 

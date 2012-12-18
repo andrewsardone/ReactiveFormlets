@@ -13,18 +13,15 @@
 	RFTableForm *_form;
 }
 
-- (id)initWithForm:(RFTableForm *)form
-{
-	if ((self = [self init]))
-	{
+- (id)initWithForm:(RFTableForm *)form {
+	if (self = [self init]) {
 		_form = form;
 	}
 
 	return self;
 }
 
-- (void)loadView
-{
+- (void)loadView {
 	self.view = _form.view;
 }
 

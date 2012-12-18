@@ -25,25 +25,21 @@
 @synthesize cell = _cell;
 @dynamic currentValue;
 
-+ (instancetype)text
-{
++ (instancetype)text {
 	return [JSTextInputRow new];
 }
 
-+ (instancetype)secureText
-{
++ (instancetype)secureText {
 	return [[JSTextInputRow new] modifyTextField:^(UITextField *field) {
 		field.secureTextEntry = YES;
 	}];
 }
 
-+ (instancetype)number
-{
++ (instancetype)number {
 	return [JSNumberInputRow new];
 }
 
-- (id)copyWithZone:(NSZone *)zone
-{
+- (id)copyWithZone:(NSZone *)zone {
 	RFInputRow *row = [self.class new];
 	row.textField.text = self.textField.text;
 	row.textField.placeholder = self.textField.placeholder;
@@ -53,24 +49,20 @@
 	return row;
 }
 
-- (instancetype)placeholder:(NSString *)placeholder
-{
+- (instancetype)placeholder:(NSString *)placeholder {
 	return [self modifyTextField:^(UITextField *field) {
 		field.placeholder = placeholder;
 	}];
 }
 
-- (instancetype)modifyTextField:(void (^)(UITextField *field))block
-{
+- (instancetype)modifyTextField:(void (^)(UITextField *field))block {
 	RFInputRow *copy = [self copy];
 	block(copy.textField);
 	return copy;
 }
 
-- (UITextField *)textField
-{
-	if (!_textField)
-	{
+- (UITextField *)textField {
+	if (!_textField) {
 		_textField = [[UITextField alloc] initWithFrame:CGRectMake(0.f, 5.f, 285.f, 35.f)];
 		_textField.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
 		_textField.returnKeyType = UIReturnKeyDone;
@@ -80,45 +72,39 @@
 	return _textField;
 }
 
-- (UITableViewCell *)cell
-{
-	if (!_cell)
-	{
+- (UITableViewCell *)cell {
+	if (!_cell) {
 		_cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"TextCell"];
 		_cell.selectionStyle = UITableViewCellSelectionStyleNone;
 
 		_cell.accessoryView = self.textField;
 	}
+
 	return _cell;
 }
 
-- (RACSignal *)signal
-{
+- (RACSignal *)signal {
 	return self.textField.rac_textSignal;
 }
 
-- (NSString *)stringValue
-{
+- (NSString *)stringValue {
 	return self.textField.text;
 }
 
-- (NSNumber *)number
-{
+- (NSNumber *)number {
 	return [NSDecimalNumber decimalNumberWithString:self.textField.text];
 }
 
 #pragma mark - UITextFieldDelegate
 
-- (BOOL)textFieldShouldReturn:(UITextField *)textField
-{
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
 	[textField resignFirstResponder];
 	return NO;
 }
 
 #pragma mark -
 
-- (void)rowWasSelected
-{
+- (void)rowWasSelected {
 	[self.textField becomeFirstResponder];
 }
 
@@ -127,25 +113,21 @@
 
 @implementation JSTextInputRow
 
-+ (Protocol *)model
-{
++ (Protocol *)model {
 	return @protocol(Text);
 }
 
-+ (instancetype)stringValue:(NSString *)string
-{
++ (instancetype)stringValue:(NSString *)string {
 	JSTextInputRow *row = [self new];
 	row.textField.text = string;
 	return row;
 }
 
-- (id)currentValue
-{
+- (id)currentValue {
 	return self.textField.text;
 }
 
-- (void)setCurrentValue:(id)currentValue
-{
+- (void)setCurrentValue:(id)currentValue {
 	self.textField.text = currentValue;
 }
 
@@ -153,38 +135,32 @@
 
 @implementation JSNumberInputRow
 
-+ (Protocol *)model
-{
++ (Protocol *)model {
 	return @protocol(Number);
 }
 
-+ (instancetype)number:(NSNumber *)number
-{
++ (instancetype)number:(NSNumber *)number {
 	JSNumberInputRow *row = [self new];
 	row.textField.text = number.stringValue;
 	return row;
 }
 
-- (UITextField *)textField
-{
+- (UITextField *)textField {
 	UITextField *textField = [super textField];
 	textField.keyboardType = UIKeyboardTypeNumberPad;
 	return textField;
 }
 
-- (id)currentValue
-{
+- (id)currentValue {
 	return self.number;
 }
 
-- (void)setCurrentValue:(id)currentValue
-{
+- (void)setCurrentValue:(id)currentValue {
 	self.textField.text = [currentValue stringValue];
 }
 
-- (RACSignal *)signal
-{
-	return [self.textField.rac_textSignal map:^id(NSString *text) {
+- (RACSignal *)signal {
+	return [self.textField.rac_textSignal map:^(NSString *text) {
 		return [NSDecimalNumber decimalNumberWithString:text];
 	}];
 }
