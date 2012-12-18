@@ -31,11 +31,11 @@
 // An example model protocol might look like this:
 //
 //     @protocol Boy
-//     @property (readonly) id <Text> name;
-//     @property (readonly) id <Number> age;
-//     @property (readonly) id <Boy> buddy;
-//     + (instancetype)name:(id <Text>)name age:(id <Number>)age buddy:(id <Boy>)buddy;
-//     + (instancetype)name:(id <Text>)name age:(id <Number>)age;
+//     - (id<Text>)name;
+//     - (id<Number>)age;
+//     - (id<Boy>)buddy;
+//     + (instancetype)name:name age:age buddy:buddy;
+//     + (instancetype)name:name age:age;
 //     @end
 //
 // A model class can be generated from that as follows:
