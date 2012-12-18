@@ -42,7 +42,6 @@
 		FC648D00157AC81E007E2872 /* iOS_FormletsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FC648CFF157AC81E007E2872 /* iOS_FormletsTests.m */; };
 		FC648D2D157AC924007E2872 /* RFFormlet.m in Sources */ = {isa = PBXBuildFile; fileRef = FC648D2A157AC924007E2872 /* RFFormlet.m */; };
 		FC8CA6E11587FCF1002B6EEA /* RFReifiedProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = FC8CA6E01587FCF1002B6EEA /* RFReifiedProtocol.m */; };
-		FC9153F01588847500C657D3 /* RFMenuRow.m in Sources */ = {isa = PBXBuildFile; fileRef = FC9153EF1588847500C657D3 /* RFMenuRow.m */; };
 		FC9153F615888B7400C657D3 /* RFTableFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC9153F515888B7400C657D3 /* RFTableFormViewController.m */; };
 		FCC7F9601587F4020008558B /* RFOrderedDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = FCC7F95F1587F4020008558B /* RFOrderedDictionary.m */; };
 /* End PBXBuildFile section */
@@ -150,8 +149,6 @@
 		FC648D2B157AC924007E2872 /* RFFormlet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFFormlet.h; sourceTree = "<group>"; };
 		FC8CA6DF1587FCF1002B6EEA /* RFReifiedProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFReifiedProtocol.h; sourceTree = "<group>"; };
 		FC8CA6E01587FCF1002B6EEA /* RFReifiedProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFReifiedProtocol.m; sourceTree = "<group>"; };
-		FC9153EE1588847500C657D3 /* RFMenuRow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFMenuRow.h; sourceTree = "<group>"; };
-		FC9153EF1588847500C657D3 /* RFMenuRow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFMenuRow.m; sourceTree = "<group>"; };
 		FC9153F11588853400C657D3 /* RFTableRow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFTableRow.h; sourceTree = "<group>"; };
 		FC9153F415888B7400C657D3 /* RFTableFormViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFTableFormViewController.h; sourceTree = "<group>"; };
 		FC9153F515888B7400C657D3 /* RFTableFormViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFTableFormViewController.m; sourceTree = "<group>"; };
@@ -204,8 +201,6 @@
 				FC9153F11588853400C657D3 /* RFTableRow.h */,
 				FC2511CE1588649E00534933 /* RFInputRow.h */,
 				FC2511CF1588649E00534933 /* RFInputRow.m */,
-				FC9153EE1588847500C657D3 /* RFMenuRow.h */,
-				FC9153EF1588847500C657D3 /* RFMenuRow.m */,
 				FC9153F415888B7400C657D3 /* RFTableFormViewController.h */,
 				FC9153F515888B7400C657D3 /* RFTableFormViewController.m */,
 			);
@@ -501,7 +496,6 @@
 				FC2511CA1588614700534933 /* RFTableSection.m in Sources */,
 				FC2511CD158862F700534933 /* RFTableForm.m in Sources */,
 				FC2511D01588649E00534933 /* RFInputRow.m in Sources */,
-				FC9153F01588847500C657D3 /* RFMenuRow.m in Sources */,
 				FC9153F615888B7400C657D3 /* RFTableFormViewController.m in Sources */,
 				FC3E5FB01596FDC3005F3F56 /* GHGitHubClient.m in Sources */,
 				FC3E5FB11596FDC3005F3F56 /* GHGitHubObject.m in Sources */,
