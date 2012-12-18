@@ -342,12 +342,12 @@
 			children = (
 				FC648D2B157AC924007E2872 /* RFFormlet.h */,
 				FC648D2A157AC924007E2872 /* RFFormlet.m */,
-				FCC7F95F1587F4020008558B /* RFOrderedDictionary.m */,
 				FCE11FF4168120C2001CFB13 /* RFFormletModels.h */,
 				FCE11FF5168120C2001CFB13 /* RFFormletModels.m */,
+				FCC7F95E1587F4020008558B /* RFOrderedDictionary.h */,
+				FCC7F95F1587F4020008558B /* RFOrderedDictionary.m */,
 				FC8CA6DF1587FCF1002B6EEA /* RFReifiedProtocol.h */,
 				FC8CA6E01587FCF1002B6EEA /* RFReifiedProtocol.m */,
-				FCC7F95E1587F4020008558B /* RFOrderedDictionary.h */,
 				FCE11FF8168131DA001CFB13 /* RFSignalSource.h */,
 			);
 			name = Formlets;
