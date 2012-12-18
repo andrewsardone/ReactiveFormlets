@@ -14,8 +14,8 @@
 #import "GHGitHubClient.h"
 
 @protocol GHCredentials <NSObject>
-- (NSString<Text> *)username;
-- (NSString<Text> *)password;
+- (id<Text>)username;
+- (id<Text>)password;
 + username:name password:pass;
 @end
 
@@ -57,15 +57,15 @@
 
     id activityItem = [[UIBarButtonItem alloc] initWithCustomView:indicatorView];
 
-    [self rac_bind:@selfpath(navigationItem.rightBarButtonItem) to:[RACAbleWithStart(loading) map:^id(NSNumber *loading) {
+    RAC(self.navigationItem.rightBarButtonItem) = [RACAbleWithStart(loading) map:^id(NSNumber *loading) {
         BOOL isLoading = loading.boolValue;
         return !isLoading ? loginButtonItem : activityItem;
-    }]];
+    }];
 
-    [self rac_bind:@selfpath(navigationItem.rightBarButtonItem.enabled) to:[[_form map:^id(id<GHCredentials> credentials) {
-        BOOL ready = credentials.username.length > 0 && credentials.password.length > 0;
-        return [NSNumber numberWithBool:ready];
-    }] startWith:[NSNumber numberWithBool:NO]]];
+    RAC(self.navigationItem.rightBarButtonItem.enabled) = [[_form map:^id(id<GHCredentials> credentials) {
+        BOOL ready = credentials.username.stringValue.length > 0 && credentials.password.stringValue.length > 0;
+        return @(ready);
+    }] startWith:@NO];
 
     self.view = _form.view;
 }
@@ -75,7 +75,8 @@
 - (void)login:(id)sender
 {
     id<GHCredentials> credentials = _form.currentValue;
-    self.user = [GHGitHubUser userWithUsername:credentials.username password:credentials.password];
+    self.user = [GHGitHubUser userWithUsername:credentials.username.stringValue
+                                      password:credentials.password.stringValue];
     self.client = [GHGitHubClient clientForUser:self.user];
 
     self.loading = YES;
