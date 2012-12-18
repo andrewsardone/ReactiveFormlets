@@ -10,8 +10,6 @@
 #import <ReactiveCocoa/RACSignal.h>
 #import "RFReifiedProtocol.h"
 
-#define selfpath(property) keypath(self,property)
-
 // Formlets are reactive and copyable.
 @protocol RFFormlet <NSCopying>
 @property (copy) id currentValue;
