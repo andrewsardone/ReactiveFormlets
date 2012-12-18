@@ -14,7 +14,7 @@
 
 #import <ReactiveCocoa/ReactiveCocoa.h>
 
-@protocol Animal <RFFormlet>
+@protocol Animal
 - (id<Text>)name;
 - (id<Text>)nickName;
 - (id<Text>)favoriteFood;
@@ -24,7 +24,7 @@
 + (instancetype)name:(id<Text>)name nickName:(id<Text>)nickName friend:(id<Animal>)friend;
 @end
 
-@protocol Pets <RFFormlet>
+@protocol Pets
 - (id<Animal>)dog;
 - (id<Animal>)cat;
 + (instancetype)dog:(id<Animal>)dog cat:(id<Animal>)cat;

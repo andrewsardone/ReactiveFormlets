@@ -6,10 +6,14 @@
 //  Copyright (c) 2012 Jon Sterling. All rights reserved.
 //
 
-#import "RFTableRow.h"
+#import "RFFormlet.h"
 
 // JSInputRow is a table row with a text field.
-@interface RFInputRow : RFFormlet <RFTableRow, Text, Number>
+@interface RFInputRow : RFFormlet <Text, Number>
+@property (strong, readonly) UITableViewCell *cell;
+
 - (instancetype)modifyTextField:(void (^)(UITextField *field))block;
 - (instancetype)placeholder:(NSString *)placeholder;
+
+- (void)rowWasSelected;
 @end

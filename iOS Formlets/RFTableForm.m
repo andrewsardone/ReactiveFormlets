@@ -9,7 +9,6 @@
 #import "RFTableForm.h"
 #import "RFTableSection.h"
 #import "RFInputRow.h"
-#import "RFTableRow.h"
 
 @interface RFTableForm () <UITableViewDataSource, UITableViewDelegate>
 @end

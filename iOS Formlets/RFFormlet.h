@@ -11,18 +11,11 @@
 #import "RFReifiedProtocol.h"
 
 // Formlets are reactive and copyable.
-@protocol RFFormlet <NSCopying>
+@interface RFFormlet : RFReifiedProtocol <NSCopying>
 @property (copy) id currentValue;
 - (instancetype)withValue:(id)value;
 - (RACSignal *)signal;
 @end
-
-@interface RFFormlet : RFReifiedProtocol <RFFormlet>
-@end
-
-@interface RFFormlet (Dictionary) <RFMutableOrderedDictionary, NSFastEnumeration>
-@end
-
 
 // These primitive models have no keys. They are simply there so that we
 // can unify the building blocks of formlets and their data under a
