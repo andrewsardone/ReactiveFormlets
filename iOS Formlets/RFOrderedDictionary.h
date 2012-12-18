@@ -11,7 +11,7 @@
 @protocol RFMutableOrderedDictionary;
 typedef void (^RFOrderedDictionaryModifyBlock)(id<RFMutableOrderedDictionary> dict);
 
-@protocol RFOrderedDictionary <NSObject>
+@protocol RFOrderedDictionary <NSFastEnumeration>
 - (id)objectForKey:(id<NSCopying>)key;
 - (id)objectForKeyedSubscript:(id<NSCopying>)key;
 - (NSArray *)allKeys;
@@ -32,7 +32,7 @@ typedef void (^RFOrderedDictionaryModifyBlock)(id<RFMutableOrderedDictionary> di
 // RFOrderedDictionary is an (optionally) mutable associative collection. It
 // is almost exactly like an NSMutableDictionary, except that
 // keys are always kept in the order they are inserted.
-@interface RFOrderedDictionary : NSObject <RFOrderedDictionary, NSFastEnumeration, NSCopying>
+@interface RFOrderedDictionary : NSObject <RFOrderedDictionary, NSCopying>
 - (id)initWithOrderedDictionary:(RFOrderedDictionary *)dictionary;
 
 // Turn the dictionary into a sequence of (key,value) RACTuples.

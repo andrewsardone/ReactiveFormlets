@@ -39,8 +39,8 @@
 							 favoriteFood:@"kibbles"
 									  age:@6];
 
-	RFInputRow<Text> *textRow = [RFInputRow text];
-	RFInputRow<Number> *numberRow = [RFInputRow number];
+	RFTextInputRow *textRow = [RFTextInputRow new];
+	RFNumberInputRow *numberRow = [RFNumberInputRow new];
 
 	Class AnimalSection = [RFTableSection model:@protocol(Animal)];
 	RFTableSection <Animal> *animalSection = [AnimalSection name:[textRow placeholder:@"name"]
@@ -49,7 +49,7 @@
 															 age:[numberRow placeholder:@"age"]];
 
 	Class PetsTable = [RFTableForm model:@protocol(Pets)];
-	_form = [PetsTable dog:[[animalSection title:@"Doggy"] withValue:tucker]
+	_form = [PetsTable dog:[[animalSection title:@"Doggy"] withPureData:tucker]
 					   cat:[animalSection title:@"Kitty"]];
 
 	RAC(self.title) = _form.dog.name;

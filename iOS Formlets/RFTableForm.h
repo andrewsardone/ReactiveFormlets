@@ -9,7 +9,7 @@
 #import "RFFormlet.h"
 
 // Many RFTableSection
-@interface RFTableForm : RFFormlet
+@interface RFTableForm : RFCompoundFormlet
 - (UITableView *)view;
 @end
 

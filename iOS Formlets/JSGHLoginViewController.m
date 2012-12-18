@@ -35,13 +35,13 @@
 	// This is all the code you need to make a login form!
 	Class<GHCredentials> LoginForm = [RFSingleSectionTableForm model:@protocol(GHCredentials)];
 
-	RFInputRow<Text> *usernameField = [[RFInputRow text] modifyTextField:^(UITextField *field) {
+	RFTextInputRow *usernameField = [[RFTextInputRow new] modifyTextField:^(UITextField *field) {
 		field.autocapitalizationType = UITextAutocapitalizationTypeNone;
 		field.autocorrectionType = UITextAutocorrectionTypeNo;
 	}];
 
 	_form = [LoginForm username:[usernameField placeholder:@"username"]
-					   password:[[RFInputRow secureText] placeholder:@"password"]];
+					   password:[[RFTextInputRow new] placeholder:@"password"]];
 
 
 	// And you're done!
@@ -72,7 +72,7 @@
 #pragma mark -
 
 - (void)login:(id)sender {
-	id<GHCredentials> credentials = _form.currentValue;
+	id<GHCredentials> credentials = _form.pureData;
 	self.user = [GHGitHubUser userWithUsername:(id)credentials.username password:(id)credentials.password];
 	self.client = [GHGitHubClient clientForUser:self.user];
 	self.loading = YES;

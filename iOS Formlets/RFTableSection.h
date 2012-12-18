@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "RFFormlet.h"
 
-@interface RFTableSection : RFFormlet
+@interface RFTableSection : RFCompoundFormlet
 @property (copy, readonly) NSString *title;
 
 - (instancetype)title:(NSString *)title;

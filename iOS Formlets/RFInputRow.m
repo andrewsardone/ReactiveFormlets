@@ -1,5 +1,5 @@
 //
-//  JSInputRow.m
+//  RFInputRow.m
 //  iOS Formlets
 //
 //  Created by Jon Sterling on 6/12/12.
@@ -9,13 +9,6 @@
 #import "RFInputRow.h"
 #import <ReactiveCocoa/ReactiveCocoa.h>
 
-@interface JSTextInputRow : RFInputRow
-@end
-
-@interface JSNumberInputRow : RFInputRow
-@end
-
-
 @interface RFInputRow () <UITextFieldDelegate>
 @property (strong, readonly) UITextField *textField;
 @end
@@ -23,20 +16,9 @@
 @implementation RFInputRow
 @synthesize textField = _textField;
 @synthesize cell = _cell;
-@dynamic currentValue;
 
-+ (instancetype)text {
-	return [JSTextInputRow new];
-}
-
-+ (instancetype)secureText {
-	return [[JSTextInputRow new] modifyTextField:^(UITextField *field) {
-		field.secureTextEntry = YES;
-	}];
-}
-
-+ (instancetype)number {
-	return [JSNumberInputRow new];
+- (id)value {
+	return self.textField.text;
 }
 
 - (id)copyWithZone:(NSZone *)zone {
@@ -83,17 +65,10 @@
 	return _cell;
 }
 
-- (RACSignal *)signal {
+- (id<RACSignal>)signal {
 	return self.textField.rac_textSignal;
 }
 
-- (NSString *)stringValue {
-	return self.textField.text;
-}
-
-- (NSNumber *)number {
-	return [NSDecimalNumber decimalNumberWithString:self.textField.text];
-}
 
 #pragma mark - UITextFieldDelegate
 
@@ -111,39 +86,19 @@
 @end
 
 
-@implementation JSTextInputRow
+@implementation RFTextInputRow
 
-+ (Protocol *)model {
-	return @protocol(Text);
-}
-
-+ (instancetype)stringValue:(NSString *)string {
-	JSTextInputRow *row = [self new];
-	row.textField.text = string;
-	return row;
-}
-
-- (id)currentValue {
+- (id)pureData {
 	return self.textField.text;
 }
 
-- (void)setCurrentValue:(id)currentValue {
-	self.textField.text = currentValue;
+- (void)setPureData:(id)pureData {
+	self.textField.text = pureData;
 }
 
 @end
 
-@implementation JSNumberInputRow
-
-+ (Protocol *)model {
-	return @protocol(Number);
-}
-
-+ (instancetype)number:(NSNumber *)number {
-	JSNumberInputRow *row = [self new];
-	row.textField.text = number.stringValue;
-	return row;
-}
+@implementation RFNumberInputRow
 
 - (UITextField *)textField {
 	UITextField *textField = [super textField];
@@ -151,15 +106,15 @@
 	return textField;
 }
 
-- (id)currentValue {
-	return self.number;
+- (id)pureData {
+	return [NSDecimalNumber decimalNumberWithString:self.textField.text];
 }
 
-- (void)setCurrentValue:(id)currentValue {
-	self.textField.text = [currentValue stringValue];
+- (void)setPureData:(id)pureData {
+	self.textField.text = [pureData stringValue];
 }
 
-- (RACSignal *)signal {
+- (id<RACSignal>)signal {
 	return [self.textField.rac_textSignal map:^(NSString *text) {
 		return [NSDecimalNumber decimalNumberWithString:text];
 	}];

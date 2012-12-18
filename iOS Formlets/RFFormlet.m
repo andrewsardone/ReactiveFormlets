@@ -9,40 +9,74 @@
 #import "RFFormlet.h"
 #import <ReactiveCocoa/ReactiveCocoa.h>
 
-@interface RFFormlet ()
-@property (strong, nonatomic) RACSignal *signal;
+@concreteprotocol(RFFormlet)
+@dynamic pureData;
+
+- (id<RACSignal>)signal { return nil; }
+
+#pragma mark - Concrete
+
+- (id)initWithPureData:(id)pureData {
+    if (self = [self init]) {
+        self.pureData = pureData;
+    }
+
+    return self;
+}
+
+- (id)copyWithZone:(NSZone *)zone {
+    return [[self.class alloc] initWithPureData:self.pureData];
+}
+
+- (instancetype)withPureData:(id)pureData {
+    id copy = [self copy];
+    [copy setPureData:pureData];
+    return copy;
+}
+
 @end
 
-@implementation RFFormlet
-@dynamic currentValue;
+@implementation RFPrimitiveFormlet
+@dynamic pureData;
 
-- (instancetype)withValue:(id)value {
-	RFFormlet *copy = [self copy];
-	copy.currentValue = value;
-	return copy;
+- (id<RACSignal>)signal {
+    @throw [NSException exceptionWithName:NSGenericException
+                                   reason:@"Subclasses of RFPrimitiveFormlet must override -signal"
+                                 userInfo:nil];
+    return nil;
 }
 
-- (id)currentValue {
-	RFOrderedDictionary *modelData = [[RFReifiedProtocol model:self.class.model] new];
-	return [modelData modify:^void(id<RFMutableOrderedDictionary> dict) {
-		for (id key in self) {
-			id currentValue = [self[key] currentValue];
-			if (currentValue) dict[key] = currentValue;
-		}
-	}];
-
-	return modelData;
+- (NSMethodSignature *)methodSignatureForSelector:(SEL)aSelector {
+	return [(id)self.signal methodSignatureForSelector:aSelector];
 }
 
-- (void)setCurrentValue:(id)value {
-	for (id key in value) {
-		[self[key] setCurrentValue:value[key]];
+- (void)forwardInvocation:(NSInvocation *)anInvocation {
+    [anInvocation invokeWithTarget:self.signal];
+}
+
+@end
+
+@implementation RFCompoundFormlet {
+    id<RACSignal> _signal;
+}
+
+- (id)pureData {
+    RFReifiedProtocol *modelData = [[RFReifiedProtocol model:self.class.model] new];
+    return [modelData modify:^(id<RFMutableOrderedDictionary> dict) {
+        for (id key in dict) {
+            id data = [self[key] pureData];
+            if (data) dict[key] = data;
+        }
+    }];
+}
+
+- (void)setPureData:(id)pureData {
+	for (id key in pureData) {
+        [self[key] setPureData:pureData[key]];
 	}
 }
 
-#pragma mark -
-
-- (RACSignal *)signal {
+- (id<RACSignal>)signal {
 	if (!_signal) {
 		_signal = [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
 			NSMutableSet *disposables = [NSMutableSet setWithCapacity:self.count];
@@ -79,14 +113,13 @@
 	return _signal;
 }
 
-#pragma mark -
+#pragma mark - Forwarding
 
 - (NSMethodSignature *)methodSignatureForSelector:(SEL)aSelector {
-	return [super methodSignatureForSelector:aSelector] ?: [self.signal methodSignatureForSelector:aSelector];
+	return [super methodSignatureForSelector:aSelector] ?: [(id)self.signal methodSignatureForSelector:aSelector];
 }
 
-- (void)forwardInvocation:(NSInvocation *)anInvocation
-{
+- (void)forwardInvocation:(NSInvocation *)anInvocation {
 	if ([self respondsToSelector:anInvocation.selector]) {
 		[super forwardInvocation:anInvocation];
     } else {
