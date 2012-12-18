@@ -145,7 +145,7 @@
 		FC648CFC157AC81E007E2872 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		FC648CFE157AC81E007E2872 /* iOS_FormletsTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iOS_FormletsTests.h; sourceTree = "<group>"; };
 		FC648CFF157AC81E007E2872 /* iOS_FormletsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iOS_FormletsTests.m; sourceTree = "<group>"; };
-		FC648D2A157AC924007E2872 /* RFFormlet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFFormlet.m; sourceTree = "<group>"; };
+		FC648D2A157AC924007E2872 /* RFFormlet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFFormlet.m; sourceTree = "<group>"; usesTabs = 0; };
 		FC648D2B157AC924007E2872 /* RFFormlet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFFormlet.h; sourceTree = "<group>"; };
 		FC8CA6DF1587FCF1002B6EEA /* RFReifiedProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFReifiedProtocol.h; sourceTree = "<group>"; };
 		FC8CA6E01587FCF1002B6EEA /* RFReifiedProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFReifiedProtocol.m; sourceTree = "<group>"; };
@@ -264,6 +264,7 @@
 				FC648CCF157AC81D007E2872 /* Products */,
 			);
 			sourceTree = "<group>";
+			usesTabs = 1;
 		};
 		FC648CCF157AC81D007E2872 /* Products */ = {
 			isa = PBXGroup;

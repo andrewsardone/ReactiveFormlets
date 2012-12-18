@@ -31,33 +31,33 @@
 @end
 
 @implementation JSViewController {
-    RFTableForm <Pets> *_form;
+	RFTableForm <Pets> *_form;
 }
 
 - (void)loadView
 {
-    Class AnimalModel = [RFReifiedProtocol model:@protocol(Animal)];
-    id<Animal> tucker = [AnimalModel name:@"Tucker"
-                                 nickName:@"Tuckey"
-                             favoriteFood:@"kibbles"
-                                      age:@6];
-    
-    RFInputRow<Text> *textRow = [RFInputRow text];
-    RFInputRow<Number> *numberRow = [RFInputRow number];
+	Class AnimalModel = [RFReifiedProtocol model:@protocol(Animal)];
+	id<Animal> tucker = [AnimalModel name:@"Tucker"
+								 nickName:@"Tuckey"
+							 favoriteFood:@"kibbles"
+									  age:@6];
 
-    Class AnimalSection = [RFTableSection model:@protocol(Animal)];
-    RFTableSection <Animal> *animalSection = [AnimalSection name:[textRow placeholder:@"name"]
-                                                        nickName:[textRow placeholder:@"nickname"]
-                                                    favoriteFood:[textRow placeholder:@"food"]
-                                                             age:[numberRow placeholder:@"age"]];
+	RFInputRow<Text> *textRow = [RFInputRow text];
+	RFInputRow<Number> *numberRow = [RFInputRow number];
 
-    Class PetsTable = [RFTableForm model:@protocol(Pets)];
-    _form = [PetsTable dog:[[animalSection title:@"Doggy"] withValue:tucker]
-                       cat:[animalSection title:@"Kitty"]];
+	Class AnimalSection = [RFTableSection model:@protocol(Animal)];
+	RFTableSection <Animal> *animalSection = [AnimalSection name:[textRow placeholder:@"name"]
+														nickName:[textRow placeholder:@"nickname"]
+													favoriteFood:[textRow placeholder:@"food"]
+															 age:[numberRow placeholder:@"age"]];
 
-    RAC(self.title) = _form.dog.name;
+	Class PetsTable = [RFTableForm model:@protocol(Pets)];
+	_form = [PetsTable dog:[[animalSection title:@"Doggy"] withValue:tucker]
+					   cat:[animalSection title:@"Kitty"]];
 
-    self.view = _form.view;
+	RAC(self.title) = _form.dog.name;
+
+	self.view = _form.view;
 }
 
 @end

@@ -28,70 +28,70 @@
 @end
 
 @implementation JSGHLoginViewController {
-    RFSingleSectionTableForm *_form;
+	RFSingleSectionTableForm *_form;
 }
 
 - (void)loadView
 {
-    // This is all the code you need to make a login form!
-    Class<GHCredentials> LoginForm = [RFSingleSectionTableForm model:@protocol(GHCredentials)];
+	// This is all the code you need to make a login form!
+	Class<GHCredentials> LoginForm = [RFSingleSectionTableForm model:@protocol(GHCredentials)];
 
-    RFInputRow<Text> *usernameField = [[RFInputRow text] modifyTextField:^(UITextField *field) {
-        field.autocapitalizationType = UITextAutocapitalizationTypeNone;
-        field.autocorrectionType = UITextAutocorrectionTypeNo;
-    }];
+	RFInputRow<Text> *usernameField = [[RFInputRow text] modifyTextField:^(UITextField *field) {
+		field.autocapitalizationType = UITextAutocapitalizationTypeNone;
+		field.autocorrectionType = UITextAutocorrectionTypeNo;
+	}];
 
-    _form = [LoginForm username:[usernameField placeholder:@"username"]
-                       password:[[RFInputRow secureText] placeholder:@"password"]];
-
-
-    // And you're done!
-    id loginButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Login"
-                                                          style:UIBarButtonItemStyleDone
-                                                         target:self
-                                                         action:@selector(login:)];
+	_form = [LoginForm username:[usernameField placeholder:@"username"]
+					   password:[[RFInputRow secureText] placeholder:@"password"]];
 
 
-    UIActivityIndicatorView *indicatorView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
-    [indicatorView startAnimating];
+	// And you're done!
+	id loginButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Login"
+														  style:UIBarButtonItemStyleDone
+														 target:self
+														 action:@selector(login:)];
 
-    id activityItem = [[UIBarButtonItem alloc] initWithCustomView:indicatorView];
 
-    RAC(self.navigationItem.rightBarButtonItem) = [RACAbleWithStart(loading) map:^id(NSNumber *loading) {
-        BOOL isLoading = loading.boolValue;
-        return !isLoading ? loginButtonItem : activityItem;
-    }];
+	UIActivityIndicatorView *indicatorView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
+	[indicatorView startAnimating];
 
-    RAC(self.navigationItem.rightBarButtonItem.enabled) = [[_form map:^id(id<GHCredentials> credentials) {
-        BOOL ready = credentials.username.stringValue.length > 0 && credentials.password.stringValue.length > 0;
-        return @(ready);
-    }] startWith:@NO];
+	id activityItem = [[UIBarButtonItem alloc] initWithCustomView:indicatorView];
 
-    self.view = _form.view;
+	RAC(self.navigationItem.rightBarButtonItem) = [RACAbleWithStart(loading) map:^id(NSNumber *loading) {
+		BOOL isLoading = loading.boolValue;
+		return !isLoading ? loginButtonItem : activityItem;
+	}];
+
+	RAC(self.navigationItem.rightBarButtonItem.enabled) = [[_form.signal map:^id(id<GHCredentials> credentials) {
+		BOOL ready = [(id)credentials.username length] > 0 && [(id)credentials.password length] > 0;
+		return @(ready);
+	}] startWith:@NO];
+
+	self.view = _form.view;
 }
 
 #pragma mark -
 
 - (void)login:(id)sender
 {
-    id<GHCredentials> credentials = _form.currentValue;
-    self.user = [GHGitHubUser userWithUsername:credentials.username.stringValue
-                                      password:credentials.password.stringValue];
-    self.client = [GHGitHubClient clientForUser:self.user];
+	id<GHCredentials> credentials = _form.currentValue;
+	self.user = [GHGitHubUser userWithUsername:(id)credentials.username
+									  password:(id)credentials.password];
+	self.client = [GHGitHubClient clientForUser:self.user];
 
-    self.loading = YES;
+	self.loading = YES;
 
-    id<RACSignal> loginResult = [self.client login];
+	id<RACSignal> loginResult = [self.client login];
 
-    __weak JSGHLoginViewController *weakSelf = self;
-    [loginResult subscribeNext:^(id x) {
-    } error:^(NSError *error) {
-        weakSelf.loading = NO;
-        [[[UIAlertView alloc] initWithTitle:@"Failed!" message:[error description] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
-    } completed:^{
-        weakSelf.loading = NO;
-        [[[UIAlertView alloc] initWithTitle:@"Logged in!" message:nil delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
-    }];
+	__weak JSGHLoginViewController *weakSelf = self;
+	[loginResult subscribeNext:^(id x) {
+	} error:^(NSError *error) {
+		weakSelf.loading = NO;
+		[[[UIAlertView alloc] initWithTitle:@"Failed!" message:[error description] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+	} completed:^{
+		weakSelf.loading = NO;
+		[[[UIAlertView alloc] initWithTitle:@"Logged in!" message:nil delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+	}];
 }
 
 @end

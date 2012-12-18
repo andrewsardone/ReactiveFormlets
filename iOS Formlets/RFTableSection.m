@@ -15,26 +15,26 @@
 
 - (id)copyWithZone:(NSZone *)zone
 {
-    RFTableSection *copy = [super copyWithZone:zone];
-    copy->_title = _title;
-    return copy;
+	RFTableSection *copy = [super copyWithZone:zone];
+	copy->_title = _title;
+	return copy;
 }
 
 - (instancetype)title:(NSString *)title
 {
-    RFTableSection *copy = [self copy];
-    copy->_title = title;
-    return copy;
+	RFTableSection *copy = [self copy];
+	copy->_title = title;
+	return copy;
 }
 
 - (NSUInteger)numberOfRows
 {
-    return self.count;
+	return self.count;
 }
 
 - (UITableViewCell *)cellForRow:(NSUInteger)row
 {
-    return [[self.allValues objectAtIndex:row] cell];
+	return [[self.allValues objectAtIndex:row] cell];
 }
 
 @end

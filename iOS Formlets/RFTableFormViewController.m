@@ -10,22 +10,22 @@
 #import "RFTableForm.h"
 
 @implementation RFTableFormViewController {
-    RFTableForm *_form;
+	RFTableForm *_form;
 }
 
 - (id)initWithForm:(RFTableForm *)form
 {
-    if ((self = [self init]))
-    {
-        _form = form;
-    }
+	if ((self = [self init]))
+	{
+		_form = form;
+	}
 
-    return self;
+	return self;
 }
 
 - (void)loadView
 {
-    self.view = _form.view;
+	self.view = _form.view;
 }
 
 @end

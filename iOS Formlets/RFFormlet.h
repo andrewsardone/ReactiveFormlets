@@ -14,12 +14,10 @@
 @protocol RFFormlet <NSCopying>
 @property (copy) id currentValue;
 - (instancetype)withValue:(id)value;
+- (RACSignal *)signal;
 @end
 
 @interface RFFormlet : RFReifiedProtocol <RFFormlet>
-+ (Class)model:(Protocol *)model;
-+ (Protocol *)model;
-- (RACSignal *)signal;
 @end
 
 @interface RFFormlet (Dictionary) <RFMutableOrderedDictionary, NSFastEnumeration>
