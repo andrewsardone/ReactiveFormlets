@@ -34,9 +34,9 @@
 {
     RFOrderedDictionary *modelData = [[RFReifiedProtocol model:self.class.model] new];
     return [modelData modify:^void(id<RFMutableOrderedDictionary> dict) {
-        for (id key in self.reify)
+        for (id key in self)
         {
-            id currentValue = [self.reify[key] currentValue];
+            id currentValue = [self[key] currentValue];
             if (currentValue)
                 dict[key] = currentValue;
         }
@@ -49,7 +49,7 @@
 {
     for (id key in value)
     {
-        [self.reify[key] setCurrentValue:value[key]];
+        [self[key] setCurrentValue:value[key]];
     }
 }
 
@@ -57,14 +57,14 @@
 
 - (RACDisposable *)subscribe:(id<RACSubscriber>)subscriber
 {
-    NSMutableSet *disposables = [NSMutableSet setWithCapacity:self.reify.count];
-    NSMutableSet *completedSignals = [NSMutableSet setWithCapacity:self.reify.count];
+    NSMutableSet *disposables = [NSMutableSet setWithCapacity:self.count];
+    NSMutableSet *completedSignals = [NSMutableSet setWithCapacity:self.count];
 
     id modelData = [[RFReifiedProtocol model:self.class.model] new];
 
-    for (id key in self.reify)
+    for (id key in self)
     {
-        id<RACSignal> signal = self.reify[key];
+        id<RACSignal> signal = self[key];
         RACDisposable *disposable = [signal subscribeNext:^(id x) {
             if (x != nil)
                 modelData[key] = x;
@@ -73,7 +73,7 @@
             [subscriber sendError:error];
         } completed:^{
             [completedSignals addObject:signal];
-            if(completedSignals.count == self.reify.count) {
+            if(completedSignals.count == self.count) {
                 [subscriber sendCompleted];
             }
         }];
@@ -106,7 +106,7 @@
 - (instancetype)modify:(RFOrderedDictionaryModifyBlock)block
 {
     RFFormlet *copy = [self copy];
-    copy->_reify = [copy.reify modify:block];
+    copy.reify = [copy.reify modify:block];
     return copy;
 }
 
@@ -153,7 +153,7 @@
     __autoreleasing RFFormlet *formlet = [self new];
 
     [invocation getReturnValue:&model];
-    formlet->_reify = model;
+    formlet.reify = model;
 
     invocation.returnValue = &formlet;
 }
