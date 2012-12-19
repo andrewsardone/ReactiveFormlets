@@ -80,7 +80,7 @@
 	if (!_signal) {
 		_signal = [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
 			NSMutableSet *disposables = [NSMutableSet setWithCapacity:self.count];
-			NSMutableSet *completedSignals = [NSMutableSet setWithCapacity:self.count];
+			NSMutableSet *extantSignals = [NSMutableSet setWithArray:self.allValues];
 
 			id modelData = [[RFReifiedProtocol model:self.class.model] new];
 
@@ -93,14 +93,15 @@
 				} error:^(NSError *error) {
 					[subscriber sendError:error];
 				} completed:^{
-					[completedSignals addObject:signal];
-					if(completedSignals.count == self.count) {
+					[extantSignals removeObject:signal];
+					if (!extantSignals.count) {
 						[subscriber sendCompleted];
 					}
 				}];
 
-				if(disposable != nil)
+				if(disposable != nil) {
 					[disposables addObject:disposable];
+				}
 			}
 
 			return [RACDisposable disposableWithBlock:^{
