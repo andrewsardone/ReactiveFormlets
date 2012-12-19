@@ -7,6 +7,7 @@
 //
 
 #import "RFInputRow.h"
+#import "RFNumberStringValueTransformer.h"
 #import <ReactiveCocoa/ReactiveCocoa.h>
 
 @interface RFInputRow () <UITextFieldDelegate>
@@ -17,17 +18,17 @@
 @synthesize textField = _textField;
 @synthesize cell = _cell;
 
-- (id)value {
-	return self.textField.text;
+- (NSString *)keyPathForLens {
+	return @keypath(self.textField.text);
 }
 
 - (id)copyWithZone:(NSZone *)zone {
 	RFInputRow *row = [self.class new];
-	row.textField.text = self.textField.text;
 	row.textField.placeholder = self.textField.placeholder;
 	row.textField.secureTextEntry = self.textField.secureTextEntry;
 	row.textField.autocorrectionType = self.textField.autocorrectionType;
 	row.textField.autocapitalizationType = self.textField.autocapitalizationType;
+	[row updateInPlace:self.read];
 	return row;
 }
 
@@ -87,31 +88,18 @@
 
 
 @implementation RFTextInputRow
-
-- (id)pureValue {
-	return self.textField.text;
-}
-
-- (void)setPureValue:(id)pureValue {
-	self.textField.text = pureValue;
-}
-
 @end
 
 @implementation RFNumberInputRow
+
+- (NSValueTransformer *)valueTransformer {
+	return [NSValueTransformer valueTransformerForName:RFNumberStringValueTransformerName];
+}
 
 - (UITextField *)textField {
 	UITextField *textField = [super textField];
 	textField.keyboardType = UIKeyboardTypeNumberPad;
 	return textField;
-}
-
-- (id)pureValue {
-	return [NSDecimalNumber decimalNumberWithString:self.textField.text];
-}
-
-- (void)setPureValue:(id)pureValue {
-	self.textField.text = [pureValue stringValue];
 }
 
 - (id<RACSignal>)signal {

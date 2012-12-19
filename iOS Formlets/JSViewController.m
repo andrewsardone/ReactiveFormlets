@@ -49,7 +49,7 @@
 															 age:[numberRow placeholder:@"age"]];
 
 	Class PetsTable = [RFTableForm model:@protocol(Pets)];
-	_form = [PetsTable dog:[[animalSection title:@"Doggy"] withPureValue:tucker]
+	_form = [PetsTable dog:[[animalSection title:@"Doggy"] update:tucker]
 					   cat:[animalSection title:@"Kitty"]];
 
 	RAC(self.title) = _form.dog.name;

@@ -45,6 +45,9 @@
 		FC9153F615888B7400C657D3 /* RFTableFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC9153F515888B7400C657D3 /* RFTableFormViewController.m */; };
 		FCC7F9601587F4020008558B /* RFOrderedDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = FCC7F95F1587F4020008558B /* RFOrderedDictionary.m */; };
 		FCE11FFB16813C48001CFB13 /* RFSignalSource.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE11FFA16813C47001CFB13 /* RFSignalSource.m */; };
+		FCE11FFE1682587C001CFB13 /* RFLens.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE11FFD1682587C001CFB13 /* RFLens.m */; };
+		FCE1200A16827732001CFB13 /* RFIdentityValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE1200916827732001CFB13 /* RFIdentityValueTransformer.m */; };
+		FCE1200D16827791001CFB13 /* RFNumberStringValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE1200C16827790001CFB13 /* RFNumberStringValueTransformer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -157,6 +160,12 @@
 		FCE11FF4168120C2001CFB13 /* RFModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFModel.h; sourceTree = "<group>"; };
 		FCE11FF916813C0C001CFB13 /* RFSignalSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RFSignalSource.h; sourceTree = "<group>"; };
 		FCE11FFA16813C47001CFB13 /* RFSignalSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFSignalSource.m; sourceTree = "<group>"; };
+		FCE11FFC1682587B001CFB13 /* RFLens.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFLens.h; sourceTree = "<group>"; };
+		FCE11FFD1682587C001CFB13 /* RFLens.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFLens.m; sourceTree = "<group>"; };
+		FCE1200816827732001CFB13 /* RFIdentityValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFIdentityValueTransformer.h; sourceTree = "<group>"; };
+		FCE1200916827732001CFB13 /* RFIdentityValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFIdentityValueTransformer.m; sourceTree = "<group>"; };
+		FCE1200B16827790001CFB13 /* RFNumberStringValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFNumberStringValueTransformer.h; sourceTree = "<group>"; };
+		FCE1200C16827790001CFB13 /* RFNumberStringValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFNumberStringValueTransformer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -340,6 +349,9 @@
 		FC648D27157AC914007E2872 /* Formlets */ = {
 			isa = PBXGroup;
 			children = (
+				FCE1200716827723001CFB13 /* Value Transformers */,
+				FCE11FFC1682587B001CFB13 /* RFLens.h */,
+				FCE11FFD1682587C001CFB13 /* RFLens.m */,
 				FC648D2B157AC924007E2872 /* RFFormlet.h */,
 				FC648D2A157AC924007E2872 /* RFFormlet.m */,
 				FCE11FF4168120C2001CFB13 /* RFModel.h */,
@@ -351,6 +363,17 @@
 				FCE11FFA16813C47001CFB13 /* RFSignalSource.m */,
 			);
 			name = Formlets;
+			sourceTree = "<group>";
+		};
+		FCE1200716827723001CFB13 /* Value Transformers */ = {
+			isa = PBXGroup;
+			children = (
+				FCE1200816827732001CFB13 /* RFIdentityValueTransformer.h */,
+				FCE1200916827732001CFB13 /* RFIdentityValueTransformer.m */,
+				FCE1200B16827790001CFB13 /* RFNumberStringValueTransformer.h */,
+				FCE1200C16827790001CFB13 /* RFNumberStringValueTransformer.m */,
+			);
+			name = "Value Transformers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -519,6 +542,9 @@
 				FC3E604C1596FE5C005F3F56 /* AFXMLRequestOperation.m in Sources */,
 				FC3E60601596FECF005F3F56 /* JSGHLoginViewController.m in Sources */,
 				FCE11FFB16813C48001CFB13 /* RFSignalSource.m in Sources */,
+				FCE11FFE1682587C001CFB13 /* RFLens.m in Sources */,
+				FCE1200A16827732001CFB13 /* RFIdentityValueTransformer.m in Sources */,
+				FCE1200D16827791001CFB13 /* RFNumberStringValueTransformer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

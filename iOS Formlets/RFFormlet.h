@@ -10,15 +10,9 @@
 #import <ReactiveCocoa/libextobjc/extobjc/EXTConcreteProtocol.h>
 #import "RFReifiedProtocol.h"
 #import "RFModel.h"
+#import "RFLens.h"
 
-@protocol RFFormlet <RFModel>
-@property (strong, nonatomic) id pureValue;
-
-@concrete
-- (id)initWithPureValue:(id)pureValue;
-- (instancetype)withPureValue:(id)pureValue;
-
-- (id)copyWithZone:(NSZone *)zone;
+@protocol RFFormlet <RFSignalSource, RFLens>
 @end
 
 @interface RFCompoundFormlet : RFReifiedProtocol <RFFormlet>

@@ -9,35 +9,18 @@
 #import "RFFormlet.h"
 #import <ReactiveCocoa/ReactiveCocoa.h>
 
-@concreteprotocol(RFFormlet)
-@dynamic pureValue;
-
-- (id<RACSignal>)rf_signal { return nil; }
-
-#pragma mark - Concrete
-
-- (id)initWithPureValue:(id)pureValue {
-    if (self = [self init]) {
-        self.pureValue = pureValue;
-    }
-
-    return self;
-}
+@implementation RFPrimitiveFormlet
 
 - (id)copyWithZone:(NSZone *)zone {
-    return [[self.class alloc] initWithPureValue:self.pureValue];
+	return [self.class new];
 }
 
-- (instancetype)withPureValue:(id)pureValue {
-    id copy = [self copy];
-    [copy setPureValue:pureValue];
-    return copy;
+- (NSString *)keyPathForLens {
+    @throw [NSException exceptionWithName:NSGenericException
+                                   reason:@"Subclasses of RFPrimitiveFormlet must override -keyPathForLens"
+                                 userInfo:nil];
+	return nil;
 }
-
-@end
-
-@implementation RFPrimitiveFormlet
-@dynamic pureValue;
 
 - (id<RACSignal>)rf_signal {
     @throw [NSException exceptionWithName:NSGenericException
@@ -56,24 +39,40 @@
 
 @end
 
+@interface RFCompoundFormlet ()
+@property (strong) id compoundValue;
+@end
+
 @implementation RFCompoundFormlet {
     id<RACSignal> _signal;
 }
 
-- (id)pureValue {
-    RFReifiedProtocol *modelData = [[RFReifiedProtocol model:self.class.model] new];
+@dynamic compoundValue;
+
+- (id)copyWithZone:(NSZone *)zone {
+	id copy = [super copyWithZone:zone];
+	[copy updateInPlace:self.read];
+	return copy;
+}
+
+- (id)compoundValue {
+	RFReifiedProtocol *modelData = [[RFReifiedProtocol model:self.class.model] new];
     return [modelData modify:^(id<RFMutableOrderedDictionary> dict) {
         for (id key in dict) {
-            id data = [self[key] pureValue];
+            id data = [self[key] read];
             if (data) dict[key] = data;
         }
     }];
 }
 
-- (void)setPureValue:(id)pureValue {
-	for (id key in pureValue) {
-        [self[key] setPureValue:pureValue[key]];
+- (void)setCompoundValue:(id)value {
+	for (id key in value) {
+		[self[key] updateInPlace:value[key]];
 	}
+}
+
+- (NSString *)keyPathForLens {
+	return @keypath(self.compoundValue);
 }
 
 - (id<RACSignal>)rf_signal {
