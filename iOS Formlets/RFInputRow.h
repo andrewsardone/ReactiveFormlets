@@ -7,7 +7,6 @@
 //
 
 #import "RFFormlet.h"
-#import "RFFormletModels.h"
 
 // JSInputRow is a table row with a text field.
 @interface RFInputRow : RFPrimitiveFormlet

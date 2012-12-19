@@ -72,8 +72,9 @@
 #pragma mark -
 
 - (void)login:(id)sender {
-	id<GHCredentials> credentials = _form.pureData;
-	self.user = [GHGitHubUser userWithUsername:(id)credentials.username password:(id)credentials.password];
+	id<GHCredentials> credentials = _form.pureValue;
+	self.user = [GHGitHubUser userWithUsername:(id)credentials.username
+									  password:(id)credentials.password];
 	self.client = [GHGitHubClient clientForUser:self.user];
 	self.loading = YES;
 

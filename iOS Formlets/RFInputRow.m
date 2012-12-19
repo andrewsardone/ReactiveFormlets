@@ -88,12 +88,12 @@
 
 @implementation RFTextInputRow
 
-- (id)pureData {
+- (id)pureValue {
 	return self.textField.text;
 }
 
-- (void)setPureData:(id)pureData {
-	self.textField.text = pureData;
+- (void)setPureValue:(id)pureValue {
+	self.textField.text = pureValue;
 }
 
 @end
@@ -106,12 +106,12 @@
 	return textField;
 }
 
-- (id)pureData {
+- (id)pureValue {
 	return [NSDecimalNumber decimalNumberWithString:self.textField.text];
 }
 
-- (void)setPureData:(id)pureData {
-	self.textField.text = [pureData stringValue];
+- (void)setPureValue:(id)pureValue {
+	self.textField.text = [pureValue stringValue];
 }
 
 - (id<RACSignal>)signal {

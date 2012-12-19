@@ -44,7 +44,7 @@
 		FC8CA6E11587FCF1002B6EEA /* RFReifiedProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = FC8CA6E01587FCF1002B6EEA /* RFReifiedProtocol.m */; };
 		FC9153F615888B7400C657D3 /* RFTableFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC9153F515888B7400C657D3 /* RFTableFormViewController.m */; };
 		FCC7F9601587F4020008558B /* RFOrderedDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = FCC7F95F1587F4020008558B /* RFOrderedDictionary.m */; };
-		FCE11FF6168120C2001CFB13 /* RFFormletModels.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE11FF5168120C2001CFB13 /* RFFormletModels.m */; };
+		FCE11FFB16813C48001CFB13 /* RFSignalSource.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE11FFA16813C47001CFB13 /* RFSignalSource.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -154,9 +154,9 @@
 		FC9153F515888B7400C657D3 /* RFTableFormViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFTableFormViewController.m; sourceTree = "<group>"; };
 		FCC7F95E1587F4020008558B /* RFOrderedDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFOrderedDictionary.h; sourceTree = "<group>"; };
 		FCC7F95F1587F4020008558B /* RFOrderedDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFOrderedDictionary.m; sourceTree = "<group>"; };
-		FCE11FF4168120C2001CFB13 /* RFFormletModels.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFFormletModels.h; sourceTree = "<group>"; };
-		FCE11FF5168120C2001CFB13 /* RFFormletModels.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFFormletModels.m; sourceTree = "<group>"; };
-		FCE11FF8168131DA001CFB13 /* RFSignalSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RFSignalSource.h; sourceTree = "<group>"; };
+		FCE11FF4168120C2001CFB13 /* RFModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFModel.h; sourceTree = "<group>"; };
+		FCE11FF916813C0C001CFB13 /* RFSignalSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RFSignalSource.h; sourceTree = "<group>"; };
+		FCE11FFA16813C47001CFB13 /* RFSignalSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFSignalSource.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -342,13 +342,13 @@
 			children = (
 				FC648D2B157AC924007E2872 /* RFFormlet.h */,
 				FC648D2A157AC924007E2872 /* RFFormlet.m */,
-				FCE11FF4168120C2001CFB13 /* RFFormletModels.h */,
-				FCE11FF5168120C2001CFB13 /* RFFormletModels.m */,
+				FCE11FF4168120C2001CFB13 /* RFModel.h */,
 				FCC7F95E1587F4020008558B /* RFOrderedDictionary.h */,
 				FCC7F95F1587F4020008558B /* RFOrderedDictionary.m */,
 				FC8CA6DF1587FCF1002B6EEA /* RFReifiedProtocol.h */,
 				FC8CA6E01587FCF1002B6EEA /* RFReifiedProtocol.m */,
-				FCE11FF8168131DA001CFB13 /* RFSignalSource.h */,
+				FCE11FF916813C0C001CFB13 /* RFSignalSource.h */,
+				FCE11FFA16813C47001CFB13 /* RFSignalSource.m */,
 			);
 			name = Formlets;
 			sourceTree = "<group>";
@@ -518,7 +518,7 @@
 				FC3E604B1596FE5C005F3F56 /* AFURLConnectionOperation.m in Sources */,
 				FC3E604C1596FE5C005F3F56 /* AFXMLRequestOperation.m in Sources */,
 				FC3E60601596FECF005F3F56 /* JSGHLoginViewController.m in Sources */,
-				FCE11FF6168120C2001CFB13 /* RFFormletModels.m in Sources */,
+				FCE11FFB16813C48001CFB13 /* RFSignalSource.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

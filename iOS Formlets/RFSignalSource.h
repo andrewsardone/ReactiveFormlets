@@ -7,9 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <ReactiveCocoa/libextobjc/extobjc/EXTConcreteProtocol.h>
 
 @protocol RACSignal;
 
 @protocol RFSignalSource <NSObject>
+@concrete
 - (id<RACSignal>)rf_signal;
 @end

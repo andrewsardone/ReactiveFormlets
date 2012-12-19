@@ -10,34 +10,34 @@
 #import <ReactiveCocoa/ReactiveCocoa.h>
 
 @concreteprotocol(RFFormlet)
-@dynamic pureData;
+@dynamic pureValue;
 
 - (id<RACSignal>)rf_signal { return nil; }
 
 #pragma mark - Concrete
 
-- (id)initWithPureData:(id)pureData {
+- (id)initWithPureValue:(id)pureValue {
     if (self = [self init]) {
-        self.pureData = pureData;
+        self.pureValue = pureValue;
     }
 
     return self;
 }
 
 - (id)copyWithZone:(NSZone *)zone {
-    return [[self.class alloc] initWithPureData:self.pureData];
+    return [[self.class alloc] initWithPureValue:self.pureValue];
 }
 
-- (instancetype)withPureData:(id)pureData {
+- (instancetype)withPureValue:(id)pureValue {
     id copy = [self copy];
-    [copy setPureData:pureData];
+    [copy setPureValue:pureValue];
     return copy;
 }
 
 @end
 
 @implementation RFPrimitiveFormlet
-@dynamic pureData;
+@dynamic pureValue;
 
 - (id<RACSignal>)rf_signal {
     @throw [NSException exceptionWithName:NSGenericException
@@ -60,19 +60,19 @@
     id<RACSignal> _signal;
 }
 
-- (id)pureData {
+- (id)pureValue {
     RFReifiedProtocol *modelData = [[RFReifiedProtocol model:self.class.model] new];
     return [modelData modify:^(id<RFMutableOrderedDictionary> dict) {
         for (id key in dict) {
-            id data = [self[key] pureData];
+            id data = [self[key] pureValue];
             if (data) dict[key] = data;
         }
     }];
 }
 
-- (void)setPureData:(id)pureData {
-	for (id key in pureData) {
-        [self[key] setPureData:pureData[key]];
+- (void)setPureValue:(id)pureValue {
+	for (id key in pureValue) {
+        [self[key] setPureValue:pureValue[key]];
 	}
 }
 

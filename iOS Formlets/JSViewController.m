@@ -14,7 +14,7 @@
 
 #import <ReactiveCocoa/ReactiveCocoa.h>
 
-@protocol Animal <RFSignalSource>
+@protocol Animal <RFModel>
 - (id<Text>)name;
 - (id<Text>)nickName;
 - (id<Text>)favoriteFood;
@@ -22,7 +22,7 @@
 + (instancetype)name:(id<Text>)name nickName:(id<Text>)nickName favoriteFood:(id<Text>)food age:(id<Number>)age;
 @end
 
-@protocol Pets <RFSignalSource>
+@protocol Pets <RFModel>
 - (id<Animal>)dog;
 - (id<Animal>)cat;
 + (instancetype)dog:(id<Animal>)dog cat:(id<Animal>)cat;
@@ -49,7 +49,7 @@
 															 age:[numberRow placeholder:@"age"]];
 
 	Class PetsTable = [RFTableForm model:@protocol(Pets)];
-	_form = [PetsTable dog:[[animalSection title:@"Doggy"] withPureData:tucker]
+	_form = [PetsTable dog:[[animalSection title:@"Doggy"] withPureValue:tucker]
 					   cat:[animalSection title:@"Kitty"]];
 
 	RAC(self.title) = _form.dog.name;
