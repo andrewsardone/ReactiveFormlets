@@ -22,6 +22,12 @@
 	return @keypath(self.textField.text);
 }
 
+- (id<RACSignal>)rf_signal {
+	return [self.textField.rac_textSignal map:^(NSString *text) {
+		return [self.valueTransformer transformedValue:text];
+	}];
+}
+
 - (id)copyWithZone:(NSZone *)zone {
 	RFInputRow *row = [self.class new];
 	row.textField.placeholder = self.textField.placeholder;
@@ -66,11 +72,6 @@
 	return _cell;
 }
 
-- (id<RACSignal>)rf_signal {
-	return self.textField.rac_textSignal;
-}
-
-
 #pragma mark - UITextFieldDelegate
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
@@ -100,12 +101,6 @@
 	UITextField *textField = [super textField];
 	textField.keyboardType = UIKeyboardTypeNumberPad;
 	return textField;
-}
-
-- (id<RACSignal>)signal {
-	return [self.textField.rac_textSignal map:^(NSString *text) {
-		return [NSDecimalNumber decimalNumberWithString:text];
-	}];
 }
 
 @end
