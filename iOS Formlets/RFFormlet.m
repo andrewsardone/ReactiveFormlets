@@ -91,8 +91,7 @@
 
 			id modelData = [[RFReifiedProtocol model:self.class.model] new];
 
-			for (id key in self)
-			{
+			for (id key in self) {
 				RACSignal *signal = self[key];
 				RACDisposable *disposable = [signal subscribeNext:^(id value) {
 					if (value) modelData[key] = value;
