@@ -11,6 +11,8 @@
 
 @concreteprotocol(RFLens)
 
+#pragma mark - Inherited
+
 - (id)copyWithZone:(NSZone *)zone { return nil; }
 - (NSString *)keyPathForLens { return nil; }
 

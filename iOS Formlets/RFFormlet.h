@@ -12,11 +12,20 @@
 #import "RFModel.h"
 #import "RFLens.h"
 
+// A formlet emits a signal and provides a lens through which values are mapped
+// in and out. A formlet may either bind directly to an interface, or may be
+// composed of other formlets.
 @protocol RFFormlet <RFSignalSource, RFLens>
 @end
 
+// A primitive formlet is one which binds directly to an interface.
+// `RFPrimitiveFormlet` subclasses must provide their own `-rf_signal` and
+// `-keyPathForLens` implementations.
+@interface RFPrimitiveFormlet : NSObject <RFFormlet>
+@end
+
+// A compound formlet is one which is composed of smaller formlets, as specified
+// in the model protocol it is initialized from.
 @interface RFCompoundFormlet : RFReifiedProtocol <RFFormlet>
 @end
 
-@interface RFPrimitiveFormlet : NSObject <RFFormlet>
-@end

@@ -9,43 +9,55 @@
 #import <Foundation/Foundation.h>
 #import "RFOrderedDictionary.h"
 
-// RFReifiedProtocol is a way to generate model classes from protocols,
+// `RFReifiedProtocol` is a way to generate model classes from protocols,
 // to do away with following kinds of boilerplate:
 //
 //   * defining model classes and their storage
 //   * registering model classes to protocols
 //
-// The reason we can't just use plain old model classes is that we want
-// to be able to decorate other objects with their protocol: that is, a
-// formlet should *be* the model, but lifted into the *idiom* of forms.
-// So, we need protocols; hence, we need protocol reification.
+// Protocol reification is useful when you wish to have in addition to a model,
+// an enriched version of that model (such as a formlet). To avoid duplicating
+// interfaces, we would really prefer to just have a model and whatever else
+// conform to the same protocol.
 //
 // Model protocols are expected to have the following charactaristics:
 //
 //   * All properties are readonly objects
 //
 //   * Any number of constructors may be provided, of the form
-//	   +key1:key2:key3:...keyN
-//	 where key1...keyN are all properties on the protocol.
+//     +key1:key2:key3:...keyN
+//   where key1...keyN are all properties on the protocol.
 //
 // An example model protocol might look like this:
 //
-//	 @protocol Boy
-//	 - (id<Text>)name;
-//	 - (id<Number>)age;
-//	 - (id<Boy>)buddy;
-//	 + (instancetype)name:name age:age buddy:buddy;
-//	 + (instancetype)name:name age:age;
-//	 @end
+//   @protocol Boy <RFModel>
+//   - (id<Text>)name;
+//   - (id<Number>)age;
+//   - (id<Boy>)buddy;
+//   + (instancetype)name:name age:age buddy:buddy;
+//   + (instancetype)name:name age:age;
+//   @end
 //
 // A model class can be generated from that as follows:
 //
-//	 Class Boy = [RFReifiedProtocol model:@protocol(Boy)];
-//	 id<Boy> steve = [Boy name:@"Steve" age:@7];
-//	 id<Boy> dan = [Boy name:@"Dan" age:@9 buddy:steve];
+//   Class Boy = [RFReifiedProtocol model:@protocol(Boy)];
+//   id<Boy> steve = [Boy name:@"Steve" age:@7];
+//   id<Boy> dan = [Boy name:@"Dan" age:@9 buddy:steve];
 //
 
 @interface RFReifiedProtocol : RFOrderedDictionary
+
+// Generates a new model class according to a protocol.
+//
+// model - The protocol from which to generate a class with properties and a
+// constructor.
+//
+// Returns the generated class, which is a subclass of the class to which
+// `+model:` was sent.
 + (Class)model:(Protocol *)model;
+
+// The model associated with any particular `RFReifiedProtocol`-generated
+// subclass.
 + (Protocol *)model;
 @end
+

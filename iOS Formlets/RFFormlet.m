@@ -11,9 +11,22 @@
 
 @implementation RFPrimitiveFormlet
 
+#pragma mark - NSCopying
+
 - (id)copyWithZone:(NSZone *)zone {
 	return [self.class new];
 }
+
+#pragma mark - RFSignalSource
+
+- (id<RACSignal>)rf_signal {
+    @throw [NSException exceptionWithName:NSGenericException
+                                   reason:@"Subclasses of RFPrimitiveFormlet must override -rf_signal"
+                                 userInfo:nil];
+    return nil;
+}
+
+#pragma mark - RFLens
 
 - (NSString *)keyPathForLens {
     @throw [NSException exceptionWithName:NSGenericException
@@ -22,12 +35,7 @@
 	return nil;
 }
 
-- (id<RACSignal>)rf_signal {
-    @throw [NSException exceptionWithName:NSGenericException
-                                   reason:@"Subclasses of RFPrimitiveFormlet must override -rf_signal"
-                                 userInfo:nil];
-    return nil;
-}
+#pragma mark - Message Forwarding
 
 - (NSMethodSignature *)methodSignatureForSelector:(SEL)aSelector {
 	return [(id)self.rf_signal methodSignatureForSelector:aSelector];
@@ -49,12 +57,6 @@
 
 @dynamic compoundValue;
 
-- (id)copyWithZone:(NSZone *)zone {
-	id copy = [super copyWithZone:zone];
-	[copy updateInPlace:self.read];
-	return copy;
-}
-
 - (id)compoundValue {
 	RFReifiedProtocol *modelData = [[RFReifiedProtocol model:self.class.model] new];
     return [modelData modify:^(id<RFMutableOrderedDictionary> dict) {
@@ -71,9 +73,15 @@
 	}
 }
 
-- (NSString *)keyPathForLens {
-	return @keypath(self.compoundValue);
+#pragma mark - NSCopying
+
+- (id)copyWithZone:(NSZone *)zone {
+	id copy = [super copyWithZone:zone];
+	[copy updateInPlace:self.read];
+	return copy;
 }
+
+#pragma mark - RFSignalSource
 
 - (id<RACSignal>)rf_signal {
 	if (!_signal) {
@@ -113,7 +121,13 @@
 	return _signal;
 }
 
-#pragma mark - Forwarding
+#pragma mark - RFLens
+
+- (NSString *)keyPathForLens {
+	return @keypath(self.compoundValue);
+}
+
+#pragma mark - Message Forwarding
 
 - (NSMethodSignature *)methodSignatureForSelector:(SEL)aSelector {
 	return [super methodSignatureForSelector:aSelector] ?: [(id)self.rf_signal methodSignatureForSelector:aSelector];

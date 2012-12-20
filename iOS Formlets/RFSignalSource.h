@@ -11,7 +11,11 @@
 
 @protocol RACSignal;
 
+// A concrete protocol representing an object which emits a signal.
 @protocol RFSignalSource <NSObject>
 @concrete
+
+// If no implementation is provided, returns a signal that immediately sends
+// `self` and then completes.
 - (id<RACSignal>)rf_signal;
 @end

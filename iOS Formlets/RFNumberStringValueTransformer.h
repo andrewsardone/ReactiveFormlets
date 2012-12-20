@@ -10,5 +10,6 @@
 
 extern NSString *const RFNumberStringValueTransformerName;
 
+// Provides a bijection between numbers and strings.
 @interface RFNumberStringValueTransformer : NSValueTransformer
 @end

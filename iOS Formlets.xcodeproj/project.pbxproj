@@ -203,7 +203,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		FC2511C71588612800534933 /* Table Stuff */ = {
+		FC2511C71588612800534933 /* Example Formlets */ = {
 			isa = PBXGroup;
 			children = (
 				FC2BB4011596F5FD00E89B72 /* RFTableForm.h */,
@@ -215,7 +215,7 @@
 				FC9153F415888B7400C657D3 /* RFTableFormViewController.h */,
 				FC9153F515888B7400C657D3 /* RFTableFormViewController.m */,
 			);
-			name = "Table Stuff";
+			name = "Example Formlets";
 			sourceTree = "<group>";
 		};
 		FC3E5F961596FDA3005F3F56 /* GitHub API */ = {
@@ -305,8 +305,8 @@
 				FC3E605F1596FECF005F3F56 /* JSGHLoginViewController.m */,
 				FC648CE9157AC81D007E2872 /* JSViewController.h */,
 				FC648CEA157AC81D007E2872 /* JSViewController.m */,
-				FC2511C71588612800534933 /* Table Stuff */,
-				FC648D27157AC914007E2872 /* Formlets */,
+				FC2511C71588612800534933 /* Example Formlets */,
+				FC648D27157AC914007E2872 /* Core */,
 				FC648CE1157AC81D007E2872 /* JSAppDelegate.h */,
 				FC648CE2157AC81D007E2872 /* JSAppDelegate.m */,
 				FC648CE6157AC81D007E2872 /* MainStoryboard.storyboard */,
@@ -346,14 +346,13 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		FC648D27157AC914007E2872 /* Formlets */ = {
+		FC648D27157AC914007E2872 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				FCE1200716827723001CFB13 /* Value Transformers */,
-				FCE11FFC1682587B001CFB13 /* RFLens.h */,
-				FCE11FFD1682587C001CFB13 /* RFLens.m */,
 				FC648D2B157AC924007E2872 /* RFFormlet.h */,
 				FC648D2A157AC924007E2872 /* RFFormlet.m */,
+				FCE11FFC1682587B001CFB13 /* RFLens.h */,
+				FCE11FFD1682587C001CFB13 /* RFLens.m */,
 				FCE11FF4168120C2001CFB13 /* RFModel.h */,
 				FCC7F95E1587F4020008558B /* RFOrderedDictionary.h */,
 				FCC7F95F1587F4020008558B /* RFOrderedDictionary.m */,
@@ -361,8 +360,9 @@
 				FC8CA6E01587FCF1002B6EEA /* RFReifiedProtocol.m */,
 				FCE11FF916813C0C001CFB13 /* RFSignalSource.h */,
 				FCE11FFA16813C47001CFB13 /* RFSignalSource.m */,
+				FCE1200716827723001CFB13 /* Value Transformers */,
 			);
-			name = Formlets;
+			name = Core;
 			sourceTree = "<group>";
 		};
 		FCE1200716827723001CFB13 /* Value Transformers */ = {

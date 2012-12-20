@@ -9,13 +9,20 @@
 #import <Foundation/Foundation.h>
 #import "RFSignalSource.h"
 
-@protocol RFModel <RFSignalSource> @end
+// A suitable model protocol emits a signal.
+@protocol RFModel <RFSignalSource>
+@end
 
-@protocol Text <RFModel> @end
-@protocol Number <RFModel> @end
+// Two primitive models are provided.
+@protocol Text <RFModel>
+@end
+
+@protocol Number <RFModel>
+@end
 
 @interface NSString (Text) <Text>
 @end
 
 @interface NSNumber (Number) <Number>
 @end
+

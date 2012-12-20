@@ -9,6 +9,10 @@
 #import <Foundation/Foundation.h>
 
 extern NSString *const RFIdentityValueTransformerName;
-@interface RFIdentityValueTransformer : NSValueTransformer
 
+// Provides a trivial identity bijection:
+//
+//   forall A, A <=> A.
+//
+@interface RFIdentityValueTransformer : NSValueTransformer
 @end
