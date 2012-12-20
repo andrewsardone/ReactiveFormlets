@@ -22,7 +22,7 @@
 	return @keypath(self.textField.text);
 }
 
-- (id<RACSignal>)rf_signal {
+- (RACSignal *)rf_signal {
 	return [self.textField.rac_textSignal map:^(NSString *text) {
 		return [self.valueTransformer transformedValue:text];
 	}];

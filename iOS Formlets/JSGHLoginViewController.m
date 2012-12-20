@@ -78,7 +78,7 @@
 	self.client = [GHGitHubClient clientForUser:self.user];
 	self.loading = YES;
 
-	id<RACSignal> loginResult = [self.client login];
+	RACSignal *loginResult = [self.client login];
 
 	__weak JSGHLoginViewController *weakSelf = self;
 	[loginResult subscribeNext:^(id x) {

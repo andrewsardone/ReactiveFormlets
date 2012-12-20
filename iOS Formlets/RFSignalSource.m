@@ -11,7 +11,7 @@
 
 @concreteprotocol(RFSignalSource)
 
-- (id<RACSignal>)rf_signal {
+- (RACSignal *)rf_signal {
 	return [RACSignal return:self];
 }
 

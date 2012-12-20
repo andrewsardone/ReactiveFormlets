@@ -19,7 +19,7 @@
 
 #pragma mark - RFSignalSource
 
-- (id<RACSignal>)rf_signal {
+- (RACSignal *)rf_signal {
 	@throw [NSException exceptionWithName:NSGenericException
 								   reason:@"Subclasses of RFPrimitiveFormlet must override -rf_signal"
 								 userInfo:nil];
@@ -52,7 +52,7 @@
 @end
 
 @implementation RFCompoundFormlet {
-	id<RACSignal> _signal;
+	RACSignal *_signal;
 }
 
 @dynamic compoundValue;
@@ -83,7 +83,7 @@
 
 #pragma mark - RFSignalSource
 
-- (id<RACSignal>)rf_signal {
+- (RACSignal *)rf_signal {
 	if (!_signal) {
 		_signal = [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
 			NSMutableSet *disposables = [NSMutableSet setWithCapacity:self.count];
@@ -93,7 +93,7 @@
 
 			for (id key in self)
 			{
-				id<RACSignal> signal = self[key];
+				RACSignal *signal = self[key];
 				RACDisposable *disposable = [signal subscribeNext:^(id value) {
 					if (value) modelData[key] = value;
 					[subscriber sendNext:modelData];

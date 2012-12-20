@@ -72,9 +72,9 @@
 
 
 - (NSMethodSignature *)methodSignatureForSelector:(SEL)aSelector {
-	struct objc_method_description method = protocol_getMethodDescription(self.class.model, aSelector, YES, YES);
-	if (method.name == NULL) return nil;
-	return [NSMethodSignature signatureWithObjCTypes:method.types];
+	char const *types = [RACObjCRuntime getMethodTypesForMethod:aSelector inProtocol:self.class.model];
+	if (types == NULL) return nil;
+	return [NSMethodSignature signatureWithObjCTypes:types];
 }
 
 - (void)forwardInvocation:(NSInvocation *)anInvocation {
