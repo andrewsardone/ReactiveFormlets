@@ -106,4 +106,10 @@
 	}];
 }
 
+- (NSString *)description {
+	return [self.sequence map:^(RACTuple *value) {
+		return [NSString stringWithFormat:@"%@: %@", value.first, value.second];
+	}].array.description;
+}
+
 @end

@@ -9,7 +9,6 @@
 #import "RFReifiedProtocol.h"
 #import "RFOrderedDictionary.h"
 #import <ReactiveCocoa/RACObjCRuntime.h>
-#import <objc/runtime.h>
 
 @implementation RFReifiedProtocol
 
@@ -91,16 +90,6 @@
 
 - (id)valueForUndefinedKey:(NSString *)key {
 	return self[key];
-}
-
-- (NSString *)description {
-	NSMutableString *body = [NSMutableString new];
-	for (id key in self) {
-		[body appendFormat:@"%@: %@\n", key, self[key]];
-	}
-
-	return [NSString stringWithFormat:@"\n  %@",
-			[[body componentsSeparatedByString:@"\n"] componentsJoinedByString:@"\n  "]];
 }
 
 @end
