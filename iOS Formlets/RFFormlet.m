@@ -20,18 +20,18 @@
 #pragma mark - RFSignalSource
 
 - (id<RACSignal>)rf_signal {
-    @throw [NSException exceptionWithName:NSGenericException
-                                   reason:@"Subclasses of RFPrimitiveFormlet must override -rf_signal"
-                                 userInfo:nil];
-    return nil;
+	@throw [NSException exceptionWithName:NSGenericException
+								   reason:@"Subclasses of RFPrimitiveFormlet must override -rf_signal"
+								 userInfo:nil];
+	return nil;
 }
 
 #pragma mark - RFLens
 
 - (NSString *)keyPathForLens {
-    @throw [NSException exceptionWithName:NSGenericException
-                                   reason:@"Subclasses of RFPrimitiveFormlet must override -keyPathForLens"
-                                 userInfo:nil];
+	@throw [NSException exceptionWithName:NSGenericException
+								   reason:@"Subclasses of RFPrimitiveFormlet must override -keyPathForLens"
+								 userInfo:nil];
 	return nil;
 }
 
@@ -42,7 +42,7 @@
 }
 
 - (void)forwardInvocation:(NSInvocation *)anInvocation {
-    [anInvocation invokeWithTarget:self.rf_signal];
+	[anInvocation invokeWithTarget:self.rf_signal];
 }
 
 @end
@@ -52,19 +52,19 @@
 @end
 
 @implementation RFCompoundFormlet {
-    id<RACSignal> _signal;
+	id<RACSignal> _signal;
 }
 
 @dynamic compoundValue;
 
 - (id)compoundValue {
 	RFReifiedProtocol *modelData = [[RFReifiedProtocol model:self.class.model] new];
-    return [modelData modify:^(id<RFMutableOrderedDictionary> dict) {
-        for (id key in dict) {
-            id data = [self[key] read];
-            if (data) dict[key] = data;
-        }
-    }];
+	return [modelData modify:^(id<RFMutableOrderedDictionary> dict) {
+		for (id key in dict) {
+			id data = [self[key] read];
+			if (data) dict[key] = data;
+		}
+	}];
 }
 
 - (void)setCompoundValue:(id)value {
@@ -136,9 +136,9 @@
 - (void)forwardInvocation:(NSInvocation *)anInvocation {
 	if ([self respondsToSelector:anInvocation.selector]) {
 		[super forwardInvocation:anInvocation];
-    } else {
+	} else {
 		[anInvocation invokeWithTarget:self.rf_signal];
-    }
+	}
 }
 
 @end
