@@ -29,7 +29,7 @@
 }
 
 - (id)copyWithZone:(NSZone *)zone {
-	RFInputRow *row = [self.class new];
+	RFInputRow *row = [super copyWithZone:zone];
 	row.textField.placeholder = self.textField.placeholder;
 	row.textField.secureTextEntry = self.textField.secureTextEntry;
 	row.textField.autocorrectionType = self.textField.autocorrectionType;
