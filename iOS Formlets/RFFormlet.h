@@ -29,3 +29,10 @@
 @interface RFCompoundFormlet : RFReifiedProtocol <RFFormlet>
 @end
 
+// A compound formlet is an ordered dictionary, where its keys are model fields
+// and its values are other formlets. We can refine the dictionary accessors
+// to indicate that all elements of a compound formlet are other formlets.
+@interface RFCompoundFormlet (TypeRefinement)
+- (id<RFFormlet>)objectForKey:(id<NSCopying>)key;
+- (id<RFFormlet>)objectForKeyedSubscript:(id<NSCopying>)key;
+@end

@@ -61,7 +61,7 @@
 	RFReifiedProtocol *modelData = [[RFReifiedProtocol model:self.class.model] new];
 	return [modelData modify:^(id<RFMutableOrderedDictionary> dict) {
 		for (id key in dict) {
-			id data = [self[key] read];
+			id data = self[key].read;
 			if (data) dict[key] = data;
 		}
 	}];
