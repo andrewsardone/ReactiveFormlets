@@ -73,7 +73,7 @@
 		[_keys addObject:key];
 	}
 
-	[_dictionary setObject:[object copy] forKey:key];
+	[_dictionary setObject:object forKey:key];
 }
 
 - (void)setObject:(id)object forKeyedSubscript:(id<NSCopying>)key {

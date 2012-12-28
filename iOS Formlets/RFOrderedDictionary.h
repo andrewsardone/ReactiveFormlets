@@ -48,11 +48,11 @@ typedef void (^RFOrderedDictionaryModifyBlock)(id<RFMutableOrderedDictionary> di
 //
 // key - The key at which to update the dictionary.
 // value - The value with which to update the dictionary.
-- (void)setObject:(id<NSCopying>)object forKey:(id<NSCopying>)key;
-- (void)setObject:(id<NSCopying>)object forKeyedSubscript:(id<NSCopying>)key;
+- (void)setObject:(id)object forKey:(id<NSCopying>)key;
+- (void)setObject:(id)object forKeyedSubscript:(id<NSCopying>)key;
 @end
 
-@class RACSequence;
+@class RACSequence; 
 
 // RFOrderedDictionary is an (optionally) mutable associative collection. It
 // is almost exactly like an NSMutableDictionary, except that
