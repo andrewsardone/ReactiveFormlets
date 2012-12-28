@@ -57,10 +57,15 @@ typedef void (^RFOrderedDictionaryModifyBlock)(id<RFMutableOrderedDictionary> di
 // RFOrderedDictionary is an (optionally) mutable associative collection. It
 // is almost exactly like an NSMutableDictionary, except that
 // keys are always kept in the order they are inserted.
-@interface RFOrderedDictionary : NSObject <RFOrderedDictionary, NSCopying>
+@interface RFOrderedDictionary : NSObject <RFOrderedDictionary, NSCopying, NSMutableCopying>
 
 // Initializes with an existing ordered dictionary.
 - (id)initWithOrderedDictionary:(RFOrderedDictionary *)dictionary;
+
+// Returns a copy of the dictionary by copying each of its objects.
+- (instancetype)deepCopyWithZone:(NSZone *)zone;
+
+- (RFOrderedDictionary<RFMutableOrderedDictionary> *)mutableCopyWithZone:(NSZone *)zone;
 
 // Returns a sequence of (key,value) RACTuples.
 - (RACSequence *)sequence;

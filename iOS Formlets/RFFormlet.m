@@ -76,7 +76,11 @@
 #pragma mark - NSCopying
 
 - (id)copyWithZone:(NSZone *)zone {
-	id copy = [super copyWithZone:zone];
+	return [self deepCopyWithZone:zone];
+}
+
+- (instancetype)deepCopyWithZone:(NSZone *)zone {
+	id copy = [super deepCopyWithZone:zone];
 	[copy updateInPlace:self.read];
 	return copy;
 }
@@ -89,7 +93,7 @@
 			NSMutableSet *disposables = [NSMutableSet setWithCapacity:self.count];
 			NSMutableSet *extantSignals = [NSMutableSet setWithArray:self.allValues];
 
-			id modelData = [[RFReifiedProtocol model:self.class.model] new];
+			id<RFMutableOrderedDictionary> modelData = [[[RFReifiedProtocol model:self.class.model] new] mutableCopy];
 
 			for (id key in self) {
 				RACSignal *signal = self[key];

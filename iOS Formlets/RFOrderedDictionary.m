@@ -12,12 +12,23 @@
 #import <ReactiveCocoa/RACTuple.h>
 #import <ReactiveCocoa/NSArray+RACSequenceAdditions.h>
 
-@interface RFOrderedDictionary () <RFMutableOrderedDictionary>
+typedef enum {
+	RFMutabilityNone,
+	RFMutabilityTemporary,
+	RFMutabilityPermanent
+} RFMutabilityState;
+
+@interface RFOrderedDictionary ()
+- (void)performWithTemporaryMutability:(void(^)(id<RFMutableOrderedDictionary> dict))block;
+@end
+
+@interface RFOrderedDictionary (RFMutableOrderedDictionary) <RFMutableOrderedDictionary>
 @end
 
 @implementation RFOrderedDictionary {
 	NSMutableArray *_keys;
 	NSMutableDictionary *_dictionary;
+	RFMutabilityState _mutabilityState;
 }
 
 - (id)init {
@@ -38,18 +49,39 @@
 	return self;
 }
 
-- (id)copyWithZone:(NSZone *)zone {
-	RFOrderedDictionary *copy = [[self class] new];
-	for (id key in self) {
-		copy[key] = [self[key] copyWithZone:zone];
-	}
+- (void)performWithTemporaryMutability:(RFOrderedDictionaryModifyBlock)block {
+	BOOL immutableByDefault = _mutabilityState != RFMutabilityPermanent;
+	if (immutableByDefault) _mutabilityState = RFMutabilityTemporary;
+	block(self);
+	if (immutableByDefault) _mutabilityState = RFMutabilityNone;
+}
 
+- (id)copyWithZone:(NSZone *)zone {
+	return [[[self class] alloc] initWithOrderedDictionary:self];
+}
+
+- (RFOrderedDictionary<RFMutableOrderedDictionary> *)mutableCopyWithZone:(NSZone *)zone {
+	RFOrderedDictionary *copy = [self copyWithZone:zone];
+	copy->_mutabilityState = RFMutabilityPermanent;
+	return copy;
+}
+
+- (instancetype)deepCopyWithZone:(NSZone *)zone {
+	RFOrderedDictionary *copy = [[self class] new];
+	[copy performWithTemporaryMutability:^(id<RFMutableOrderedDictionary> dict) {
+		for (id key in self) {
+			dict[key] = [self[key] copyWithZone:zone];
+		}
+	}];
 	return copy;
 }
 
 - (instancetype)modify:(RFOrderedDictionaryModifyBlock)block {
-	RFOrderedDictionary *copy = [self copy];
-	block(copy);
+	BOOL immutableByDefault = _mutabilityState != RFMutabilityPermanent;
+	RFOrderedDictionary *copy = immutableByDefault ? [self copy] : [self mutableCopy];
+	[copy performWithTemporaryMutability:^(id<RFMutableOrderedDictionary> dict) {
+		block(dict);
+	}];
 	return copy;
 }
 
@@ -63,21 +95,6 @@
 
 - (id)objectForKeyedSubscript:(id<NSCopying>)key {
 	return [self objectForKey:key];
-}
-
-- (void)setObject:(id)object forKey:(id<NSCopying>)key {
-	NSParameterAssert(object != nil);
-	NSParameterAssert(key != nil);
-
-	if (![_keys containsObject:key]) {
-		[_keys addObject:key];
-	}
-
-	[_dictionary setObject:object forKey:key];
-}
-
-- (void)setObject:(id)object forKeyedSubscript:(id<NSCopying>)key {
-	[self setObject:object forKey:key];
 }
 
 - (NSUInteger)count {
@@ -113,3 +130,33 @@
 }
 
 @end
+
+@implementation RFOrderedDictionary (RFMutableOrderedDictionary)
+
+- (void)assertMutableForSelector:(SEL)selector {
+	if (_mutabilityState != RFMutabilityNone) return;
+
+	NSString *reason = [NSString stringWithFormat:
+						@"Attempted to send -%@ to immutable object %@",
+						NSStringFromSelector(selector), self];
+	@throw [NSException exceptionWithName:NSInternalInconsistencyException reason:reason userInfo:nil];
+}
+
+- (void)setObject:(id)object forKey:(id<NSCopying>)key {
+	NSParameterAssert(key != nil);
+	[self assertMutableForSelector:_cmd];
+
+	if (object == nil) [_keys removeObject:key];
+	if (![_keys containsObject:key]) {
+		[_keys addObject:key];
+	}
+
+	[_dictionary setObject:object forKey:key];
+}
+
+- (void)setObject:(id)object forKeyedSubscript:(id<NSCopying>)key {
+	[self setObject:object forKey:key];
+}
+
+@end
+
