@@ -8,41 +8,27 @@
 
 #import "RFReifiedProtocol.h"
 #import "RFOrderedDictionary.h"
+#import "NSInvocation+RFExtensions.h"
+#import "NSObject+RFObjCRuntime.h"
 #import <ReactiveCocoa/RACObjCRuntime.h>
+#import <ReactiveCocoa/RACTuple.h>
+#import <ReactiveCocoa/RACSequence.h>
+
+static void *const kModelAssociatedObjectKey;
 
 @implementation RFReifiedProtocol
 
 + (Class)model:(Protocol *)model {
-	NSString *className = [NSString stringWithFormat:@"%@_%s", self, protocol_getName(model)];
+	NSString *name = [NSString stringWithFormat:@"%@_%s", self, protocol_getName(model)];
 
-	Class modelClass = objc_getClass(className.UTF8String);
-	if (modelClass != nil) return modelClass;
-	modelClass = objc_allocateClassPair([self class], className.UTF8String, 0);
+	Class class = [self rf_subclassWithName:name adopting:@[ model ]];
+	[class rf_setAssociatedObject:model forKey:kModelAssociatedObjectKey policy:OBJC_ASSOCIATION_ASSIGN];
 
-	objc_registerClassPair(modelClass);
-	class_addProtocol(modelClass, model);
-
-	Class metaclass = object_getClass(modelClass);
-	IMP model_imp = imp_implementationWithBlock(^{
-		return model;
-	});
-
-	char const *typeEncoding = method_getTypeEncoding(class_getClassMethod(modelClass, @selector(model)));
-	class_replaceMethod(metaclass, @selector(model), model_imp, typeEncoding);
-
-	return modelClass;
+	return class;
 }
 
 + (Protocol *)model {
-	return nil;
-}
-
-+ (NSArray *)keysFromConstructor:(SEL)selector {
-	NSPredicate *predicate = [NSPredicate predicateWithBlock:^ BOOL (NSString *string, id _) {
-		return string.length > 0;
-	}];
-
-	return [[NSStringFromSelector(selector) componentsSeparatedByString:@":"] filteredArrayUsingPredicate:predicate];
+	return [self rf_associatedObjectForKey:kModelAssociatedObjectKey];
 }
 
 + (NSMethodSignature *)methodSignatureForSelector:(SEL)aSelector {
@@ -52,20 +38,10 @@
 
 + (void)forwardInvocation:(NSInvocation *)invocation {
 	[invocation retainArguments];
-	NSArray *keys = [self keysFromConstructor:invocation.selector];
 
-	RFOrderedDictionary *dictionary = [[RFOrderedDictionary new] modify:^(id<RFMutableOrderedDictionary> dict) {
-		for (int i = 2; i < invocation.methodSignature.numberOfArguments; ++i) {
-			__unsafe_unretained id outArgument = nil;
-			[invocation getArgument:&outArgument atIndex:i];
-
-			NSString *key = [keys objectAtIndex:i-2];
-			dict[key] = outArgument;
-		}
-	}];
-
+	RFOrderedDictionary *arguments = invocation.rf_argumentDictionary;
 	invocation.returnValue = &(__unsafe_unretained id){
-		[[self alloc] initWithOrderedDictionary:dictionary]
+		[[self alloc] initWithOrderedDictionary:arguments]
 	};
 }
 

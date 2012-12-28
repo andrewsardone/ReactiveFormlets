@@ -11,6 +11,8 @@
 		FC2511CA1588614700534933 /* RFTableSection.m in Sources */ = {isa = PBXBuildFile; fileRef = FC2511C91588614700534933 /* RFTableSection.m */; };
 		FC2511CD158862F700534933 /* RFTableForm.m in Sources */ = {isa = PBXBuildFile; fileRef = FC2511CC158862F700534933 /* RFTableForm.m */; };
 		FC2511D01588649E00534933 /* RFInputRow.m in Sources */ = {isa = PBXBuildFile; fileRef = FC2511CF1588649E00534933 /* RFInputRow.m */; };
+		FC2EAA01168CC470008EC3E4 /* NSInvocation+RFExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = FC2EAA00168CC470008EC3E4 /* NSInvocation+RFExtensions.m */; };
+		FC2EAA05168D33C1008EC3E4 /* NSObject+RFObjCRuntime.m in Sources */ = {isa = PBXBuildFile; fileRef = FC2EAA04168D33C1008EC3E4 /* NSObject+RFObjCRuntime.m */; };
 		FC3E5FB01596FDC3005F3F56 /* GHGitHubClient.m in Sources */ = {isa = PBXBuildFile; fileRef = FC3E5FA71596FDC3005F3F56 /* GHGitHubClient.m */; };
 		FC3E5FB11596FDC3005F3F56 /* GHGitHubObject.m in Sources */ = {isa = PBXBuildFile; fileRef = FC3E5FA91596FDC3005F3F56 /* GHGitHubObject.m */; };
 		FC3E5FB21596FDC3005F3F56 /* GHGitHubOrg.m in Sources */ = {isa = PBXBuildFile; fileRef = FC3E5FAB1596FDC3005F3F56 /* GHGitHubOrg.m */; };
@@ -96,6 +98,10 @@
 		FC2511CE1588649E00534933 /* RFInputRow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFInputRow.h; sourceTree = "<group>"; };
 		FC2511CF1588649E00534933 /* RFInputRow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFInputRow.m; sourceTree = "<group>"; };
 		FC2BB4011596F5FD00E89B72 /* RFTableForm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFTableForm.h; sourceTree = "<group>"; };
+		FC2EA9FF168CC470008EC3E4 /* NSInvocation+RFExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSInvocation+RFExtensions.h"; sourceTree = "<group>"; };
+		FC2EAA00168CC470008EC3E4 /* NSInvocation+RFExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSInvocation+RFExtensions.m"; sourceTree = "<group>"; };
+		FC2EAA03168D33C1008EC3E4 /* NSObject+RFObjCRuntime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+RFObjCRuntime.h"; sourceTree = "<group>"; };
+		FC2EAA04168D33C1008EC3E4 /* NSObject+RFObjCRuntime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+RFObjCRuntime.m"; sourceTree = "<group>"; };
 		FC3E5FA61596FDC3005F3F56 /* GHGitHubClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GHGitHubClient.h; path = lib/ReactiveCocoa/GHAPIDemo/GHAPIDemo/GHGitHubClient.h; sourceTree = "<group>"; };
 		FC3E5FA71596FDC3005F3F56 /* GHGitHubClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GHGitHubClient.m; path = lib/ReactiveCocoa/GHAPIDemo/GHAPIDemo/GHGitHubClient.m; sourceTree = "<group>"; };
 		FC3E5FA81596FDC3005F3F56 /* GHGitHubObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GHGitHubObject.h; path = lib/ReactiveCocoa/GHAPIDemo/GHAPIDemo/GHGitHubObject.h; sourceTree = "<group>"; };
@@ -216,6 +222,17 @@
 				FC9153F515888B7400C657D3 /* RFTableFormViewController.m */,
 			);
 			name = "Example Formlets";
+			sourceTree = "<group>";
+		};
+		FC2EAA02168CC88B008EC3E4 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FC2EAA03168D33C1008EC3E4 /* NSObject+RFObjCRuntime.h */,
+				FC2EAA04168D33C1008EC3E4 /* NSObject+RFObjCRuntime.m */,
+				FC2EA9FF168CC470008EC3E4 /* NSInvocation+RFExtensions.h */,
+				FC2EAA00168CC470008EC3E4 /* NSInvocation+RFExtensions.m */,
+			);
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 		FC3E5F961596FDA3005F3F56 /* GitHub API */ = {
@@ -360,6 +377,7 @@
 				FC8CA6E01587FCF1002B6EEA /* RFReifiedProtocol.m */,
 				FCE11FF916813C0C001CFB13 /* RFSignalSource.h */,
 				FCE11FFA16813C47001CFB13 /* RFSignalSource.m */,
+				FC2EAA02168CC88B008EC3E4 /* Extensions */,
 				FCE1200716827723001CFB13 /* Value Transformers */,
 			);
 			name = Core;
@@ -545,6 +563,8 @@
 				FCE11FFE1682587C001CFB13 /* RFLens.m in Sources */,
 				FCE1200A16827732001CFB13 /* RFIdentityValueTransformer.m in Sources */,
 				FCE1200D16827791001CFB13 /* RFNumberStringValueTransformer.m in Sources */,
+				FC2EAA01168CC470008EC3E4 /* NSInvocation+RFExtensions.m in Sources */,
+				FC2EAA05168D33C1008EC3E4 /* NSObject+RFObjCRuntime.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
