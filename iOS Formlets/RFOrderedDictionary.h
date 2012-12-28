@@ -65,8 +65,11 @@ typedef void (^RFOrderedDictionaryModifyBlock)(id<RFMutableOrderedDictionary> di
 // Returns a copy of the dictionary by copying each of its objects.
 - (instancetype)deepCopyWithZone:(NSZone *)zone;
 
-- (RFOrderedDictionary<RFMutableOrderedDictionary> *)mutableCopyWithZone:(NSZone *)zone;
-
 // Returns a sequence of (key,value) RACTuples.
 - (RACSequence *)sequence;
+@end
+
+@interface RFOrderedDictionary (TypeRefinement)
+- (RFOrderedDictionary<RFMutableOrderedDictionary> *)mutableCopyWithZone:(NSZone *)zone;
+- (RFOrderedDictionary<RFMutableOrderedDictionary> *)mutableCopy;
 @end
