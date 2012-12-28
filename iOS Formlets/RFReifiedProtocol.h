@@ -30,19 +30,19 @@
 //
 // An example model protocol might look like this:
 //
-//   @protocol Boy <RFModel>
-//   - (id<Text>)name;
-//   - (id<Number>)age;
-//   - (id<Boy>)buddy;
-//   + (instancetype)name:name age:age buddy:buddy;
-//   + (instancetype)name:name age:age;
-//   @end
+//     @protocol Boy <RFModel>
+//     - (id<Text>)name;
+//     - (id<Number>)age;
+//     - (id<Boy>)buddy;
+//     + (instancetype)name:name age:age buddy:buddy;
+//     + (instancetype)name:name age:age;
+//     @end
 //
 // A model class can be generated from that as follows:
 //
-//   Class Boy = [RFReifiedProtocol model:@protocol(Boy)];
-//   id<Boy> steve = [Boy name:@"Steve" age:@7];
-//   id<Boy> dan = [Boy name:@"Dan" age:@9 buddy:steve];
+//     Class Boy = [RFReifiedProtocol model:@protocol(Boy)];
+//     id<Boy> steve = [Boy name:@"Steve" age:@7];
+//     id<Boy> dan = [Boy name:@"Dan" age:@9 buddy:steve];
 //
 
 @interface RFReifiedProtocol : RFOrderedDictionary
