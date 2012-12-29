@@ -1,20 +1,20 @@
 //
-//  RFNumberStringValueTransformer.m
-//  iOS Formlets
+//  RAFNumberStringValueTransformer.m
+//  ReactiveCocoa
 //
 //  Created by Jon Sterling on 12/19/12.
 //  Copyright (c) 2012 Jon Sterling. All rights reserved.
 //
 
-#import "RFNumberStringValueTransformer.h"
+#import "RAFNumberStringValueTransformer.h"
 
-NSString *const RFNumberStringValueTransformerName = @"RFNumberStringValueTransformerName";
+NSString *const RAFNumberStringValueTransformerName = @"RAFNumberStringValueTransformerName";
 
-@implementation RFNumberStringValueTransformer
+@implementation RAFNumberStringValueTransformer
 
 + (void)load {
 	@autoreleasepool {
-		[NSValueTransformer setValueTransformer:[self new] forName:RFNumberStringValueTransformerName];
+		[NSValueTransformer setValueTransformer:[self new] forName:RAFNumberStringValueTransformerName];
 	}
 }
 

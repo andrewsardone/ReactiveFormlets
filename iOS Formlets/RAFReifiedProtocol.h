@@ -1,15 +1,15 @@
 //
-//  RFReifiedProtocol.h
-//  iOS Formlets
+//  RAFReifiedProtocol.h
+//  ReactiveCocoa
 //
 //  Created by Jon Sterling on 6/12/12.
 //  Copyright (c) 2012 Jon Sterling. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
-#import "RFOrderedDictionary.h"
+#import "RAFOrderedDictionary.h"
 
-// `RFReifiedProtocol` is a way to generate model classes from protocols,
+// `RAFReifiedProtocol` is a way to generate model classes from protocols,
 // to do away with following kinds of boilerplate:
 //
 //   * defining model classes and their storage
@@ -30,7 +30,7 @@
 //
 // An example model protocol might look like this:
 //
-//     @protocol Boy <RFModel>
+//     @protocol Boy <RAFModel>
 //     - (id<Text>)name;
 //     - (id<Number>)age;
 //     - (id<Boy>)buddy;
@@ -40,12 +40,12 @@
 //
 // A model class can be generated from that as follows:
 //
-//     Class Boy = [RFReifiedProtocol model:@protocol(Boy)];
+//     Class Boy = [RAFReifiedProtocol model:@protocol(Boy)];
 //     id<Boy> steve = [Boy name:@"Steve" age:@7];
 //     id<Boy> dan = [Boy name:@"Dan" age:@9 buddy:steve];
 //
 
-@interface RFReifiedProtocol : RFOrderedDictionary
+@interface RAFReifiedProtocol : RAFOrderedDictionary
 
 // Generates a new model class according to a protocol.
 //
@@ -56,7 +56,7 @@
 // `+model:` was sent.
 + (Class)model:(Protocol *)model;
 
-// The model associated with any particular `RFReifiedProtocol`-generated
+// The model associated with any particular `RAFReifiedProtocol`-generated
 // subclass.
 + (Protocol *)model;
 @end

@@ -6,10 +6,10 @@
 //  Copyright (c) 2012 Jon Sterling. All rights reserved.
 //
 
-#import "RFFormlet.h"
+#import "RAFFormlet.h"
 #import <ReactiveCocoa/ReactiveCocoa.h>
 
-@implementation RFPrimitiveFormlet
+@implementation RAFPrimitiveFormlet
 
 #pragma mark - NSCopying
 
@@ -17,20 +17,20 @@
 	return [self.class new];
 }
 
-#pragma mark - RFSignalSource
+#pragma mark - RAFSignalSource
 
 - (RACSignal *)rf_signal {
 	@throw [NSException exceptionWithName:NSGenericException
-								   reason:@"Subclasses of RFPrimitiveFormlet must override -rf_signal"
+								   reason:@"Subclasses of RAFPrimitiveFormlet must override -rf_signal"
 								 userInfo:nil];
 	return nil;
 }
 
-#pragma mark - RFLens
+#pragma mark - RAFLens
 
 - (NSString *)keyPathForLens {
 	@throw [NSException exceptionWithName:NSGenericException
-								   reason:@"Subclasses of RFPrimitiveFormlet must override -keyPathForLens"
+								   reason:@"Subclasses of RAFPrimitiveFormlet must override -keyPathForLens"
 								 userInfo:nil];
 	return nil;
 }
@@ -47,19 +47,19 @@
 
 @end
 
-@interface RFCompoundFormlet ()
+@interface RAFCompoundFormlet ()
 @property (strong) id compoundValue;
 @end
 
-@implementation RFCompoundFormlet {
+@implementation RAFCompoundFormlet {
 	RACSignal *_signal;
 }
 
 @dynamic compoundValue;
 
 - (id)compoundValue {
-	RFReifiedProtocol *modelData = [[RFReifiedProtocol model:self.class.model] new];
-	return [modelData modify:^(id<RFMutableOrderedDictionary> dict) {
+	RAFReifiedProtocol *modelData = [[RAFReifiedProtocol model:self.class.model] new];
+	return [modelData modify:^(id<RAFMutableOrderedDictionary> dict) {
 		for (id key in dict) {
 			id data = self[key].read;
 			if (data) dict[key] = data;
@@ -85,7 +85,7 @@
 	return copy;
 }
 
-#pragma mark - RFSignalSource
+#pragma mark - RAFSignalSource
 
 - (RACSignal *)rf_signal {
 	if (!_signal) {
@@ -93,7 +93,7 @@
 			NSMutableSet *disposables = [NSMutableSet setWithCapacity:self.count];
 			NSMutableSet *extantSignals = [NSMutableSet setWithArray:self.allValues];
 
-			id<RFMutableOrderedDictionary> modelData = [[[RFReifiedProtocol model:self.class.model] new] mutableCopy];
+			id<RAFMutableOrderedDictionary> modelData = [[[RAFReifiedProtocol model:self.class.model] new] mutableCopy];
 
 			for (id key in self) {
 				RACSignal *signal = self[key];
@@ -124,7 +124,7 @@
 	return _signal;
 }
 
-#pragma mark - RFLens
+#pragma mark - RAFLens
 
 - (NSString *)keyPathForLens {
 	return @keypath(self.compoundValue);

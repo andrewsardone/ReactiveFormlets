@@ -1,23 +1,23 @@
 //
-//  RFFormletModels.h
-//  iOS Formlets
+//  RAFFormletModels.h
+//  ReactiveCocoa
 //
 //  Created by Jon Sterling on 12/18/12.
 //  Copyright (c) 2012 Jon Sterling. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
-#import "RFSignalSource.h"
+#import "RAFSignalSource.h"
 
 // A suitable model protocol emits a signal.
-@protocol RFModel <RFSignalSource>
+@protocol RAFModel <RAFSignalSource>
 @end
 
 // Two primitive models are provided.
-@protocol Text <RFModel>
+@protocol Text <RAFModel>
 @end
 
-@protocol Number <RFModel>
+@protocol Number <RAFModel>
 @end
 
 @interface NSString (Text) <Text>

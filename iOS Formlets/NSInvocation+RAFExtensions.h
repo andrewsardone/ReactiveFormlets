@@ -1,6 +1,6 @@
 //
-//  NSInvocation+RFExtensions.h
-//  iOS Formlets
+//  NSInvocation+RAFExtensions.h
+//  ReactiveCocoa
 //
 //  Created by Jon Sterling on 12/27/12.
 //  Copyright (c) 2012 Jon Sterling. All rights reserved.
@@ -9,9 +9,9 @@
 #import <Foundation/Foundation.h>
 
 @class RACSequence;
-@class RFOrderedDictionary;
+@class RAFOrderedDictionary;
 
-@interface NSInvocation (RFExtensions)
+@interface NSInvocation (RAFExtensions)
 
 // A sequence [NSString] of the invocations.
 - (RACSequence *)rf_keywords;
@@ -23,6 +23,6 @@
 - (RACSequence *)rf_keywordPairs;
 
 // An ordered dictionary of the invocation's keywords and arguments.
-- (RFOrderedDictionary *)rf_argumentDictionary;
+- (RAFOrderedDictionary *)rf_argumentDictionary;
 
 @end

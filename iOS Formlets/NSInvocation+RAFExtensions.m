@@ -1,18 +1,18 @@
 //
-//  NSInvocation+RFExtensions.m
-//  iOS Formlets
+//  NSInvocation+RAFExtensions.m
+//  ReactiveCocoa
 //
 //  Created by Jon Sterling on 12/27/12.
 //  Copyright (c) 2012 Jon Sterling. All rights reserved.
 //
 
-#import "NSInvocation+RFExtensions.h"
-#import "RFOrderedDictionary.h"
+#import "NSInvocation+RAFExtensions.h"
+#import "RAFOrderedDictionary.h"
 #import <ReactiveCocoa/RACSequence.h>
 #import <ReactiveCocoa/RACTuple.h>
 #import <ReactiveCocoa/NSArray+RACSequenceAdditions.h>
 
-@implementation NSInvocation (RFExtensions)
+@implementation NSInvocation (RAFExtensions)
 
 - (RACSequence *)rf_keywords {
 	NSPredicate *notEmpty = [NSPredicate predicateWithBlock:^ BOOL (NSString *string, id _) {
@@ -42,8 +42,8 @@
 	return [RACSequence zip:@[ self.rf_keywords, self.rf_arguments ]];
 }
 
-- (RFOrderedDictionary *)rf_argumentDictionary {
-	return [[RFOrderedDictionary new] modify:^(id<RFMutableOrderedDictionary> dict) {
+- (RAFOrderedDictionary *)rf_argumentDictionary {
+	return [[RAFOrderedDictionary new] modify:^(id<RAFMutableOrderedDictionary> dict) {
 		for (RACTuple *pair in self.rf_keywordPairs) {
 			dict[pair.first] = pair.second;
 		}

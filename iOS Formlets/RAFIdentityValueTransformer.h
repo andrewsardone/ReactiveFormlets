@@ -1,6 +1,6 @@
 //
-//  RFIdentityValueTransformer.h
-//  iOS Formlets
+//  RAFIdentityValueTransformer.h
+//  ReactiveCocoa
 //
 //  Created by Jon Sterling on 12/19/12.
 //  Copyright (c) 2012 Jon Sterling. All rights reserved.
@@ -8,11 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
-extern NSString *const RFIdentityValueTransformerName;
+extern NSString *const RAFIdentityValueTransformerName;
 
 // Provides a trivial identity bijection:
 //
 //   forall A, A <=> A.
 //
-@interface RFIdentityValueTransformer : NSValueTransformer
+@interface RAFIdentityValueTransformer : NSValueTransformer
 @end

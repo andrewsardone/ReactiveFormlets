@@ -1,34 +1,34 @@
 //
-//  RFOrderedDictionary.m
-//  iOS Formlets
+//  RAFOrderedDictionary.m
+//  ReactiveCocoa
 //
 //  Created by Jon Sterling on 6/12/12.
 //  Copyright (c) 2012 Jon Sterling. All rights reserved.
 //
 
-#import "RFOrderedDictionary.h"
+#import "RAFOrderedDictionary.h"
 #import <ReactiveCocoa/RACSubject.h>
 #import <ReactiveCocoa/RACSequence.h>
 #import <ReactiveCocoa/RACTuple.h>
 #import <ReactiveCocoa/NSArray+RACSequenceAdditions.h>
 
 typedef enum {
-	RFMutabilityNone,
-	RFMutabilityTemporary,
-	RFMutabilityPermanent
-} RFMutabilityState;
+	RAFMutabilityNone,
+	RAFMutabilityTemporary,
+	RAFMutabilityPermanent
+} RAFMutabilityState;
 
-@interface RFOrderedDictionary ()
-- (void)performWithTemporaryMutability:(void(^)(id<RFMutableOrderedDictionary> dict))block;
+@interface RAFOrderedDictionary ()
+- (void)performWithTemporaryMutability:(void(^)(id<RAFMutableOrderedDictionary> dict))block;
 @end
 
-@interface RFOrderedDictionary (RFMutableOrderedDictionary) <RFMutableOrderedDictionary>
+@interface RAFOrderedDictionary (RAFMutableOrderedDictionary) <RAFMutableOrderedDictionary>
 @end
 
-@implementation RFOrderedDictionary {
+@implementation RAFOrderedDictionary {
 	NSMutableArray *_keys;
 	NSMutableDictionary *_dictionary;
-	RFMutabilityState _mutabilityState;
+	RAFMutabilityState _mutabilityState;
 }
 
 #pragma mark - Initializers
@@ -42,7 +42,7 @@ typedef enum {
 	return self;
 }
 
-- (id)initWithOrderedDictionary:(RFOrderedDictionary *)dictionary {
+- (id)initWithOrderedDictionary:(RAFOrderedDictionary *)dictionary {
 	if (self = [super init]) {
 		_keys = [dictionary.allKeys mutableCopy];
 		_dictionary = [NSMutableDictionary dictionaryWithObjects:dictionary.allValues forKeys:dictionary.allKeys];
@@ -58,8 +58,8 @@ typedef enum {
 }
 
 - (instancetype)deepCopyWithZone:(NSZone *)zone {
-	RFOrderedDictionary *copy = [[self class] new];
-	[copy performWithTemporaryMutability:^(id<RFMutableOrderedDictionary> dict) {
+	RAFOrderedDictionary *copy = [[self class] new];
+	[copy performWithTemporaryMutability:^(id<RAFMutableOrderedDictionary> dict) {
 		for (id key in self) {
 			dict[key] = [self[key] copyWithZone:zone];
 		}
@@ -69,9 +69,9 @@ typedef enum {
 
 #pragma mark - NSMutableCopying
 
-- (RFOrderedDictionary<RFMutableOrderedDictionary> *)mutableCopyWithZone:(NSZone *)zone {
-	RFOrderedDictionary *copy = [self copyWithZone:zone];
-	copy->_mutabilityState = RFMutabilityPermanent;
+- (RAFOrderedDictionary<RAFMutableOrderedDictionary> *)mutableCopyWithZone:(NSZone *)zone {
+	RAFOrderedDictionary *copy = [self copyWithZone:zone];
+	copy->_mutabilityState = RAFMutabilityPermanent;
 	return copy;
 }
 
@@ -83,17 +83,17 @@ typedef enum {
 
 #pragma mark - Safe Update
 
-- (void)performWithTemporaryMutability:(RFOrderedDictionaryModifyBlock)block {
-	BOOL immutableByDefault = _mutabilityState != RFMutabilityPermanent;
-	if (immutableByDefault) _mutabilityState = RFMutabilityTemporary;
+- (void)performWithTemporaryMutability:(RAFOrderedDictionaryModifyBlock)block {
+	BOOL immutableByDefault = _mutabilityState != RAFMutabilityPermanent;
+	if (immutableByDefault) _mutabilityState = RAFMutabilityTemporary;
 	block(self);
-	if (immutableByDefault) _mutabilityState = RFMutabilityNone;
+	if (immutableByDefault) _mutabilityState = RAFMutabilityNone;
 }
 
-- (instancetype)modify:(RFOrderedDictionaryModifyBlock)block {
-	BOOL immutableByDefault = _mutabilityState != RFMutabilityPermanent;
-	RFOrderedDictionary *copy = immutableByDefault ? [self copy] : [self mutableCopy];
-	[copy performWithTemporaryMutability:^(id<RFMutableOrderedDictionary> dict) {
+- (instancetype)modify:(RAFOrderedDictionaryModifyBlock)block {
+	BOOL immutableByDefault = _mutabilityState != RAFMutabilityPermanent;
+	RAFOrderedDictionary *copy = immutableByDefault ? [self copy] : [self mutableCopy];
+	[copy performWithTemporaryMutability:^(id<RAFMutableOrderedDictionary> dict) {
 		block(dict);
 	}];
 	return copy;
@@ -151,10 +151,10 @@ typedef enum {
 
 @end
 
-@implementation RFOrderedDictionary (RFMutableOrderedDictionary)
+@implementation RAFOrderedDictionary (RAFMutableOrderedDictionary)
 
 - (void)assertMutableForSelector:(SEL)selector {
-	if (_mutabilityState != RFMutabilityNone) return;
+	if (_mutabilityState != RAFMutabilityNone) return;
 
 	NSString *reason = [NSString stringWithFormat:
 						@"Attempted to send -%@ to immutable object %@",

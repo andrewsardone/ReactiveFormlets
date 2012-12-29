@@ -8,11 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		FC1386A8167FF6DD0022A146 /* libReactiveCocoa-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FC13869C167FF6CF0022A146 /* libReactiveCocoa-iOS.a */; };
-		FC2511CA1588614700534933 /* RFTableSection.m in Sources */ = {isa = PBXBuildFile; fileRef = FC2511C91588614700534933 /* RFTableSection.m */; };
-		FC2511CD158862F700534933 /* RFTableForm.m in Sources */ = {isa = PBXBuildFile; fileRef = FC2511CC158862F700534933 /* RFTableForm.m */; };
-		FC2511D01588649E00534933 /* RFInputRow.m in Sources */ = {isa = PBXBuildFile; fileRef = FC2511CF1588649E00534933 /* RFInputRow.m */; };
-		FC2EAA01168CC470008EC3E4 /* NSInvocation+RFExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = FC2EAA00168CC470008EC3E4 /* NSInvocation+RFExtensions.m */; };
-		FC2EAA05168D33C1008EC3E4 /* RFObjCRuntime.m in Sources */ = {isa = PBXBuildFile; fileRef = FC2EAA04168D33C1008EC3E4 /* RFObjCRuntime.m */; };
+		FC2511CA1588614700534933 /* RAFTableSection.m in Sources */ = {isa = PBXBuildFile; fileRef = FC2511C91588614700534933 /* RAFTableSection.m */; };
+		FC2511CD158862F700534933 /* RAFTableForm.m in Sources */ = {isa = PBXBuildFile; fileRef = FC2511CC158862F700534933 /* RAFTableForm.m */; };
+		FC2511D01588649E00534933 /* RAFInputRow.m in Sources */ = {isa = PBXBuildFile; fileRef = FC2511CF1588649E00534933 /* RAFInputRow.m */; };
+		FC2EAA01168CC470008EC3E4 /* NSInvocation+RAFExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = FC2EAA00168CC470008EC3E4 /* NSInvocation+RAFExtensions.m */; };
+		FC2EAA05168D33C1008EC3E4 /* RAFObjCRuntime.m in Sources */ = {isa = PBXBuildFile; fileRef = FC2EAA04168D33C1008EC3E4 /* RAFObjCRuntime.m */; };
 		FC3E5FB01596FDC3005F3F56 /* GHGitHubClient.m in Sources */ = {isa = PBXBuildFile; fileRef = FC3E5FA71596FDC3005F3F56 /* GHGitHubClient.m */; };
 		FC3E5FB11596FDC3005F3F56 /* GHGitHubObject.m in Sources */ = {isa = PBXBuildFile; fileRef = FC3E5FA91596FDC3005F3F56 /* GHGitHubObject.m */; };
 		FC3E5FB21596FDC3005F3F56 /* GHGitHubOrg.m in Sources */ = {isa = PBXBuildFile; fileRef = FC3E5FAB1596FDC3005F3F56 /* GHGitHubOrg.m */; };
@@ -42,14 +42,14 @@
 		FC648CF5157AC81E007E2872 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC648CD4157AC81D007E2872 /* Foundation.framework */; };
 		FC648CFD157AC81E007E2872 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FC648CFB157AC81E007E2872 /* InfoPlist.strings */; };
 		FC648D00157AC81E007E2872 /* iOS_FormletsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FC648CFF157AC81E007E2872 /* iOS_FormletsTests.m */; };
-		FC648D2D157AC924007E2872 /* RFFormlet.m in Sources */ = {isa = PBXBuildFile; fileRef = FC648D2A157AC924007E2872 /* RFFormlet.m */; };
-		FC8CA6E11587FCF1002B6EEA /* RFReifiedProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = FC8CA6E01587FCF1002B6EEA /* RFReifiedProtocol.m */; };
-		FC9153F615888B7400C657D3 /* RFTableFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC9153F515888B7400C657D3 /* RFTableFormViewController.m */; };
-		FCC7F9601587F4020008558B /* RFOrderedDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = FCC7F95F1587F4020008558B /* RFOrderedDictionary.m */; };
-		FCE11FFB16813C48001CFB13 /* RFSignalSource.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE11FFA16813C47001CFB13 /* RFSignalSource.m */; };
-		FCE11FFE1682587C001CFB13 /* RFLens.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE11FFD1682587C001CFB13 /* RFLens.m */; };
-		FCE1200A16827732001CFB13 /* RFIdentityValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE1200916827732001CFB13 /* RFIdentityValueTransformer.m */; };
-		FCE1200D16827791001CFB13 /* RFNumberStringValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE1200C16827790001CFB13 /* RFNumberStringValueTransformer.m */; };
+		FC648D2D157AC924007E2872 /* RAFFormlet.m in Sources */ = {isa = PBXBuildFile; fileRef = FC648D2A157AC924007E2872 /* RAFFormlet.m */; };
+		FC8CA6E11587FCF1002B6EEA /* RAFReifiedProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = FC8CA6E01587FCF1002B6EEA /* RAFReifiedProtocol.m */; };
+		FC9153F615888B7400C657D3 /* RAFTableFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC9153F515888B7400C657D3 /* RAFTableFormViewController.m */; };
+		FCC7F9601587F4020008558B /* RAFOrderedDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = FCC7F95F1587F4020008558B /* RAFOrderedDictionary.m */; };
+		FCE11FFB16813C48001CFB13 /* RAFSignalSource.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE11FFA16813C47001CFB13 /* RAFSignalSource.m */; };
+		FCE11FFE1682587C001CFB13 /* RAFLens.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE11FFD1682587C001CFB13 /* RAFLens.m */; };
+		FCE1200A16827732001CFB13 /* RAFIdentityValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE1200916827732001CFB13 /* RAFIdentityValueTransformer.m */; };
+		FCE1200D16827791001CFB13 /* RAFNumberStringValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE1200C16827790001CFB13 /* RAFNumberStringValueTransformer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,16 +92,16 @@
 
 /* Begin PBXFileReference section */
 		FC138688167FF6CE0022A146 /* ReactiveCocoa.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ReactiveCocoa.xcodeproj; path = lib/ReactiveCocoa/ReactiveCocoaFramework/ReactiveCocoa.xcodeproj; sourceTree = "<group>"; };
-		FC2511C81588614700534933 /* RFTableSection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFTableSection.h; sourceTree = "<group>"; };
-		FC2511C91588614700534933 /* RFTableSection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFTableSection.m; sourceTree = "<group>"; };
-		FC2511CC158862F700534933 /* RFTableForm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFTableForm.m; sourceTree = "<group>"; };
-		FC2511CE1588649E00534933 /* RFInputRow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFInputRow.h; sourceTree = "<group>"; };
-		FC2511CF1588649E00534933 /* RFInputRow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFInputRow.m; sourceTree = "<group>"; };
-		FC2BB4011596F5FD00E89B72 /* RFTableForm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFTableForm.h; sourceTree = "<group>"; };
-		FC2EA9FF168CC470008EC3E4 /* NSInvocation+RFExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSInvocation+RFExtensions.h"; sourceTree = "<group>"; };
-		FC2EAA00168CC470008EC3E4 /* NSInvocation+RFExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSInvocation+RFExtensions.m"; sourceTree = "<group>"; };
-		FC2EAA03168D33C1008EC3E4 /* RFObjCRuntime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFObjCRuntime.h; sourceTree = "<group>"; };
-		FC2EAA04168D33C1008EC3E4 /* RFObjCRuntime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFObjCRuntime.m; sourceTree = "<group>"; };
+		FC2511C81588614700534933 /* RAFTableSection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RAFTableSection.h; sourceTree = "<group>"; };
+		FC2511C91588614700534933 /* RAFTableSection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RAFTableSection.m; sourceTree = "<group>"; };
+		FC2511CC158862F700534933 /* RAFTableForm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RAFTableForm.m; sourceTree = "<group>"; };
+		FC2511CE1588649E00534933 /* RAFInputRow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RAFInputRow.h; sourceTree = "<group>"; };
+		FC2511CF1588649E00534933 /* RAFInputRow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RAFInputRow.m; sourceTree = "<group>"; };
+		FC2BB4011596F5FD00E89B72 /* RAFTableForm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RAFTableForm.h; sourceTree = "<group>"; };
+		FC2EA9FF168CC470008EC3E4 /* NSInvocation+RAFExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSInvocation+RAFExtensions.h"; sourceTree = "<group>"; };
+		FC2EAA00168CC470008EC3E4 /* NSInvocation+RAFExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSInvocation+RAFExtensions.m"; sourceTree = "<group>"; };
+		FC2EAA03168D33C1008EC3E4 /* RAFObjCRuntime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RAFObjCRuntime.h; sourceTree = "<group>"; };
+		FC2EAA04168D33C1008EC3E4 /* RAFObjCRuntime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RAFObjCRuntime.m; sourceTree = "<group>"; };
 		FC3E5FA61596FDC3005F3F56 /* GHGitHubClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GHGitHubClient.h; path = lib/ReactiveCocoa/GHAPIDemo/GHAPIDemo/GHGitHubClient.h; sourceTree = "<group>"; };
 		FC3E5FA71596FDC3005F3F56 /* GHGitHubClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GHGitHubClient.m; path = lib/ReactiveCocoa/GHAPIDemo/GHAPIDemo/GHGitHubClient.m; sourceTree = "<group>"; };
 		FC3E5FA81596FDC3005F3F56 /* GHGitHubObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GHGitHubObject.h; path = lib/ReactiveCocoa/GHAPIDemo/GHAPIDemo/GHGitHubObject.h; sourceTree = "<group>"; };
@@ -135,43 +135,43 @@
 		FC3E60431596FE5C005F3F56 /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
 		FC3E605E1596FECF005F3F56 /* JSGHLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSGHLoginViewController.h; sourceTree = "<group>"; };
 		FC3E605F1596FECF005F3F56 /* JSGHLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSGHLoginViewController.m; sourceTree = "<group>"; };
-		FC648CCE157AC81D007E2872 /* iOS Formlets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS Formlets.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC648CCE157AC81D007E2872 /* ReactiveFormlets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReactiveFormlets.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC648CD2157AC81D007E2872 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		FC648CD4157AC81D007E2872 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		FC648CD6157AC81D007E2872 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		FC648CDA157AC81D007E2872 /* iOS Formlets-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iOS Formlets-Info.plist"; sourceTree = "<group>"; };
+		FC648CDA157AC81D007E2872 /* ReactiveFormlets-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ReactiveFormlets-Info.plist"; sourceTree = "<group>"; };
 		FC648CDC157AC81D007E2872 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		FC648CDE157AC81D007E2872 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		FC648CE0157AC81D007E2872 /* iOS Formlets-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iOS Formlets-Prefix.pch"; sourceTree = "<group>"; };
+		FC648CE0157AC81D007E2872 /* ReactiveFormlets-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ReactiveFormlets-Prefix.pch"; sourceTree = "<group>"; };
 		FC648CE1157AC81D007E2872 /* JSAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSAppDelegate.h; sourceTree = "<group>"; };
 		FC648CE2157AC81D007E2872 /* JSAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSAppDelegate.m; sourceTree = "<group>"; };
 		FC648CE4157AC81D007E2872 /* iOS Formlets.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "iOS Formlets.entitlements"; sourceTree = "<group>"; };
 		FC648CE7157AC81D007E2872 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		FC648CE9157AC81D007E2872 /* JSViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSViewController.h; sourceTree = "<group>"; };
 		FC648CEA157AC81D007E2872 /* JSViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSViewController.m; sourceTree = "<group>"; };
-		FC648CF1157AC81E007E2872 /* iOS FormletsTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "iOS FormletsTests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC648CF1157AC81E007E2872 /* ReactiveFormletsTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReactiveFormletsTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC648CF2157AC81E007E2872 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		FC648CFA157AC81E007E2872 /* iOS FormletsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iOS FormletsTests-Info.plist"; sourceTree = "<group>"; };
+		FC648CFA157AC81E007E2872 /* ReactiveFormletsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ReactiveFormletsTests-Info.plist"; sourceTree = "<group>"; };
 		FC648CFC157AC81E007E2872 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		FC648CFE157AC81E007E2872 /* iOS_FormletsTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iOS_FormletsTests.h; sourceTree = "<group>"; };
 		FC648CFF157AC81E007E2872 /* iOS_FormletsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iOS_FormletsTests.m; sourceTree = "<group>"; };
-		FC648D2A157AC924007E2872 /* RFFormlet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFFormlet.m; sourceTree = "<group>"; usesTabs = 1; };
-		FC648D2B157AC924007E2872 /* RFFormlet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFFormlet.h; sourceTree = "<group>"; };
-		FC8CA6DF1587FCF1002B6EEA /* RFReifiedProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFReifiedProtocol.h; sourceTree = "<group>"; };
-		FC8CA6E01587FCF1002B6EEA /* RFReifiedProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFReifiedProtocol.m; sourceTree = "<group>"; };
-		FC9153F415888B7400C657D3 /* RFTableFormViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFTableFormViewController.h; sourceTree = "<group>"; };
-		FC9153F515888B7400C657D3 /* RFTableFormViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFTableFormViewController.m; sourceTree = "<group>"; };
-		FCC7F95E1587F4020008558B /* RFOrderedDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFOrderedDictionary.h; sourceTree = "<group>"; };
-		FCC7F95F1587F4020008558B /* RFOrderedDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFOrderedDictionary.m; sourceTree = "<group>"; };
-		FCE11FF4168120C2001CFB13 /* RFModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFModel.h; sourceTree = "<group>"; };
-		FCE11FF916813C0C001CFB13 /* RFSignalSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RFSignalSource.h; sourceTree = "<group>"; };
-		FCE11FFA16813C47001CFB13 /* RFSignalSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFSignalSource.m; sourceTree = "<group>"; };
-		FCE11FFC1682587B001CFB13 /* RFLens.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFLens.h; sourceTree = "<group>"; };
-		FCE11FFD1682587C001CFB13 /* RFLens.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFLens.m; sourceTree = "<group>"; };
-		FCE1200816827732001CFB13 /* RFIdentityValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFIdentityValueTransformer.h; sourceTree = "<group>"; };
-		FCE1200916827732001CFB13 /* RFIdentityValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFIdentityValueTransformer.m; sourceTree = "<group>"; };
-		FCE1200B16827790001CFB13 /* RFNumberStringValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFNumberStringValueTransformer.h; sourceTree = "<group>"; };
-		FCE1200C16827790001CFB13 /* RFNumberStringValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFNumberStringValueTransformer.m; sourceTree = "<group>"; };
+		FC648D2A157AC924007E2872 /* RAFFormlet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RAFFormlet.m; sourceTree = "<group>"; usesTabs = 1; };
+		FC648D2B157AC924007E2872 /* RAFFormlet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RAFFormlet.h; sourceTree = "<group>"; };
+		FC8CA6DF1587FCF1002B6EEA /* RAFReifiedProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RAFReifiedProtocol.h; sourceTree = "<group>"; };
+		FC8CA6E01587FCF1002B6EEA /* RAFReifiedProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RAFReifiedProtocol.m; sourceTree = "<group>"; };
+		FC9153F415888B7400C657D3 /* RAFTableFormViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RAFTableFormViewController.h; sourceTree = "<group>"; };
+		FC9153F515888B7400C657D3 /* RAFTableFormViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RAFTableFormViewController.m; sourceTree = "<group>"; };
+		FCC7F95E1587F4020008558B /* RAFOrderedDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RAFOrderedDictionary.h; sourceTree = "<group>"; };
+		FCC7F95F1587F4020008558B /* RAFOrderedDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RAFOrderedDictionary.m; sourceTree = "<group>"; };
+		FCE11FF4168120C2001CFB13 /* RAFModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RAFModel.h; sourceTree = "<group>"; };
+		FCE11FF916813C0C001CFB13 /* RAFSignalSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RAFSignalSource.h; sourceTree = "<group>"; };
+		FCE11FFA16813C47001CFB13 /* RAFSignalSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RAFSignalSource.m; sourceTree = "<group>"; };
+		FCE11FFC1682587B001CFB13 /* RAFLens.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RAFLens.h; sourceTree = "<group>"; };
+		FCE11FFD1682587C001CFB13 /* RAFLens.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RAFLens.m; sourceTree = "<group>"; };
+		FCE1200816827732001CFB13 /* RAFIdentityValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RAFIdentityValueTransformer.h; sourceTree = "<group>"; };
+		FCE1200916827732001CFB13 /* RAFIdentityValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RAFIdentityValueTransformer.m; sourceTree = "<group>"; };
+		FCE1200B16827790001CFB13 /* RAFNumberStringValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RAFNumberStringValueTransformer.h; sourceTree = "<group>"; };
+		FCE1200C16827790001CFB13 /* RAFNumberStringValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RAFNumberStringValueTransformer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -212,14 +212,14 @@
 		FC2511C71588612800534933 /* Example Formlets */ = {
 			isa = PBXGroup;
 			children = (
-				FC2BB4011596F5FD00E89B72 /* RFTableForm.h */,
-				FC2511CC158862F700534933 /* RFTableForm.m */,
-				FC2511C81588614700534933 /* RFTableSection.h */,
-				FC2511C91588614700534933 /* RFTableSection.m */,
-				FC2511CE1588649E00534933 /* RFInputRow.h */,
-				FC2511CF1588649E00534933 /* RFInputRow.m */,
-				FC9153F415888B7400C657D3 /* RFTableFormViewController.h */,
-				FC9153F515888B7400C657D3 /* RFTableFormViewController.m */,
+				FC2BB4011596F5FD00E89B72 /* RAFTableForm.h */,
+				FC2511CC158862F700534933 /* RAFTableForm.m */,
+				FC2511C81588614700534933 /* RAFTableSection.h */,
+				FC2511C91588614700534933 /* RAFTableSection.m */,
+				FC2511CE1588649E00534933 /* RAFInputRow.h */,
+				FC2511CF1588649E00534933 /* RAFInputRow.m */,
+				FC9153F415888B7400C657D3 /* RAFTableFormViewController.h */,
+				FC9153F515888B7400C657D3 /* RAFTableFormViewController.m */,
 			);
 			name = "Example Formlets";
 			sourceTree = "<group>";
@@ -227,10 +227,10 @@
 		FC2EAA02168CC88B008EC3E4 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				FC2EAA03168D33C1008EC3E4 /* RFObjCRuntime.h */,
-				FC2EAA04168D33C1008EC3E4 /* RFObjCRuntime.m */,
-				FC2EA9FF168CC470008EC3E4 /* NSInvocation+RFExtensions.h */,
-				FC2EAA00168CC470008EC3E4 /* NSInvocation+RFExtensions.m */,
+				FC2EAA03168D33C1008EC3E4 /* RAFObjCRuntime.h */,
+				FC2EAA04168D33C1008EC3E4 /* RAFObjCRuntime.m */,
+				FC2EA9FF168CC470008EC3E4 /* NSInvocation+RAFExtensions.h */,
+				FC2EAA00168CC470008EC3E4 /* NSInvocation+RAFExtensions.m */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -297,8 +297,8 @@
 		FC648CCF157AC81D007E2872 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				FC648CCE157AC81D007E2872 /* iOS Formlets.app */,
-				FC648CF1157AC81E007E2872 /* iOS FormletsTests.octest */,
+				FC648CCE157AC81D007E2872 /* ReactiveFormlets.app */,
+				FC648CF1157AC81E007E2872 /* ReactiveFormletsTests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -335,10 +335,10 @@
 		FC648CD9157AC81D007E2872 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				FC648CDA157AC81D007E2872 /* iOS Formlets-Info.plist */,
+				FC648CDA157AC81D007E2872 /* ReactiveFormlets-Info.plist */,
 				FC648CDB157AC81D007E2872 /* InfoPlist.strings */,
 				FC648CDE157AC81D007E2872 /* main.m */,
-				FC648CE0157AC81D007E2872 /* iOS Formlets-Prefix.pch */,
+				FC648CE0157AC81D007E2872 /* ReactiveFormlets-Prefix.pch */,
 				FC648CE4157AC81D007E2872 /* iOS Formlets.entitlements */,
 			);
 			name = "Supporting Files";
@@ -357,7 +357,7 @@
 		FC648CF9157AC81E007E2872 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				FC648CFA157AC81E007E2872 /* iOS FormletsTests-Info.plist */,
+				FC648CFA157AC81E007E2872 /* ReactiveFormletsTests-Info.plist */,
 				FC648CFB157AC81E007E2872 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
@@ -366,17 +366,17 @@
 		FC648D27157AC914007E2872 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				FC648D2B157AC924007E2872 /* RFFormlet.h */,
-				FC648D2A157AC924007E2872 /* RFFormlet.m */,
-				FCE11FFC1682587B001CFB13 /* RFLens.h */,
-				FCE11FFD1682587C001CFB13 /* RFLens.m */,
-				FCE11FF4168120C2001CFB13 /* RFModel.h */,
-				FCC7F95E1587F4020008558B /* RFOrderedDictionary.h */,
-				FCC7F95F1587F4020008558B /* RFOrderedDictionary.m */,
-				FC8CA6DF1587FCF1002B6EEA /* RFReifiedProtocol.h */,
-				FC8CA6E01587FCF1002B6EEA /* RFReifiedProtocol.m */,
-				FCE11FF916813C0C001CFB13 /* RFSignalSource.h */,
-				FCE11FFA16813C47001CFB13 /* RFSignalSource.m */,
+				FC648D2B157AC924007E2872 /* RAFFormlet.h */,
+				FC648D2A157AC924007E2872 /* RAFFormlet.m */,
+				FCE11FFC1682587B001CFB13 /* RAFLens.h */,
+				FCE11FFD1682587C001CFB13 /* RAFLens.m */,
+				FCE11FF4168120C2001CFB13 /* RAFModel.h */,
+				FCC7F95E1587F4020008558B /* RAFOrderedDictionary.h */,
+				FCC7F95F1587F4020008558B /* RAFOrderedDictionary.m */,
+				FC8CA6DF1587FCF1002B6EEA /* RAFReifiedProtocol.h */,
+				FC8CA6E01587FCF1002B6EEA /* RAFReifiedProtocol.m */,
+				FCE11FF916813C0C001CFB13 /* RAFSignalSource.h */,
+				FCE11FFA16813C47001CFB13 /* RAFSignalSource.m */,
 				FC2EAA02168CC88B008EC3E4 /* Extensions */,
 				FCE1200716827723001CFB13 /* Value Transformers */,
 			);
@@ -386,10 +386,10 @@
 		FCE1200716827723001CFB13 /* Value Transformers */ = {
 			isa = PBXGroup;
 			children = (
-				FCE1200816827732001CFB13 /* RFIdentityValueTransformer.h */,
-				FCE1200916827732001CFB13 /* RFIdentityValueTransformer.m */,
-				FCE1200B16827790001CFB13 /* RFNumberStringValueTransformer.h */,
-				FCE1200C16827790001CFB13 /* RFNumberStringValueTransformer.m */,
+				FCE1200816827732001CFB13 /* RAFIdentityValueTransformer.h */,
+				FCE1200916827732001CFB13 /* RAFIdentityValueTransformer.m */,
+				FCE1200B16827790001CFB13 /* RAFNumberStringValueTransformer.h */,
+				FCE1200C16827790001CFB13 /* RAFNumberStringValueTransformer.m */,
 			);
 			name = "Value Transformers";
 			sourceTree = "<group>";
@@ -397,9 +397,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		FC648CCD157AC81D007E2872 /* iOS Formlets */ = {
+		FC648CCD157AC81D007E2872 /* ReactiveFormlets */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FC648D03157AC81E007E2872 /* Build configuration list for PBXNativeTarget "iOS Formlets" */;
+			buildConfigurationList = FC648D03157AC81E007E2872 /* Build configuration list for PBXNativeTarget "ReactiveFormlets" */;
 			buildPhases = (
 				FC648CCA157AC81D007E2872 /* Sources */,
 				FC648CCB157AC81D007E2872 /* Frameworks */,
@@ -410,14 +410,14 @@
 			dependencies = (
 				FC1386A7167FF6D30022A146 /* PBXTargetDependency */,
 			);
-			name = "iOS Formlets";
+			name = ReactiveFormlets;
 			productName = "iOS Formlets";
-			productReference = FC648CCE157AC81D007E2872 /* iOS Formlets.app */;
+			productReference = FC648CCE157AC81D007E2872 /* ReactiveFormlets.app */;
 			productType = "com.apple.product-type.application";
 		};
-		FC648CF0157AC81E007E2872 /* iOS FormletsTests */ = {
+		FC648CF0157AC81E007E2872 /* ReactiveFormletsTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FC648D06157AC81E007E2872 /* Build configuration list for PBXNativeTarget "iOS FormletsTests" */;
+			buildConfigurationList = FC648D06157AC81E007E2872 /* Build configuration list for PBXNativeTarget "ReactiveFormletsTests" */;
 			buildPhases = (
 				FC648CEC157AC81E007E2872 /* Sources */,
 				FC648CED157AC81E007E2872 /* Frameworks */,
@@ -429,9 +429,9 @@
 			dependencies = (
 				FC648CF7157AC81E007E2872 /* PBXTargetDependency */,
 			);
-			name = "iOS FormletsTests";
+			name = ReactiveFormletsTests;
 			productName = "iOS FormletsTests";
-			productReference = FC648CF1157AC81E007E2872 /* iOS FormletsTests.octest */;
+			productReference = FC648CF1157AC81E007E2872 /* ReactiveFormletsTests.octest */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
@@ -440,11 +440,11 @@
 		FC648CC5157AC81D007E2872 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				CLASSPREFIX = JS;
+				CLASSPREFIX = RAF;
 				LastUpgradeCheck = 0440;
 				ORGANIZATIONNAME = "Jon Sterling";
 			};
-			buildConfigurationList = FC648CC8157AC81D007E2872 /* Build configuration list for PBXProject "iOS Formlets" */;
+			buildConfigurationList = FC648CC8157AC81D007E2872 /* Build configuration list for PBXProject "ReactiveFormlets" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -462,8 +462,8 @@
 			);
 			projectRoot = "";
 			targets = (
-				FC648CCD157AC81D007E2872 /* iOS Formlets */,
-				FC648CF0157AC81E007E2872 /* iOS FormletsTests */,
+				FC648CCD157AC81D007E2872 /* ReactiveFormlets */,
+				FC648CF0157AC81E007E2872 /* ReactiveFormletsTests */,
 			);
 		};
 /* End PBXProject section */
@@ -537,13 +537,13 @@
 				FC648CDF157AC81D007E2872 /* main.m in Sources */,
 				FC648CE3157AC81D007E2872 /* JSAppDelegate.m in Sources */,
 				FC648CEB157AC81D007E2872 /* JSViewController.m in Sources */,
-				FC648D2D157AC924007E2872 /* RFFormlet.m in Sources */,
-				FCC7F9601587F4020008558B /* RFOrderedDictionary.m in Sources */,
-				FC8CA6E11587FCF1002B6EEA /* RFReifiedProtocol.m in Sources */,
-				FC2511CA1588614700534933 /* RFTableSection.m in Sources */,
-				FC2511CD158862F700534933 /* RFTableForm.m in Sources */,
-				FC2511D01588649E00534933 /* RFInputRow.m in Sources */,
-				FC9153F615888B7400C657D3 /* RFTableFormViewController.m in Sources */,
+				FC648D2D157AC924007E2872 /* RAFFormlet.m in Sources */,
+				FCC7F9601587F4020008558B /* RAFOrderedDictionary.m in Sources */,
+				FC8CA6E11587FCF1002B6EEA /* RAFReifiedProtocol.m in Sources */,
+				FC2511CA1588614700534933 /* RAFTableSection.m in Sources */,
+				FC2511CD158862F700534933 /* RAFTableForm.m in Sources */,
+				FC2511D01588649E00534933 /* RAFInputRow.m in Sources */,
+				FC9153F615888B7400C657D3 /* RAFTableFormViewController.m in Sources */,
 				FC3E5FB01596FDC3005F3F56 /* GHGitHubClient.m in Sources */,
 				FC3E5FB11596FDC3005F3F56 /* GHGitHubObject.m in Sources */,
 				FC3E5FB21596FDC3005F3F56 /* GHGitHubOrg.m in Sources */,
@@ -559,12 +559,12 @@
 				FC3E604B1596FE5C005F3F56 /* AFURLConnectionOperation.m in Sources */,
 				FC3E604C1596FE5C005F3F56 /* AFXMLRequestOperation.m in Sources */,
 				FC3E60601596FECF005F3F56 /* JSGHLoginViewController.m in Sources */,
-				FCE11FFB16813C48001CFB13 /* RFSignalSource.m in Sources */,
-				FCE11FFE1682587C001CFB13 /* RFLens.m in Sources */,
-				FCE1200A16827732001CFB13 /* RFIdentityValueTransformer.m in Sources */,
-				FCE1200D16827791001CFB13 /* RFNumberStringValueTransformer.m in Sources */,
-				FC2EAA01168CC470008EC3E4 /* NSInvocation+RFExtensions.m in Sources */,
-				FC2EAA05168D33C1008EC3E4 /* RFObjCRuntime.m in Sources */,
+				FCE11FFB16813C48001CFB13 /* RAFSignalSource.m in Sources */,
+				FCE11FFE1682587C001CFB13 /* RAFLens.m in Sources */,
+				FCE1200A16827732001CFB13 /* RAFIdentityValueTransformer.m in Sources */,
+				FCE1200D16827791001CFB13 /* RAFNumberStringValueTransformer.m in Sources */,
+				FC2EAA01168CC470008EC3E4 /* NSInvocation+RAFExtensions.m in Sources */,
+				FC2EAA05168D33C1008EC3E4 /* RAFObjCRuntime.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -586,7 +586,7 @@
 		};
 		FC648CF7157AC81E007E2872 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = FC648CCD157AC81D007E2872 /* iOS Formlets */;
+			target = FC648CCD157AC81D007E2872 /* ReactiveFormlets */;
 			targetProxy = FC648CF6157AC81E007E2872 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -674,14 +674,14 @@
 				CODE_SIGN_ENTITLEMENTS = "iOS Formlets/iOS Formlets.entitlements";
 				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/lib/ReactiveCocoa/ReactiveCocoaFramework";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "iOS Formlets/iOS Formlets-Prefix.pch";
+				GCC_PREFIX_HEADER = "iOS Formlets/ReactiveFormlets-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
 					"$(PROJECT_DIR)/lib/ReactiveCocoa/ReactiveCocoaFramework/",
 					"$(PROJECT_DIR)/lib/ReactiveCocoa/ReactiveCocoaFramework/ReactiveCocoa/libextobjc/extobjc/",
 				);
-				INFOPLIST_FILE = "iOS Formlets/iOS Formlets-Info.plist";
+				INFOPLIST_FILE = "iOS Formlets/ReactiveFormlets-Info.plist";
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = ReactiveFormlets;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -694,14 +694,14 @@
 				CODE_SIGN_ENTITLEMENTS = "iOS Formlets/iOS Formlets.entitlements";
 				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/lib/ReactiveCocoa/ReactiveCocoaFramework";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "iOS Formlets/iOS Formlets-Prefix.pch";
+				GCC_PREFIX_HEADER = "iOS Formlets/ReactiveFormlets-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
 					"$(PROJECT_DIR)/lib/ReactiveCocoa/ReactiveCocoaFramework/",
 					"$(PROJECT_DIR)/lib/ReactiveCocoa/ReactiveCocoaFramework/ReactiveCocoa/libextobjc/extobjc/",
 				);
-				INFOPLIST_FILE = "iOS Formlets/iOS Formlets-Info.plist";
+				INFOPLIST_FILE = "iOS Formlets/ReactiveFormlets-Info.plist";
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = ReactiveFormlets;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -716,8 +716,8 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iOS Formlets/iOS Formlets-Prefix.pch";
-				INFOPLIST_FILE = "iOS FormletsTests/iOS FormletsTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "iOS FormletsTests/ReactiveFormletsTests-Info.plist";
+				PRODUCT_NAME = ReactiveFormletsTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
 			};
@@ -733,8 +733,8 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iOS Formlets/iOS Formlets-Prefix.pch";
-				INFOPLIST_FILE = "iOS FormletsTests/iOS FormletsTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "iOS FormletsTests/ReactiveFormletsTests-Info.plist";
+				PRODUCT_NAME = ReactiveFormletsTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
 			};
@@ -743,7 +743,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		FC648CC8157AC81D007E2872 /* Build configuration list for PBXProject "iOS Formlets" */ = {
+		FC648CC8157AC81D007E2872 /* Build configuration list for PBXProject "ReactiveFormlets" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FC648D01157AC81E007E2872 /* Debug */,
@@ -752,7 +752,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		FC648D03157AC81E007E2872 /* Build configuration list for PBXNativeTarget "iOS Formlets" */ = {
+		FC648D03157AC81E007E2872 /* Build configuration list for PBXNativeTarget "ReactiveFormlets" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FC648D04157AC81E007E2872 /* Debug */,
@@ -761,7 +761,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		FC648D06157AC81E007E2872 /* Build configuration list for PBXNativeTarget "iOS FormletsTests" */ = {
+		FC648D06157AC81E007E2872 /* Build configuration list for PBXNativeTarget "ReactiveFormletsTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FC648D07157AC81E007E2872 /* Debug */,

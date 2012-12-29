@@ -1,26 +1,26 @@
 //
-//  RFTableSection.m
-//  iOS Formlets
+//  RAFTableSection.m
+//  ReactiveCocoa
 //
 //  Created by Jon Sterling on 6/12/12.
 //  Copyright (c) 2012 Jon Sterling. All rights reserved.
 //
 
-#import "RFTableSection.h"
-#import "RFInputRow.h"
-#import "RFTableForm.h"
-#import "RFFormlet.h"
+#import "RAFTableSection.h"
+#import "RAFInputRow.h"
+#import "RAFTableForm.h"
+#import "RAFFormlet.h"
 
-@implementation RFTableSection
+@implementation RAFTableSection
 
 - (id)copyWithZone:(NSZone *)zone {
-	RFTableSection *copy = [super copyWithZone:zone];
+	RAFTableSection *copy = [super copyWithZone:zone];
 	copy->_title = _title;
 	return copy;
 }
 
 - (instancetype)title:(NSString *)title {
-	RFTableSection *copy = [self copy];
+	RAFTableSection *copy = [self copy];
 	copy->_title = title;
 	return copy;
 }

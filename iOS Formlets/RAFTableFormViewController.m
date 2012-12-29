@@ -1,19 +1,19 @@
 //
-//  RFTableFormViewController.m
-//  iOS Formlets
+//  RAFTableFormViewController.m
+//  ReactiveCocoa
 //
 //  Created by Jon Sterling on 6/13/12.
 //  Copyright (c) 2012 Jon Sterling. All rights reserved.
 //
 
-#import "RFTableFormViewController.h"
-#import "RFTableForm.h"
+#import "RAFTableFormViewController.h"
+#import "RAFTableForm.h"
 
-@implementation RFTableFormViewController {
-	RFTableForm *_form;
+@implementation RAFTableFormViewController {
+	RAFTableForm *_form;
 }
 
-- (id)initWithForm:(RFTableForm *)form {
+- (id)initWithForm:(RAFTableForm *)form {
 	if (self = [self init]) {
 		_form = form;
 	}

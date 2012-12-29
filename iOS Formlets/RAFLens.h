@@ -1,6 +1,6 @@
 //
-//  RFLens.h
-//  iOS Formlets
+//  RAFLens.h
+//  ReactiveCocoa
 //
 //  Created by Jon Sterling on 12/19/12.
 //  Copyright (c) 2012 Jon Sterling. All rights reserved.
@@ -11,7 +11,7 @@
 
 // A concrete protocol representing a lens into an object through a value
 // transformer.
-@protocol RFLens <NSCopying>
+@protocol RAFLens <NSCopying>
 @required
 
 // The keypath destination of the lens.

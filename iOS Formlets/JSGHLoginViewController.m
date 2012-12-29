@@ -1,14 +1,14 @@
 //
 //  JSGHLoginViewController.m
-//  iOS Formlets
+//  ReactiveCocoa
 //
 //  Created by Jon Sterling on 6/24/12.
 //  Copyright (c) 2012 Jon Sterling. All rights reserved.
 //
 
 #import "JSGHLoginViewController.h"
-#import "RFTableForm.h"
-#import "RFInputRow.h"
+#import "RAFTableForm.h"
+#import "RAFInputRow.h"
 #import <ReactiveCocoa/ReactiveCocoa.h>
 #import "GHGitHubUser.h"
 #import "GHGitHubClient.h"
@@ -28,20 +28,20 @@
 @end
 
 @implementation JSGHLoginViewController {
-	RFSingleSectionTableForm *_form;
+	RAFSingleSectionTableForm *_form;
 }
 
 - (void)loadView {
 	// This is all the code you need to make a login form!
-	Class<GHCredentials> LoginForm = [RFSingleSectionTableForm model:@protocol(GHCredentials)];
+	Class<GHCredentials> LoginForm = [RAFSingleSectionTableForm model:@protocol(GHCredentials)];
 
-	RFTextInputRow *usernameField = [[RFTextInputRow new] modifyTextField:^(UITextField *field) {
+	RAFTextInputRow *usernameField = [[RAFTextInputRow new] modifyTextField:^(UITextField *field) {
 		field.autocapitalizationType = UITextAutocapitalizationTypeNone;
 		field.autocorrectionType = UITextAutocorrectionTypeNo;
 	}];
 
 	_form = [LoginForm username:[usernameField placeholder:@"username"]
-					   password:[[RFTextInputRow new] placeholder:@"password"]];
+					   password:[[RAFTextInputRow new] placeholder:@"password"]];
 
 
 	// And you're done!

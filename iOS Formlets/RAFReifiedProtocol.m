@@ -1,22 +1,22 @@
 //
-//  RFReifiedProtocol.m
-//  iOS Formlets
+//  RAFReifiedProtocol.m
+//  ReactiveCocoa
 //
 //  Created by Jon Sterling on 6/12/12.
 //  Copyright (c) 2012 Jon Sterling. All rights reserved.
 //
 
-#import "RFReifiedProtocol.h"
-#import "RFOrderedDictionary.h"
-#import "NSInvocation+RFExtensions.h"
-#import "RFObjCRuntime.h"
+#import "RAFReifiedProtocol.h"
+#import "RAFOrderedDictionary.h"
+#import "NSInvocation+RAFExtensions.h"
+#import "RAFObjCRuntime.h"
 #import <ReactiveCocoa/RACObjCRuntime.h>
 #import <ReactiveCocoa/RACTuple.h>
 #import <ReactiveCocoa/RACSequence.h>
 
 static void *const kModelAssociatedObjectKey;
 
-@implementation RFReifiedProtocol
+@implementation RAFReifiedProtocol
 
 + (Class)model:(Protocol *)model {
 	NSString *name = [NSString stringWithFormat:@"%@_%s", self, protocol_getName(model)];
@@ -34,20 +34,20 @@ static void *const kModelAssociatedObjectKey;
 #pragma mark - Message Forwarding
 
 + (NSMethodSignature *)methodSignatureForSelector:(SEL)aSelector {
-	return [RFObjCRuntime classMethodSignatureForSelector:aSelector inProtocol:self.class.model];
+	return [RAFObjCRuntime classMethodSignatureForSelector:aSelector inProtocol:self.class.model];
 }
 
 + (void)forwardInvocation:(NSInvocation *)invocation {
 	[invocation retainArguments];
 
-	RFOrderedDictionary *arguments = invocation.rf_argumentDictionary;
+	RAFOrderedDictionary *arguments = invocation.rf_argumentDictionary;
 	invocation.returnValue = &(__unsafe_unretained id){
 		[[self alloc] initWithOrderedDictionary:arguments]
 	};
 }
 
 - (NSMethodSignature *)methodSignatureForSelector:(SEL)aSelector {
-	return [RFObjCRuntime instanceMethodSignatureForSelector:aSelector inProtocol:self.class.model];
+	return [RAFObjCRuntime instanceMethodSignatureForSelector:aSelector inProtocol:self.class.model];
 }
 
 - (void)forwardInvocation:(NSInvocation *)anInvocation {

@@ -1,19 +1,19 @@
 //
-//  RFTableForm.m
-//  iOS Formlets
+//  RAFTableForm.m
+//  ReactiveCocoa
 //
 //  Created by Jon Sterling on 6/12/12.
 //  Copyright (c) 2012 Jon Sterling. All rights reserved.
 //
 
-#import "RFTableForm.h"
-#import "RFTableSection.h"
-#import "RFInputRow.h"
+#import "RAFTableForm.h"
+#import "RAFTableSection.h"
+#import "RAFInputRow.h"
 
-@interface RFTableForm () <UITableViewDataSource, UITableViewDelegate>
+@interface RAFTableForm () <UITableViewDataSource, UITableViewDelegate>
 @end
 
-@implementation RFTableForm
+@implementation RAFTableForm
 
 - (UITableView *)view {
 	UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
@@ -51,7 +51,7 @@
 @end
 
 
-@implementation RFSingleSectionTableForm
+@implementation RAFSingleSectionTableForm
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 	return 1;

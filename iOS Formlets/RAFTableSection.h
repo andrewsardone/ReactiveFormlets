@@ -1,15 +1,15 @@
 //
-//  RFTableSection.h
-//  iOS Formlets
+//  RAFTableSection.h
+//  ReactiveCocoa
 //
 //  Created by Jon Sterling on 6/12/12.
 //  Copyright (c) 2012 Jon Sterling. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
-#import "RFFormlet.h"
+#import "RAFFormlet.h"
 
-@interface RFTableSection : RFCompoundFormlet
+@interface RAFTableSection : RAFCompoundFormlet
 @property (copy, readonly) NSString *title;
 
 - (instancetype)title:(NSString *)title;

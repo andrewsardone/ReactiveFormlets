@@ -1,20 +1,20 @@
 //
-//  RFIdentityValueTransformer.m
-//  iOS Formlets
+//  RAFIdentityValueTransformer.m
+//  ReactiveCocoa
 //
 //  Created by Jon Sterling on 12/19/12.
 //  Copyright (c) 2012 Jon Sterling. All rights reserved.
 //
 
-#import "RFIdentityValueTransformer.h"
+#import "RAFIdentityValueTransformer.h"
 
-NSString *const RFIdentityValueTransformerName = @"RFIdentityValueTransformerName";
+NSString *const RAFIdentityValueTransformerName = @"RAFIdentityValueTransformerName";
 
-@implementation RFIdentityValueTransformer
+@implementation RAFIdentityValueTransformer
 
 + (void)load {
 	@autoreleasepool {
-		[NSValueTransformer setValueTransformer:[self new] forName:RFIdentityValueTransformerName];
+		[NSValueTransformer setValueTransformer:[self new] forName:RAFIdentityValueTransformerName];
 	}
 }
 

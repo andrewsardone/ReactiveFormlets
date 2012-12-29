@@ -1,20 +1,20 @@
 //
-//  RFInputRow.m
-//  iOS Formlets
+//  RAFInputRow.m
+//  ReactiveCocoa
 //
 //  Created by Jon Sterling on 6/12/12.
 //  Copyright (c) 2012 Jon Sterling. All rights reserved.
 //
 
-#import "RFInputRow.h"
-#import "RFNumberStringValueTransformer.h"
+#import "RAFInputRow.h"
+#import "RAFNumberStringValueTransformer.h"
 #import <ReactiveCocoa/ReactiveCocoa.h>
 
-@interface RFInputRow () <UITextFieldDelegate>
+@interface RAFInputRow () <UITextFieldDelegate>
 @property (strong, readonly) UITextField *textField;
 @end
 
-@implementation RFInputRow
+@implementation RAFInputRow
 @synthesize textField = _textField;
 @synthesize cell = _cell;
 
@@ -29,7 +29,7 @@
 }
 
 - (id)copyWithZone:(NSZone *)zone {
-	RFInputRow *row = [super copyWithZone:zone];
+	RAFInputRow *row = [super copyWithZone:zone];
 	row.textField.placeholder = self.textField.placeholder;
 	row.textField.secureTextEntry = self.textField.secureTextEntry;
 	row.textField.autocorrectionType = self.textField.autocorrectionType;
@@ -45,7 +45,7 @@
 }
 
 - (instancetype)modifyTextField:(void (^)(UITextField *field))block {
-	RFInputRow *copy = [self copy];
+	RAFInputRow *copy = [self copy];
 	block(copy.textField);
 	return copy;
 }
@@ -88,13 +88,13 @@
 @end
 
 
-@implementation RFTextInputRow
+@implementation RAFTextInputRow
 @end
 
-@implementation RFNumberInputRow
+@implementation RAFNumberInputRow
 
 - (NSValueTransformer *)valueTransformer {
-	return [NSValueTransformer valueTransformerForName:RFNumberStringValueTransformerName];
+	return [NSValueTransformer valueTransformerForName:RAFNumberStringValueTransformerName];
 }
 
 - (UITextField *)textField {

@@ -1,6 +1,6 @@
 //
-//  RFOrderedDictionary.h
-//  iOS Formlets
+//  RAFOrderedDictionary.h
+//  ReactiveCocoa
 //
 //  Created by Jon Sterling on 6/12/12.
 //  Copyright (c) 2012 Jon Sterling. All rights reserved.
@@ -8,14 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol RFMutableOrderedDictionary;
+@protocol RAFMutableOrderedDictionary;
 
 // The block which allows guarded access to the mutable interface of an
 // immutable ordered dictionary.
-typedef void (^RFOrderedDictionaryModifyBlock)(id<RFMutableOrderedDictionary> dict);
+typedef void (^RAFOrderedDictionaryModifyBlock)(id<RAFMutableOrderedDictionary> dict);
 
 // The immutable interface to an ordered dictionary.
-@protocol RFOrderedDictionary <NSFastEnumeration>
+@protocol RAFOrderedDictionary <NSFastEnumeration>
 
 // Returns the object at the provided key.
 - (id)objectForKey:(id<NSCopying>)key;
@@ -34,14 +34,14 @@ typedef void (^RFOrderedDictionaryModifyBlock)(id<RFMutableOrderedDictionary> di
 //
 // block - The destructive operations to be performed on the copy; within the
 // block's scope, access is granted statically to the mutable interface of
-// `RFOrderedDictionary`.
+// `RAFOrderedDictionary`.
 //
 // Returns a modified version of the ordered dictionary.
-- (instancetype)modify:(RFOrderedDictionaryModifyBlock)block;
+- (instancetype)modify:(RAFOrderedDictionaryModifyBlock)block;
 @end
 
 // The mutable interface to the ordered dictionary.
-@protocol RFMutableOrderedDictionary <RFOrderedDictionary>
+@protocol RAFMutableOrderedDictionary <RAFOrderedDictionary>
 
 // Destructively updates the dictionary at a certain key; if the key does not
 // yet exist in the dictionary, the key-value pair is appended to the end.
@@ -54,13 +54,13 @@ typedef void (^RFOrderedDictionaryModifyBlock)(id<RFMutableOrderedDictionary> di
 
 @class RACSequence; 
 
-// RFOrderedDictionary is an (optionally) mutable associative collection. It
+// RAFOrderedDictionary is an (optionally) mutable associative collection. It
 // is almost exactly like an NSMutableDictionary, except that
 // keys are always kept in the order they are inserted.
-@interface RFOrderedDictionary : NSObject <RFOrderedDictionary, NSCopying, NSMutableCopying>
+@interface RAFOrderedDictionary : NSObject <RAFOrderedDictionary, NSCopying, NSMutableCopying>
 
 // Initializes with an existing ordered dictionary.
-- (id)initWithOrderedDictionary:(RFOrderedDictionary *)dictionary;
+- (id)initWithOrderedDictionary:(RAFOrderedDictionary *)dictionary;
 
 // Returns a copy of the dictionary by copying each of its objects.
 - (instancetype)deepCopyWithZone:(NSZone *)zone;
@@ -69,7 +69,7 @@ typedef void (^RFOrderedDictionaryModifyBlock)(id<RFMutableOrderedDictionary> di
 - (RACSequence *)sequence;
 @end
 
-@interface RFOrderedDictionary (TypeRefinement)
-- (RFOrderedDictionary<RFMutableOrderedDictionary> *)mutableCopyWithZone:(NSZone *)zone;
-- (RFOrderedDictionary<RFMutableOrderedDictionary> *)mutableCopy;
+@interface RAFOrderedDictionary (TypeRefinement)
+- (RAFOrderedDictionary<RAFMutableOrderedDictionary> *)mutableCopyWithZone:(NSZone *)zone;
+- (RAFOrderedDictionary<RAFMutableOrderedDictionary> *)mutableCopy;
 @end

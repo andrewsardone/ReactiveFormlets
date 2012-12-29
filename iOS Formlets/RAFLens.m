@@ -1,15 +1,15 @@
 //
-//  RFAlgebra.m
-//  iOS Formlets
+//  RAFLens.m
+//  ReactiveCocoa
 //
 //  Created by Jon Sterling on 12/19/12.
 //  Copyright (c) 2012 Jon Sterling. All rights reserved.
 //
 
-#import "RFLens.h"
-#import "RFIdentityValueTransformer.h"
+#import "RAFLens.h"
+#import "RAFIdentityValueTransformer.h"
 
-@concreteprotocol(RFLens)
+@concreteprotocol(RAFLens)
 
 #pragma mark - Inherited
 
@@ -19,7 +19,7 @@
 #pragma mark - Concrete
 
 - (NSValueTransformer *)valueTransformer {
-	return [NSValueTransformer valueTransformerForName:RFIdentityValueTransformerName];
+	return [NSValueTransformer valueTransformerForName:RAFIdentityValueTransformerName];
 }
 
 - (id)read {
