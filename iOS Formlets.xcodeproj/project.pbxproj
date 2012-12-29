@@ -12,7 +12,7 @@
 		FC2511CD158862F700534933 /* RFTableForm.m in Sources */ = {isa = PBXBuildFile; fileRef = FC2511CC158862F700534933 /* RFTableForm.m */; };
 		FC2511D01588649E00534933 /* RFInputRow.m in Sources */ = {isa = PBXBuildFile; fileRef = FC2511CF1588649E00534933 /* RFInputRow.m */; };
 		FC2EAA01168CC470008EC3E4 /* NSInvocation+RFExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = FC2EAA00168CC470008EC3E4 /* NSInvocation+RFExtensions.m */; };
-		FC2EAA05168D33C1008EC3E4 /* NSObject+RFObjCRuntime.m in Sources */ = {isa = PBXBuildFile; fileRef = FC2EAA04168D33C1008EC3E4 /* NSObject+RFObjCRuntime.m */; };
+		FC2EAA05168D33C1008EC3E4 /* RFObjCRuntime.m in Sources */ = {isa = PBXBuildFile; fileRef = FC2EAA04168D33C1008EC3E4 /* RFObjCRuntime.m */; };
 		FC3E5FB01596FDC3005F3F56 /* GHGitHubClient.m in Sources */ = {isa = PBXBuildFile; fileRef = FC3E5FA71596FDC3005F3F56 /* GHGitHubClient.m */; };
 		FC3E5FB11596FDC3005F3F56 /* GHGitHubObject.m in Sources */ = {isa = PBXBuildFile; fileRef = FC3E5FA91596FDC3005F3F56 /* GHGitHubObject.m */; };
 		FC3E5FB21596FDC3005F3F56 /* GHGitHubOrg.m in Sources */ = {isa = PBXBuildFile; fileRef = FC3E5FAB1596FDC3005F3F56 /* GHGitHubOrg.m */; };
@@ -100,8 +100,8 @@
 		FC2BB4011596F5FD00E89B72 /* RFTableForm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFTableForm.h; sourceTree = "<group>"; };
 		FC2EA9FF168CC470008EC3E4 /* NSInvocation+RFExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSInvocation+RFExtensions.h"; sourceTree = "<group>"; };
 		FC2EAA00168CC470008EC3E4 /* NSInvocation+RFExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSInvocation+RFExtensions.m"; sourceTree = "<group>"; };
-		FC2EAA03168D33C1008EC3E4 /* NSObject+RFObjCRuntime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+RFObjCRuntime.h"; sourceTree = "<group>"; };
-		FC2EAA04168D33C1008EC3E4 /* NSObject+RFObjCRuntime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+RFObjCRuntime.m"; sourceTree = "<group>"; };
+		FC2EAA03168D33C1008EC3E4 /* RFObjCRuntime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFObjCRuntime.h; sourceTree = "<group>"; };
+		FC2EAA04168D33C1008EC3E4 /* RFObjCRuntime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFObjCRuntime.m; sourceTree = "<group>"; };
 		FC3E5FA61596FDC3005F3F56 /* GHGitHubClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GHGitHubClient.h; path = lib/ReactiveCocoa/GHAPIDemo/GHAPIDemo/GHGitHubClient.h; sourceTree = "<group>"; };
 		FC3E5FA71596FDC3005F3F56 /* GHGitHubClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GHGitHubClient.m; path = lib/ReactiveCocoa/GHAPIDemo/GHAPIDemo/GHGitHubClient.m; sourceTree = "<group>"; };
 		FC3E5FA81596FDC3005F3F56 /* GHGitHubObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GHGitHubObject.h; path = lib/ReactiveCocoa/GHAPIDemo/GHAPIDemo/GHGitHubObject.h; sourceTree = "<group>"; };
@@ -227,8 +227,8 @@
 		FC2EAA02168CC88B008EC3E4 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				FC2EAA03168D33C1008EC3E4 /* NSObject+RFObjCRuntime.h */,
-				FC2EAA04168D33C1008EC3E4 /* NSObject+RFObjCRuntime.m */,
+				FC2EAA03168D33C1008EC3E4 /* RFObjCRuntime.h */,
+				FC2EAA04168D33C1008EC3E4 /* RFObjCRuntime.m */,
 				FC2EA9FF168CC470008EC3E4 /* NSInvocation+RFExtensions.h */,
 				FC2EAA00168CC470008EC3E4 /* NSInvocation+RFExtensions.m */,
 			);
@@ -564,7 +564,7 @@
 				FCE1200A16827732001CFB13 /* RFIdentityValueTransformer.m in Sources */,
 				FCE1200D16827791001CFB13 /* RFNumberStringValueTransformer.m in Sources */,
 				FC2EAA01168CC470008EC3E4 /* NSInvocation+RFExtensions.m in Sources */,
-				FC2EAA05168D33C1008EC3E4 /* NSObject+RFObjCRuntime.m in Sources */,
+				FC2EAA05168D33C1008EC3E4 /* RFObjCRuntime.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,7 +9,7 @@
 #import "RFReifiedProtocol.h"
 #import "RFOrderedDictionary.h"
 #import "NSInvocation+RFExtensions.h"
-#import "NSObject+RFObjCRuntime.h"
+#import "RFObjCRuntime.h"
 #import <ReactiveCocoa/RACObjCRuntime.h>
 #import <ReactiveCocoa/RACTuple.h>
 #import <ReactiveCocoa/RACSequence.h>
@@ -31,9 +31,10 @@ static void *const kModelAssociatedObjectKey;
 	return [self rf_associatedObjectForKey:kModelAssociatedObjectKey];
 }
 
+#pragma mark - Message Forwarding
+
 + (NSMethodSignature *)methodSignatureForSelector:(SEL)aSelector {
-	struct objc_method_description method = protocol_getMethodDescription(self.model, aSelector, YES, NO);
-	return [NSMethodSignature signatureWithObjCTypes:method.types];
+	return [RFObjCRuntime classMethodSignatureForSelector:aSelector inProtocol:self.class.model];
 }
 
 + (void)forwardInvocation:(NSInvocation *)invocation {
@@ -45,11 +46,8 @@ static void *const kModelAssociatedObjectKey;
 	};
 }
 
-
 - (NSMethodSignature *)methodSignatureForSelector:(SEL)aSelector {
-	char const *types = [RACObjCRuntime getMethodTypesForMethod:aSelector inProtocol:self.class.model];
-	if (types == NULL) return nil;
-	return [NSMethodSignature signatureWithObjCTypes:types];
+	return [RFObjCRuntime instanceMethodSignatureForSelector:aSelector inProtocol:self.class.model];
 }
 
 - (void)forwardInvocation:(NSInvocation *)anInvocation {
