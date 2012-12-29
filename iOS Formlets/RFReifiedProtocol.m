@@ -53,17 +53,13 @@ static void *const kModelAssociatedObjectKey;
 - (void)forwardInvocation:(NSInvocation *)anInvocation {
 	NSString *key = NSStringFromSelector(anInvocation.selector);
 	anInvocation.returnValue = &(__unsafe_unretained id){
-		[self valueForKey:key]
+		self[key]
 	};
 }
 
 - (BOOL)respondsToSelector:(SEL)aSelector {
 	return ([self.allKeys containsObject:NSStringFromSelector(aSelector)] ||
 			[super respondsToSelector:aSelector]);
-}
-
-- (id)valueForUndefinedKey:(NSString *)key {
-	return self[key];
 }
 
 @end

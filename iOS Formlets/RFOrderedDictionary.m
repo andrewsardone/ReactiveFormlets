@@ -126,6 +126,12 @@ typedef enum {
 	return [values copy];
 }
 
+#pragma mark - Key Value Coding
+
+- (id)valueForUndefinedKey:(NSString *)key {
+	return self[key];
+}
+
 #pragma mark -
 
 - (RACSequence *)sequence {
