@@ -31,6 +31,8 @@ typedef enum {
 	RFMutabilityState _mutabilityState;
 }
 
+#pragma mark - Initializers
+
 - (id)init {
 	if (self = [super init]) {
 		_keys = [NSMutableArray new];
@@ -49,21 +51,10 @@ typedef enum {
 	return self;
 }
 
-- (void)performWithTemporaryMutability:(RFOrderedDictionaryModifyBlock)block {
-	BOOL immutableByDefault = _mutabilityState != RFMutabilityPermanent;
-	if (immutableByDefault) _mutabilityState = RFMutabilityTemporary;
-	block(self);
-	if (immutableByDefault) _mutabilityState = RFMutabilityNone;
-}
+#pragma mark - NSCopying
 
 - (id)copyWithZone:(NSZone *)zone {
 	return [[[self class] alloc] initWithOrderedDictionary:self];
-}
-
-- (RFOrderedDictionary<RFMutableOrderedDictionary> *)mutableCopyWithZone:(NSZone *)zone {
-	RFOrderedDictionary *copy = [self copyWithZone:zone];
-	copy->_mutabilityState = RFMutabilityPermanent;
-	return copy;
 }
 
 - (instancetype)deepCopyWithZone:(NSZone *)zone {
@@ -76,6 +67,29 @@ typedef enum {
 	return copy;
 }
 
+#pragma mark - NSMutableCopying
+
+- (RFOrderedDictionary<RFMutableOrderedDictionary> *)mutableCopyWithZone:(NSZone *)zone {
+	RFOrderedDictionary *copy = [self copyWithZone:zone];
+	copy->_mutabilityState = RFMutabilityPermanent;
+	return copy;
+}
+
+#pragma mark - NSFastEnumeration
+
+- (NSUInteger)countByEnumeratingWithState:(NSFastEnumerationState *)state objects:(__unsafe_unretained id [])buffer count:(NSUInteger)len {
+	return [_keys countByEnumeratingWithState:state objects:buffer count:len];
+}
+
+#pragma mark - Safe Update
+
+- (void)performWithTemporaryMutability:(RFOrderedDictionaryModifyBlock)block {
+	BOOL immutableByDefault = _mutabilityState != RFMutabilityPermanent;
+	if (immutableByDefault) _mutabilityState = RFMutabilityTemporary;
+	block(self);
+	if (immutableByDefault) _mutabilityState = RFMutabilityNone;
+}
+
 - (instancetype)modify:(RFOrderedDictionaryModifyBlock)block {
 	BOOL immutableByDefault = _mutabilityState != RFMutabilityPermanent;
 	RFOrderedDictionary *copy = immutableByDefault ? [self copy] : [self mutableCopy];
@@ -85,9 +99,7 @@ typedef enum {
 	return copy;
 }
 
-- (NSUInteger)countByEnumeratingWithState:(NSFastEnumerationState *)state objects:(__unsafe_unretained id [])buffer count:(NSUInteger)len {
-	return [_keys countByEnumeratingWithState:state objects:buffer count:len];
-}
+#pragma mark - Accessors
 
 - (id)objectForKey:(id<NSCopying>)key {
 	return [_dictionary objectForKey:key];
@@ -113,6 +125,8 @@ typedef enum {
 
 	return [values copy];
 }
+
+#pragma mark -
 
 - (RACSequence *)sequence {
 	NSDictionary *immutableDict = [self copy];
