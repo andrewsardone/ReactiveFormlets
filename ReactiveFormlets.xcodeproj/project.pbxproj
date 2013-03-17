@@ -7,514 +7,415 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FC1386A8167FF6DD0022A146 /* libReactiveCocoa-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FC13869C167FF6CF0022A146 /* libReactiveCocoa-iOS.a */; };
-		FC2511CA1588614700534933 /* RAFTableSection.m in Sources */ = {isa = PBXBuildFile; fileRef = FC2511C91588614700534933 /* RAFTableSection.m */; };
-		FC2511CD158862F700534933 /* RAFTableForm.m in Sources */ = {isa = PBXBuildFile; fileRef = FC2511CC158862F700534933 /* RAFTableForm.m */; };
-		FC2511D01588649E00534933 /* RAFInputRow.m in Sources */ = {isa = PBXBuildFile; fileRef = FC2511CF1588649E00534933 /* RAFInputRow.m */; };
-		FC2EAA01168CC470008EC3E4 /* NSInvocation+RAFExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = FC2EAA00168CC470008EC3E4 /* NSInvocation+RAFExtensions.m */; };
-		FC2EAA05168D33C1008EC3E4 /* RAFObjCRuntime.m in Sources */ = {isa = PBXBuildFile; fileRef = FC2EAA04168D33C1008EC3E4 /* RAFObjCRuntime.m */; };
-		FC3E5FB01596FDC3005F3F56 /* GHGitHubClient.m in Sources */ = {isa = PBXBuildFile; fileRef = FC3E5FA71596FDC3005F3F56 /* GHGitHubClient.m */; };
-		FC3E5FB11596FDC3005F3F56 /* GHGitHubObject.m in Sources */ = {isa = PBXBuildFile; fileRef = FC3E5FA91596FDC3005F3F56 /* GHGitHubObject.m */; };
-		FC3E5FB21596FDC3005F3F56 /* GHGitHubOrg.m in Sources */ = {isa = PBXBuildFile; fileRef = FC3E5FAB1596FDC3005F3F56 /* GHGitHubOrg.m */; };
-		FC3E5FB31596FDC3005F3F56 /* GHGitHubTeam.m in Sources */ = {isa = PBXBuildFile; fileRef = FC3E5FAD1596FDC3005F3F56 /* GHGitHubTeam.m */; };
-		FC3E5FB41596FDC3005F3F56 /* GHGitHubUser.m in Sources */ = {isa = PBXBuildFile; fileRef = FC3E5FAF1596FDC3005F3F56 /* GHGitHubUser.m */; };
-		FC3E60441596FE5C005F3F56 /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = FC3E60301596FE5C005F3F56 /* AFHTTPClient.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		FC3E60451596FE5C005F3F56 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = FC3E60321596FE5C005F3F56 /* AFHTTPRequestOperation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		FC3E60461596FE5C005F3F56 /* AFImageRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = FC3E60341596FE5C005F3F56 /* AFImageRequestOperation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		FC3E60471596FE5C005F3F56 /* AFJSONRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = FC3E60361596FE5C005F3F56 /* AFJSONRequestOperation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		FC3E60481596FE5C005F3F56 /* AFJSONUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = FC3E60381596FE5C005F3F56 /* AFJSONUtilities.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		FC3E60491596FE5C005F3F56 /* AFNetworkActivityIndicatorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FC3E603A1596FE5C005F3F56 /* AFNetworkActivityIndicatorManager.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		FC3E604A1596FE5C005F3F56 /* AFPropertyListRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = FC3E603D1596FE5C005F3F56 /* AFPropertyListRequestOperation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		FC3E604B1596FE5C005F3F56 /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = FC3E603F1596FE5C005F3F56 /* AFURLConnectionOperation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		FC3E604C1596FE5C005F3F56 /* AFXMLRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = FC3E60411596FE5C005F3F56 /* AFXMLRequestOperation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		FC3E60601596FECF005F3F56 /* JSGHLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC3E605F1596FECF005F3F56 /* JSGHLoginViewController.m */; };
-		FC648CD3157AC81D007E2872 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC648CD2157AC81D007E2872 /* UIKit.framework */; };
-		FC648CD5157AC81D007E2872 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC648CD4157AC81D007E2872 /* Foundation.framework */; };
-		FC648CD7157AC81D007E2872 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC648CD6157AC81D007E2872 /* CoreGraphics.framework */; };
-		FC648CDD157AC81D007E2872 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FC648CDB157AC81D007E2872 /* InfoPlist.strings */; };
-		FC648CDF157AC81D007E2872 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FC648CDE157AC81D007E2872 /* main.m */; };
-		FC648CE3157AC81D007E2872 /* JSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FC648CE2157AC81D007E2872 /* JSAppDelegate.m */; };
-		FC648CE5157AC81D007E2872 /* iOS Formlets.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = FC648CE4157AC81D007E2872 /* iOS Formlets.entitlements */; };
-		FC648CE8157AC81D007E2872 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC648CE6157AC81D007E2872 /* MainStoryboard.storyboard */; };
-		FC648CEB157AC81D007E2872 /* JSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC648CEA157AC81D007E2872 /* JSViewController.m */; };
-		FC648CF3157AC81E007E2872 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC648CF2157AC81E007E2872 /* SenTestingKit.framework */; };
-		FC648CF4157AC81E007E2872 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC648CD2157AC81D007E2872 /* UIKit.framework */; };
-		FC648CF5157AC81E007E2872 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC648CD4157AC81D007E2872 /* Foundation.framework */; };
-		FC648CFD157AC81E007E2872 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FC648CFB157AC81E007E2872 /* InfoPlist.strings */; };
-		FC648D00157AC81E007E2872 /* iOS_FormletsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FC648CFF157AC81E007E2872 /* iOS_FormletsTests.m */; };
-		FC648D2D157AC924007E2872 /* RAFFormlet.m in Sources */ = {isa = PBXBuildFile; fileRef = FC648D2A157AC924007E2872 /* RAFFormlet.m */; };
-		FC8CA6E11587FCF1002B6EEA /* RAFReifiedProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = FC8CA6E01587FCF1002B6EEA /* RAFReifiedProtocol.m */; };
-		FC9153F615888B7400C657D3 /* RAFTableFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC9153F515888B7400C657D3 /* RAFTableFormViewController.m */; };
-		FCC7F9601587F4020008558B /* RAFOrderedDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = FCC7F95F1587F4020008558B /* RAFOrderedDictionary.m */; };
-		FCE11FFB16813C48001CFB13 /* RAFSignalSource.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE11FFA16813C47001CFB13 /* RAFSignalSource.m */; };
-		FCE11FFE1682587C001CFB13 /* RAFLens.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE11FFD1682587C001CFB13 /* RAFLens.m */; };
-		FCE1200A16827732001CFB13 /* RAFIdentityValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE1200916827732001CFB13 /* RAFIdentityValueTransformer.m */; };
-		FCE1200D16827791001CFB13 /* RAFNumberStringValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE1200C16827790001CFB13 /* RAFNumberStringValueTransformer.m */; };
+		FCD30F3D16F64B4A00473BB8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCD30F3C16F64B4A00473BB8 /* Foundation.framework */; };
+		FCD30F4C16F64B4B00473BB8 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCD30F4B16F64B4B00473BB8 /* SenTestingKit.framework */; };
+		FCD30F4E16F64B4B00473BB8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCD30F4D16F64B4B00473BB8 /* UIKit.framework */; };
+		FCD30F4F16F64B4B00473BB8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCD30F3C16F64B4A00473BB8 /* Foundation.framework */; };
+		FCD30F5216F64B4B00473BB8 /* libReactiveFormlets.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FCD30F3916F64B4A00473BB8 /* libReactiveFormlets.a */; };
+		FCD30F5816F64B4B00473BB8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FCD30F5616F64B4B00473BB8 /* InfoPlist.strings */; };
+		FCD30F5B16F64B4B00473BB8 /* ReactiveFormletsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FCD30F5A16F64B4B00473BB8 /* ReactiveFormletsTests.m */; };
+		FCD30F7216F64C4E00473BB8 /* libReactiveCocoa-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FCD30F6F16F64C1500473BB8 /* libReactiveCocoa-iOS.a */; };
+		FCD30F7C16F64D0300473BB8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCD30F7B16F64D0300473BB8 /* UIKit.framework */; };
+		FCD30F9B16F64D9D00473BB8 /* RAFFormlet.m in Sources */ = {isa = PBXBuildFile; fileRef = FCD30F8016F64D9D00473BB8 /* RAFFormlet.m */; };
+		FCD30F9C16F64D9D00473BB8 /* RAFLens.m in Sources */ = {isa = PBXBuildFile; fileRef = FCD30F8216F64D9D00473BB8 /* RAFLens.m */; };
+		FCD30F9D16F64D9D00473BB8 /* RAFModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FCD30F8416F64D9D00473BB8 /* RAFModel.m */; };
+		FCD30F9E16F64D9D00473BB8 /* RAFOrderedDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = FCD30F8616F64D9D00473BB8 /* RAFOrderedDictionary.m */; };
+		FCD30F9F16F64D9D00473BB8 /* RAFReifiedProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = FCD30F8816F64D9D00473BB8 /* RAFReifiedProtocol.m */; };
+		FCD30FA016F64D9D00473BB8 /* RAFSignalSource.m in Sources */ = {isa = PBXBuildFile; fileRef = FCD30F8A16F64D9D00473BB8 /* RAFSignalSource.m */; };
+		FCD30FA116F64D9D00473BB8 /* RAFObjCRuntime.m in Sources */ = {isa = PBXBuildFile; fileRef = FCD30F8C16F64D9D00473BB8 /* RAFObjCRuntime.m */; };
+		FCD30FA216F64D9D00473BB8 /* NSInvocation+RAFExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = FCD30F8E16F64D9D00473BB8 /* NSInvocation+RAFExtensions.m */; };
+		FCD30FA316F64D9D00473BB8 /* RAFIdentityValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = FCD30F9016F64D9D00473BB8 /* RAFIdentityValueTransformer.m */; };
+		FCD30FA416F64D9D00473BB8 /* RAFNumberStringValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = FCD30F9216F64D9D00473BB8 /* RAFNumberStringValueTransformer.m */; };
+		FCD30FA516F64D9D00473BB8 /* RAFTableForm.m in Sources */ = {isa = PBXBuildFile; fileRef = FCD30F9416F64D9D00473BB8 /* RAFTableForm.m */; };
+		FCD30FA616F64D9D00473BB8 /* RAFTableSection.m in Sources */ = {isa = PBXBuildFile; fileRef = FCD30F9616F64D9D00473BB8 /* RAFTableSection.m */; };
+		FCD30FA716F64D9D00473BB8 /* RAFInputRow.m in Sources */ = {isa = PBXBuildFile; fileRef = FCD30F9816F64D9D00473BB8 /* RAFInputRow.m */; };
+		FCD30FA816F64D9D00473BB8 /* RAFValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = FCD30F9A16F64D9D00473BB8 /* RAFValidator.m */; };
+		FCD30FAE16F64E2700473BB8 /* EXTScope.m in Sources */ = {isa = PBXBuildFile; fileRef = FCD30FAD16F64E2700473BB8 /* EXTScope.m */; };
+		FCD30FB116F64E3000473BB8 /* EXTConcreteProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = FCD30FB016F64E3000473BB8 /* EXTConcreteProtocol.m */; };
+		FCD30FB316F6505200473BB8 /* ReactiveFormlets.h in Headers */ = {isa = PBXBuildFile; fileRef = FCD30F4116F64B4A00473BB8 /* ReactiveFormlets.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FCD30FB416F6505200473BB8 /* RAFFormlet.h in Headers */ = {isa = PBXBuildFile; fileRef = FCD30F7F16F64D9D00473BB8 /* RAFFormlet.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FCD30FB516F6505200473BB8 /* RAFLens.h in Headers */ = {isa = PBXBuildFile; fileRef = FCD30F8116F64D9D00473BB8 /* RAFLens.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FCD30FB616F6505200473BB8 /* RAFModel.h in Headers */ = {isa = PBXBuildFile; fileRef = FCD30F8316F64D9D00473BB8 /* RAFModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FCD30FB716F6505200473BB8 /* RAFOrderedDictionary.h in Headers */ = {isa = PBXBuildFile; fileRef = FCD30F8516F64D9D00473BB8 /* RAFOrderedDictionary.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FCD30FB816F6505200473BB8 /* RAFReifiedProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = FCD30F8716F64D9D00473BB8 /* RAFReifiedProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FCD30FB916F6505200473BB8 /* RAFSignalSource.h in Headers */ = {isa = PBXBuildFile; fileRef = FCD30F8916F64D9D00473BB8 /* RAFSignalSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FCD30FBA16F6505200473BB8 /* RAFObjCRuntime.h in Headers */ = {isa = PBXBuildFile; fileRef = FCD30F8B16F64D9D00473BB8 /* RAFObjCRuntime.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FCD30FBB16F6505200473BB8 /* NSInvocation+RAFExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = FCD30F8D16F64D9D00473BB8 /* NSInvocation+RAFExtensions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FCD30FBC16F6505200473BB8 /* RAFIdentityValueTransformer.h in Headers */ = {isa = PBXBuildFile; fileRef = FCD30F8F16F64D9D00473BB8 /* RAFIdentityValueTransformer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FCD30FBD16F6505200473BB8 /* RAFNumberStringValueTransformer.h in Headers */ = {isa = PBXBuildFile; fileRef = FCD30F9116F64D9D00473BB8 /* RAFNumberStringValueTransformer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FCD30FBE16F6505200473BB8 /* RAFTableForm.h in Headers */ = {isa = PBXBuildFile; fileRef = FCD30F9316F64D9D00473BB8 /* RAFTableForm.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FCD30FBF16F6505200473BB8 /* RAFTableSection.h in Headers */ = {isa = PBXBuildFile; fileRef = FCD30F9516F64D9D00473BB8 /* RAFTableSection.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FCD30FC016F6505200473BB8 /* RAFInputRow.h in Headers */ = {isa = PBXBuildFile; fileRef = FCD30F9716F64D9D00473BB8 /* RAFInputRow.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FCD30FC116F6505200473BB8 /* RAFValidator.h in Headers */ = {isa = PBXBuildFile; fileRef = FCD30F9916F64D9D00473BB8 /* RAFValidator.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		FC138699167FF6CF0022A146 /* PBXContainerItemProxy */ = {
+		FCD30F5016F64B4B00473BB8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = FC138688167FF6CE0022A146 /* ReactiveCocoa.xcodeproj */;
+			containerPortal = FCD30F3116F64B4A00473BB8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FCD30F3816F64B4A00473BB8;
+			remoteInfo = ReactiveFormlets;
+		};
+		FCD30F6C16F64C1500473BB8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FCD30F6416F64C1500473BB8 /* ReactiveCocoa.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 88037F8315056328001A5B19;
 			remoteInfo = ReactiveCocoa;
 		};
-		FC13869B167FF6CF0022A146 /* PBXContainerItemProxy */ = {
+		FCD30F6E16F64C1500473BB8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = FC138688167FF6CE0022A146 /* ReactiveCocoa.xcodeproj */;
+			containerPortal = FCD30F6416F64C1500473BB8 /* ReactiveCocoa.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 88F440AB153DAC820097B4C3;
 			remoteInfo = "ReactiveCocoa-iOS";
 		};
-		FC13869D167FF6CF0022A146 /* PBXContainerItemProxy */ = {
+		FCD30F7016F64C1500473BB8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = FC138688167FF6CE0022A146 /* ReactiveCocoa.xcodeproj */;
+			containerPortal = FCD30F6416F64C1500473BB8 /* ReactiveCocoa.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 88CDF7DC15000FCF00163A9F;
 			remoteInfo = ReactiveCocoaTests;
 		};
-		FC1386A6167FF6D30022A146 /* PBXContainerItemProxy */ = {
+		FCD30F7316F64C5D00473BB8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = FC138688167FF6CE0022A146 /* ReactiveCocoa.xcodeproj */;
+			containerPortal = FCD30F6416F64C1500473BB8 /* ReactiveCocoa.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = 88F440AA153DAC820097B4C3;
 			remoteInfo = "ReactiveCocoa-iOS";
 		};
-		FC648CF6157AC81E007E2872 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = FC648CC5157AC81D007E2872 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = FC648CCD157AC81D007E2872;
-			remoteInfo = "iOS Formlets";
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		FC138688167FF6CE0022A146 /* ReactiveCocoa.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ReactiveCocoa.xcodeproj; path = lib/ReactiveCocoa/ReactiveCocoaFramework/ReactiveCocoa.xcodeproj; sourceTree = "<group>"; };
-		FC2511C81588614700534933 /* RAFTableSection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RAFTableSection.h; sourceTree = "<group>"; };
-		FC2511C91588614700534933 /* RAFTableSection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RAFTableSection.m; sourceTree = "<group>"; };
-		FC2511CC158862F700534933 /* RAFTableForm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RAFTableForm.m; sourceTree = "<group>"; };
-		FC2511CE1588649E00534933 /* RAFInputRow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RAFInputRow.h; sourceTree = "<group>"; };
-		FC2511CF1588649E00534933 /* RAFInputRow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RAFInputRow.m; sourceTree = "<group>"; };
-		FC2BB4011596F5FD00E89B72 /* RAFTableForm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RAFTableForm.h; sourceTree = "<group>"; };
-		FC2EA9FF168CC470008EC3E4 /* NSInvocation+RAFExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSInvocation+RAFExtensions.h"; sourceTree = "<group>"; };
-		FC2EAA00168CC470008EC3E4 /* NSInvocation+RAFExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSInvocation+RAFExtensions.m"; sourceTree = "<group>"; };
-		FC2EAA03168D33C1008EC3E4 /* RAFObjCRuntime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RAFObjCRuntime.h; sourceTree = "<group>"; };
-		FC2EAA04168D33C1008EC3E4 /* RAFObjCRuntime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RAFObjCRuntime.m; sourceTree = "<group>"; };
-		FC3E5FA61596FDC3005F3F56 /* GHGitHubClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GHGitHubClient.h; path = lib/ReactiveCocoa/GHAPIDemo/GHAPIDemo/GHGitHubClient.h; sourceTree = "<group>"; };
-		FC3E5FA71596FDC3005F3F56 /* GHGitHubClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GHGitHubClient.m; path = lib/ReactiveCocoa/GHAPIDemo/GHAPIDemo/GHGitHubClient.m; sourceTree = "<group>"; };
-		FC3E5FA81596FDC3005F3F56 /* GHGitHubObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GHGitHubObject.h; path = lib/ReactiveCocoa/GHAPIDemo/GHAPIDemo/GHGitHubObject.h; sourceTree = "<group>"; };
-		FC3E5FA91596FDC3005F3F56 /* GHGitHubObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GHGitHubObject.m; path = lib/ReactiveCocoa/GHAPIDemo/GHAPIDemo/GHGitHubObject.m; sourceTree = "<group>"; };
-		FC3E5FAA1596FDC3005F3F56 /* GHGitHubOrg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GHGitHubOrg.h; path = lib/ReactiveCocoa/GHAPIDemo/GHAPIDemo/GHGitHubOrg.h; sourceTree = "<group>"; };
-		FC3E5FAB1596FDC3005F3F56 /* GHGitHubOrg.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GHGitHubOrg.m; path = lib/ReactiveCocoa/GHAPIDemo/GHAPIDemo/GHGitHubOrg.m; sourceTree = "<group>"; };
-		FC3E5FAC1596FDC3005F3F56 /* GHGitHubTeam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GHGitHubTeam.h; path = lib/ReactiveCocoa/GHAPIDemo/GHAPIDemo/GHGitHubTeam.h; sourceTree = "<group>"; };
-		FC3E5FAD1596FDC3005F3F56 /* GHGitHubTeam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GHGitHubTeam.m; path = lib/ReactiveCocoa/GHAPIDemo/GHAPIDemo/GHGitHubTeam.m; sourceTree = "<group>"; };
-		FC3E5FAE1596FDC3005F3F56 /* GHGitHubUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GHGitHubUser.h; path = lib/ReactiveCocoa/GHAPIDemo/GHAPIDemo/GHGitHubUser.h; sourceTree = "<group>"; };
-		FC3E5FAF1596FDC3005F3F56 /* GHGitHubUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GHGitHubUser.m; path = lib/ReactiveCocoa/GHAPIDemo/GHAPIDemo/GHGitHubUser.m; sourceTree = "<group>"; };
-		FC3E602F1596FE5C005F3F56 /* AFHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPClient.h; sourceTree = "<group>"; };
-		FC3E60301596FE5C005F3F56 /* AFHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPClient.m; sourceTree = "<group>"; };
-		FC3E60311596FE5C005F3F56 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
-		FC3E60321596FE5C005F3F56 /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperation.m; sourceTree = "<group>"; };
-		FC3E60331596FE5C005F3F56 /* AFImageRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFImageRequestOperation.h; sourceTree = "<group>"; };
-		FC3E60341596FE5C005F3F56 /* AFImageRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFImageRequestOperation.m; sourceTree = "<group>"; };
-		FC3E60351596FE5C005F3F56 /* AFJSONRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFJSONRequestOperation.h; sourceTree = "<group>"; };
-		FC3E60361596FE5C005F3F56 /* AFJSONRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFJSONRequestOperation.m; sourceTree = "<group>"; };
-		FC3E60371596FE5C005F3F56 /* AFJSONUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFJSONUtilities.h; sourceTree = "<group>"; };
-		FC3E60381596FE5C005F3F56 /* AFJSONUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFJSONUtilities.m; sourceTree = "<group>"; };
-		FC3E60391596FE5C005F3F56 /* AFNetworkActivityIndicatorManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworkActivityIndicatorManager.h; sourceTree = "<group>"; };
-		FC3E603A1596FE5C005F3F56 /* AFNetworkActivityIndicatorManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNetworkActivityIndicatorManager.m; sourceTree = "<group>"; };
-		FC3E603B1596FE5C005F3F56 /* AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworking.h; sourceTree = "<group>"; };
-		FC3E603C1596FE5C005F3F56 /* AFPropertyListRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFPropertyListRequestOperation.h; sourceTree = "<group>"; };
-		FC3E603D1596FE5C005F3F56 /* AFPropertyListRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFPropertyListRequestOperation.m; sourceTree = "<group>"; };
-		FC3E603E1596FE5C005F3F56 /* AFURLConnectionOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLConnectionOperation.h; sourceTree = "<group>"; };
-		FC3E603F1596FE5C005F3F56 /* AFURLConnectionOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLConnectionOperation.m; sourceTree = "<group>"; };
-		FC3E60401596FE5C005F3F56 /* AFXMLRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFXMLRequestOperation.h; sourceTree = "<group>"; };
-		FC3E60411596FE5C005F3F56 /* AFXMLRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFXMLRequestOperation.m; sourceTree = "<group>"; };
-		FC3E60421596FE5C005F3F56 /* UIImageView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+AFNetworking.h"; sourceTree = "<group>"; };
-		FC3E60431596FE5C005F3F56 /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
-		FC3E605E1596FECF005F3F56 /* JSGHLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSGHLoginViewController.h; sourceTree = "<group>"; };
-		FC3E605F1596FECF005F3F56 /* JSGHLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSGHLoginViewController.m; sourceTree = "<group>"; };
-		FC648CCE157AC81D007E2872 /* ReactiveFormlets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReactiveFormlets.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		FC648CD2157AC81D007E2872 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		FC648CD4157AC81D007E2872 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		FC648CD6157AC81D007E2872 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		FC648CDA157AC81D007E2872 /* ReactiveFormlets-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ReactiveFormlets-Info.plist"; sourceTree = "<group>"; };
-		FC648CDC157AC81D007E2872 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		FC648CDE157AC81D007E2872 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		FC648CE0157AC81D007E2872 /* ReactiveFormlets-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ReactiveFormlets-Prefix.pch"; sourceTree = "<group>"; };
-		FC648CE1157AC81D007E2872 /* JSAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSAppDelegate.h; sourceTree = "<group>"; };
-		FC648CE2157AC81D007E2872 /* JSAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSAppDelegate.m; sourceTree = "<group>"; };
-		FC648CE4157AC81D007E2872 /* iOS Formlets.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "iOS Formlets.entitlements"; sourceTree = "<group>"; };
-		FC648CE7157AC81D007E2872 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		FC648CE9157AC81D007E2872 /* JSViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSViewController.h; sourceTree = "<group>"; };
-		FC648CEA157AC81D007E2872 /* JSViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSViewController.m; sourceTree = "<group>"; };
-		FC648CF1157AC81E007E2872 /* ReactiveFormletsTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReactiveFormletsTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
-		FC648CF2157AC81E007E2872 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		FC648CFA157AC81E007E2872 /* ReactiveFormletsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ReactiveFormletsTests-Info.plist"; sourceTree = "<group>"; };
-		FC648CFC157AC81E007E2872 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		FC648CFE157AC81E007E2872 /* iOS_FormletsTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iOS_FormletsTests.h; sourceTree = "<group>"; };
-		FC648CFF157AC81E007E2872 /* iOS_FormletsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iOS_FormletsTests.m; sourceTree = "<group>"; };
-		FC648D2A157AC924007E2872 /* RAFFormlet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RAFFormlet.m; sourceTree = "<group>"; usesTabs = 1; };
-		FC648D2B157AC924007E2872 /* RAFFormlet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RAFFormlet.h; sourceTree = "<group>"; };
-		FC8CA6DF1587FCF1002B6EEA /* RAFReifiedProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RAFReifiedProtocol.h; sourceTree = "<group>"; };
-		FC8CA6E01587FCF1002B6EEA /* RAFReifiedProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RAFReifiedProtocol.m; sourceTree = "<group>"; };
-		FC9153F415888B7400C657D3 /* RAFTableFormViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RAFTableFormViewController.h; sourceTree = "<group>"; };
-		FC9153F515888B7400C657D3 /* RAFTableFormViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RAFTableFormViewController.m; sourceTree = "<group>"; };
-		FCC7F95E1587F4020008558B /* RAFOrderedDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RAFOrderedDictionary.h; sourceTree = "<group>"; };
-		FCC7F95F1587F4020008558B /* RAFOrderedDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RAFOrderedDictionary.m; sourceTree = "<group>"; };
-		FCE11FF4168120C2001CFB13 /* RAFModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RAFModel.h; sourceTree = "<group>"; };
-		FCE11FF916813C0C001CFB13 /* RAFSignalSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RAFSignalSource.h; sourceTree = "<group>"; };
-		FCE11FFA16813C47001CFB13 /* RAFSignalSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RAFSignalSource.m; sourceTree = "<group>"; };
-		FCE11FFC1682587B001CFB13 /* RAFLens.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RAFLens.h; sourceTree = "<group>"; };
-		FCE11FFD1682587C001CFB13 /* RAFLens.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RAFLens.m; sourceTree = "<group>"; };
-		FCE1200816827732001CFB13 /* RAFIdentityValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RAFIdentityValueTransformer.h; sourceTree = "<group>"; };
-		FCE1200916827732001CFB13 /* RAFIdentityValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RAFIdentityValueTransformer.m; sourceTree = "<group>"; };
-		FCE1200B16827790001CFB13 /* RAFNumberStringValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RAFNumberStringValueTransformer.h; sourceTree = "<group>"; };
-		FCE1200C16827790001CFB13 /* RAFNumberStringValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RAFNumberStringValueTransformer.m; sourceTree = "<group>"; };
+		FCD30F3916F64B4A00473BB8 /* libReactiveFormlets.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libReactiveFormlets.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		FCD30F3C16F64B4A00473BB8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		FCD30F4016F64B4A00473BB8 /* ReactiveFormlets-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ReactiveFormlets-Prefix.pch"; sourceTree = "<group>"; };
+		FCD30F4116F64B4A00473BB8 /* ReactiveFormlets.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReactiveFormlets.h; sourceTree = "<group>"; };
+		FCD30F4A16F64B4B00473BB8 /* ReactiveFormletsTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReactiveFormletsTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FCD30F4B16F64B4B00473BB8 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		FCD30F4D16F64B4B00473BB8 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		FCD30F5516F64B4B00473BB8 /* ReactiveFormletsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ReactiveFormletsTests-Info.plist"; sourceTree = "<group>"; };
+		FCD30F5716F64B4B00473BB8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FCD30F5916F64B4B00473BB8 /* ReactiveFormletsTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReactiveFormletsTests.h; sourceTree = "<group>"; };
+		FCD30F5A16F64B4B00473BB8 /* ReactiveFormletsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReactiveFormletsTests.m; sourceTree = "<group>"; };
+		FCD30F6416F64C1500473BB8 /* ReactiveCocoa.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ReactiveCocoa.xcodeproj; path = external/ReactiveCocoa/ReactiveCocoaFramework/ReactiveCocoa.xcodeproj; sourceTree = "<group>"; };
+		FCD30F7B16F64D0300473BB8 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		FCD30F7F16F64D9D00473BB8 /* RAFFormlet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RAFFormlet.h; sourceTree = "<group>"; };
+		FCD30F8016F64D9D00473BB8 /* RAFFormlet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RAFFormlet.m; sourceTree = "<group>"; };
+		FCD30F8116F64D9D00473BB8 /* RAFLens.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RAFLens.h; sourceTree = "<group>"; };
+		FCD30F8216F64D9D00473BB8 /* RAFLens.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RAFLens.m; sourceTree = "<group>"; };
+		FCD30F8316F64D9D00473BB8 /* RAFModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RAFModel.h; sourceTree = "<group>"; };
+		FCD30F8416F64D9D00473BB8 /* RAFModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RAFModel.m; sourceTree = "<group>"; };
+		FCD30F8516F64D9D00473BB8 /* RAFOrderedDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RAFOrderedDictionary.h; sourceTree = "<group>"; };
+		FCD30F8616F64D9D00473BB8 /* RAFOrderedDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RAFOrderedDictionary.m; sourceTree = "<group>"; };
+		FCD30F8716F64D9D00473BB8 /* RAFReifiedProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RAFReifiedProtocol.h; sourceTree = "<group>"; };
+		FCD30F8816F64D9D00473BB8 /* RAFReifiedProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RAFReifiedProtocol.m; sourceTree = "<group>"; };
+		FCD30F8916F64D9D00473BB8 /* RAFSignalSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RAFSignalSource.h; sourceTree = "<group>"; };
+		FCD30F8A16F64D9D00473BB8 /* RAFSignalSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RAFSignalSource.m; sourceTree = "<group>"; };
+		FCD30F8B16F64D9D00473BB8 /* RAFObjCRuntime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RAFObjCRuntime.h; sourceTree = "<group>"; };
+		FCD30F8C16F64D9D00473BB8 /* RAFObjCRuntime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RAFObjCRuntime.m; sourceTree = "<group>"; };
+		FCD30F8D16F64D9D00473BB8 /* NSInvocation+RAFExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSInvocation+RAFExtensions.h"; sourceTree = "<group>"; };
+		FCD30F8E16F64D9D00473BB8 /* NSInvocation+RAFExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSInvocation+RAFExtensions.m"; sourceTree = "<group>"; };
+		FCD30F8F16F64D9D00473BB8 /* RAFIdentityValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RAFIdentityValueTransformer.h; sourceTree = "<group>"; };
+		FCD30F9016F64D9D00473BB8 /* RAFIdentityValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RAFIdentityValueTransformer.m; sourceTree = "<group>"; };
+		FCD30F9116F64D9D00473BB8 /* RAFNumberStringValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RAFNumberStringValueTransformer.h; sourceTree = "<group>"; };
+		FCD30F9216F64D9D00473BB8 /* RAFNumberStringValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RAFNumberStringValueTransformer.m; sourceTree = "<group>"; };
+		FCD30F9316F64D9D00473BB8 /* RAFTableForm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RAFTableForm.h; sourceTree = "<group>"; };
+		FCD30F9416F64D9D00473BB8 /* RAFTableForm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RAFTableForm.m; sourceTree = "<group>"; };
+		FCD30F9516F64D9D00473BB8 /* RAFTableSection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RAFTableSection.h; sourceTree = "<group>"; };
+		FCD30F9616F64D9D00473BB8 /* RAFTableSection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RAFTableSection.m; sourceTree = "<group>"; };
+		FCD30F9716F64D9D00473BB8 /* RAFInputRow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RAFInputRow.h; sourceTree = "<group>"; };
+		FCD30F9816F64D9D00473BB8 /* RAFInputRow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RAFInputRow.m; sourceTree = "<group>"; };
+		FCD30F9916F64D9D00473BB8 /* RAFValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RAFValidator.h; sourceTree = "<group>"; };
+		FCD30F9A16F64D9D00473BB8 /* RAFValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RAFValidator.m; sourceTree = "<group>"; };
+		FCD30FAA16F64E1000473BB8 /* metamacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = metamacros.h; path = external/libextobjc/extobjc/metamacros.h; sourceTree = "<group>"; };
+		FCD30FAC16F64E1C00473BB8 /* EXTScope.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EXTScope.h; path = external/libextobjc/extobjc/EXTScope.h; sourceTree = "<group>"; };
+		FCD30FAD16F64E2700473BB8 /* EXTScope.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EXTScope.m; path = external/libextobjc/extobjc/EXTScope.m; sourceTree = "<group>"; };
+		FCD30FAF16F64E3000473BB8 /* EXTConcreteProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EXTConcreteProtocol.h; path = external/libextobjc/extobjc/EXTConcreteProtocol.h; sourceTree = "<group>"; };
+		FCD30FB016F64E3000473BB8 /* EXTConcreteProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EXTConcreteProtocol.m; path = external/libextobjc/extobjc/EXTConcreteProtocol.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		FC648CCB157AC81D007E2872 /* Frameworks */ = {
+		FCD30F3616F64B4A00473BB8 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FC1386A8167FF6DD0022A146 /* libReactiveCocoa-iOS.a in Frameworks */,
-				FC648CD3157AC81D007E2872 /* UIKit.framework in Frameworks */,
-				FC648CD5157AC81D007E2872 /* Foundation.framework in Frameworks */,
-				FC648CD7157AC81D007E2872 /* CoreGraphics.framework in Frameworks */,
+				FCD30F7C16F64D0300473BB8 /* UIKit.framework in Frameworks */,
+				FCD30F7216F64C4E00473BB8 /* libReactiveCocoa-iOS.a in Frameworks */,
+				FCD30F3D16F64B4A00473BB8 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FC648CED157AC81E007E2872 /* Frameworks */ = {
+		FCD30F4616F64B4B00473BB8 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FC648CF3157AC81E007E2872 /* SenTestingKit.framework in Frameworks */,
-				FC648CF4157AC81E007E2872 /* UIKit.framework in Frameworks */,
-				FC648CF5157AC81E007E2872 /* Foundation.framework in Frameworks */,
+				FCD30F4C16F64B4B00473BB8 /* SenTestingKit.framework in Frameworks */,
+				FCD30F4E16F64B4B00473BB8 /* UIKit.framework in Frameworks */,
+				FCD30F4F16F64B4B00473BB8 /* Foundation.framework in Frameworks */,
+				FCD30F5216F64B4B00473BB8 /* libReactiveFormlets.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		FC138689167FF6CE0022A146 /* Products */ = {
+		FCD30F3016F64B4A00473BB8 = {
 			isa = PBXGroup;
 			children = (
-				FC13869A167FF6CF0022A146 /* ReactiveCocoa.framework */,
-				FC13869C167FF6CF0022A146 /* libReactiveCocoa-iOS.a */,
-				FC13869E167FF6CF0022A146 /* ReactiveCocoaTests.octest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		FC2511C71588612800534933 /* Example Formlets */ = {
-			isa = PBXGroup;
-			children = (
-				FC2BB4011596F5FD00E89B72 /* RAFTableForm.h */,
-				FC2511CC158862F700534933 /* RAFTableForm.m */,
-				FC2511C81588614700534933 /* RAFTableSection.h */,
-				FC2511C91588614700534933 /* RAFTableSection.m */,
-				FC2511CE1588649E00534933 /* RAFInputRow.h */,
-				FC2511CF1588649E00534933 /* RAFInputRow.m */,
-				FC9153F415888B7400C657D3 /* RAFTableFormViewController.h */,
-				FC9153F515888B7400C657D3 /* RAFTableFormViewController.m */,
-			);
-			name = "Example Formlets";
-			sourceTree = "<group>";
-		};
-		FC2EAA02168CC88B008EC3E4 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				FC2EAA03168D33C1008EC3E4 /* RAFObjCRuntime.h */,
-				FC2EAA04168D33C1008EC3E4 /* RAFObjCRuntime.m */,
-				FC2EA9FF168CC470008EC3E4 /* NSInvocation+RAFExtensions.h */,
-				FC2EAA00168CC470008EC3E4 /* NSInvocation+RAFExtensions.m */,
-			);
-			name = Extensions;
-			sourceTree = "<group>";
-		};
-		FC3E5F961596FDA3005F3F56 /* GitHub API */ = {
-			isa = PBXGroup;
-			children = (
-				FC3E5FA61596FDC3005F3F56 /* GHGitHubClient.h */,
-				FC3E5FA71596FDC3005F3F56 /* GHGitHubClient.m */,
-				FC3E5FA81596FDC3005F3F56 /* GHGitHubObject.h */,
-				FC3E5FA91596FDC3005F3F56 /* GHGitHubObject.m */,
-				FC3E5FAA1596FDC3005F3F56 /* GHGitHubOrg.h */,
-				FC3E5FAB1596FDC3005F3F56 /* GHGitHubOrg.m */,
-				FC3E5FAC1596FDC3005F3F56 /* GHGitHubTeam.h */,
-				FC3E5FAD1596FDC3005F3F56 /* GHGitHubTeam.m */,
-				FC3E5FAE1596FDC3005F3F56 /* GHGitHubUser.h */,
-				FC3E5FAF1596FDC3005F3F56 /* GHGitHubUser.m */,
-			);
-			name = "GitHub API";
-			sourceTree = "<group>";
-		};
-		FC3E602E1596FE5C005F3F56 /* AFNetworking */ = {
-			isa = PBXGroup;
-			children = (
-				FC3E602F1596FE5C005F3F56 /* AFHTTPClient.h */,
-				FC3E60301596FE5C005F3F56 /* AFHTTPClient.m */,
-				FC3E60311596FE5C005F3F56 /* AFHTTPRequestOperation.h */,
-				FC3E60321596FE5C005F3F56 /* AFHTTPRequestOperation.m */,
-				FC3E60331596FE5C005F3F56 /* AFImageRequestOperation.h */,
-				FC3E60341596FE5C005F3F56 /* AFImageRequestOperation.m */,
-				FC3E60351596FE5C005F3F56 /* AFJSONRequestOperation.h */,
-				FC3E60361596FE5C005F3F56 /* AFJSONRequestOperation.m */,
-				FC3E60371596FE5C005F3F56 /* AFJSONUtilities.h */,
-				FC3E60381596FE5C005F3F56 /* AFJSONUtilities.m */,
-				FC3E60391596FE5C005F3F56 /* AFNetworkActivityIndicatorManager.h */,
-				FC3E603A1596FE5C005F3F56 /* AFNetworkActivityIndicatorManager.m */,
-				FC3E603B1596FE5C005F3F56 /* AFNetworking.h */,
-				FC3E603C1596FE5C005F3F56 /* AFPropertyListRequestOperation.h */,
-				FC3E603D1596FE5C005F3F56 /* AFPropertyListRequestOperation.m */,
-				FC3E603E1596FE5C005F3F56 /* AFURLConnectionOperation.h */,
-				FC3E603F1596FE5C005F3F56 /* AFURLConnectionOperation.m */,
-				FC3E60401596FE5C005F3F56 /* AFXMLRequestOperation.h */,
-				FC3E60411596FE5C005F3F56 /* AFXMLRequestOperation.m */,
-				FC3E60421596FE5C005F3F56 /* UIImageView+AFNetworking.h */,
-				FC3E60431596FE5C005F3F56 /* UIImageView+AFNetworking.m */,
-			);
-			name = AFNetworking;
-			path = lib/ReactiveCocoa/GHAPIDemo/external/AFNetworking/AFNetworking;
-			sourceTree = "<group>";
-		};
-		FC648CC3157AC81D007E2872 = {
-			isa = PBXGroup;
-			children = (
-				FC3E602E1596FE5C005F3F56 /* AFNetworking */,
-				FC3E5F961596FDA3005F3F56 /* GitHub API */,
-				FC648CD8157AC81D007E2872 /* iOS Formlets */,
-				FC648CF8157AC81E007E2872 /* iOS FormletsTests */,
-				FC648CD1157AC81D007E2872 /* Frameworks */,
-				FC648CCF157AC81D007E2872 /* Products */,
+				FCD30F3E16F64B4A00473BB8 /* ReactiveFormlets */,
+				FCD30F5316F64B4B00473BB8 /* ReactiveFormletsTests */,
+				FCD30F3B16F64B4A00473BB8 /* Frameworks */,
+				FCD30F3A16F64B4A00473BB8 /* Products */,
 			);
 			sourceTree = "<group>";
 			usesTabs = 1;
 		};
-		FC648CCF157AC81D007E2872 /* Products */ = {
+		FCD30F3A16F64B4A00473BB8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				FC648CCE157AC81D007E2872 /* ReactiveFormlets.app */,
-				FC648CF1157AC81E007E2872 /* ReactiveFormletsTests.octest */,
+				FCD30F3916F64B4A00473BB8 /* libReactiveFormlets.a */,
+				FCD30F4A16F64B4B00473BB8 /* ReactiveFormletsTests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		FC648CD1157AC81D007E2872 /* Frameworks */ = {
+		FCD30F3B16F64B4A00473BB8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				FC138688167FF6CE0022A146 /* ReactiveCocoa.xcodeproj */,
-				FC648CD2157AC81D007E2872 /* UIKit.framework */,
-				FC648CD4157AC81D007E2872 /* Foundation.framework */,
-				FC648CD6157AC81D007E2872 /* CoreGraphics.framework */,
-				FC648CF2157AC81E007E2872 /* SenTestingKit.framework */,
+				FCD30FA916F64DF500473BB8 /* libextobjc */,
+				FCD30F6416F64C1500473BB8 /* ReactiveCocoa.xcodeproj */,
+				FCD30F3C16F64B4A00473BB8 /* Foundation.framework */,
+				FCD30F7B16F64D0300473BB8 /* UIKit.framework */,
+				FCD30F4B16F64B4B00473BB8 /* SenTestingKit.framework */,
+				FCD30F4D16F64B4B00473BB8 /* UIKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		FC648CD8157AC81D007E2872 /* iOS Formlets */ = {
+		FCD30F3E16F64B4A00473BB8 /* ReactiveFormlets */ = {
 			isa = PBXGroup;
 			children = (
-				FC3E605E1596FECF005F3F56 /* JSGHLoginViewController.h */,
-				FC3E605F1596FECF005F3F56 /* JSGHLoginViewController.m */,
-				FC648CE9157AC81D007E2872 /* JSViewController.h */,
-				FC648CEA157AC81D007E2872 /* JSViewController.m */,
-				FC2511C71588612800534933 /* Example Formlets */,
-				FC648D27157AC914007E2872 /* Core */,
-				FC648CE1157AC81D007E2872 /* JSAppDelegate.h */,
-				FC648CE2157AC81D007E2872 /* JSAppDelegate.m */,
-				FC648CE6157AC81D007E2872 /* MainStoryboard.storyboard */,
-				FC648CD9157AC81D007E2872 /* Supporting Files */,
+				FCD30F4116F64B4A00473BB8 /* ReactiveFormlets.h */,
+				FCD30F7F16F64D9D00473BB8 /* RAFFormlet.h */,
+				FCD30F8016F64D9D00473BB8 /* RAFFormlet.m */,
+				FCD30F8116F64D9D00473BB8 /* RAFLens.h */,
+				FCD30F8216F64D9D00473BB8 /* RAFLens.m */,
+				FCD30F8316F64D9D00473BB8 /* RAFModel.h */,
+				FCD30F8416F64D9D00473BB8 /* RAFModel.m */,
+				FCD30F8516F64D9D00473BB8 /* RAFOrderedDictionary.h */,
+				FCD30F8616F64D9D00473BB8 /* RAFOrderedDictionary.m */,
+				FCD30F8716F64D9D00473BB8 /* RAFReifiedProtocol.h */,
+				FCD30F8816F64D9D00473BB8 /* RAFReifiedProtocol.m */,
+				FCD30F8916F64D9D00473BB8 /* RAFSignalSource.h */,
+				FCD30F8A16F64D9D00473BB8 /* RAFSignalSource.m */,
+				FCD30F8B16F64D9D00473BB8 /* RAFObjCRuntime.h */,
+				FCD30F8C16F64D9D00473BB8 /* RAFObjCRuntime.m */,
+				FCD30F8D16F64D9D00473BB8 /* NSInvocation+RAFExtensions.h */,
+				FCD30F8E16F64D9D00473BB8 /* NSInvocation+RAFExtensions.m */,
+				FCD30F8F16F64D9D00473BB8 /* RAFIdentityValueTransformer.h */,
+				FCD30F9016F64D9D00473BB8 /* RAFIdentityValueTransformer.m */,
+				FCD30F9116F64D9D00473BB8 /* RAFNumberStringValueTransformer.h */,
+				FCD30F9216F64D9D00473BB8 /* RAFNumberStringValueTransformer.m */,
+				FCD30F9316F64D9D00473BB8 /* RAFTableForm.h */,
+				FCD30F9416F64D9D00473BB8 /* RAFTableForm.m */,
+				FCD30F9516F64D9D00473BB8 /* RAFTableSection.h */,
+				FCD30F9616F64D9D00473BB8 /* RAFTableSection.m */,
+				FCD30F9716F64D9D00473BB8 /* RAFInputRow.h */,
+				FCD30F9816F64D9D00473BB8 /* RAFInputRow.m */,
+				FCD30F9916F64D9D00473BB8 /* RAFValidator.h */,
+				FCD30F9A16F64D9D00473BB8 /* RAFValidator.m */,
+				FCD30F3F16F64B4A00473BB8 /* Supporting Files */,
 			);
-			path = "iOS Formlets";
+			path = ReactiveFormlets;
 			sourceTree = "<group>";
 		};
-		FC648CD9157AC81D007E2872 /* Supporting Files */ = {
+		FCD30F3F16F64B4A00473BB8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				FC648CDA157AC81D007E2872 /* ReactiveFormlets-Info.plist */,
-				FC648CDB157AC81D007E2872 /* InfoPlist.strings */,
-				FC648CDE157AC81D007E2872 /* main.m */,
-				FC648CE0157AC81D007E2872 /* ReactiveFormlets-Prefix.pch */,
-				FC648CE4157AC81D007E2872 /* iOS Formlets.entitlements */,
+				FCD30F4016F64B4A00473BB8 /* ReactiveFormlets-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		FC648CF8157AC81E007E2872 /* iOS FormletsTests */ = {
+		FCD30F5316F64B4B00473BB8 /* ReactiveFormletsTests */ = {
 			isa = PBXGroup;
 			children = (
-				FC648CFE157AC81E007E2872 /* iOS_FormletsTests.h */,
-				FC648CFF157AC81E007E2872 /* iOS_FormletsTests.m */,
-				FC648CF9157AC81E007E2872 /* Supporting Files */,
+				FCD30F5916F64B4B00473BB8 /* ReactiveFormletsTests.h */,
+				FCD30F5A16F64B4B00473BB8 /* ReactiveFormletsTests.m */,
+				FCD30F5416F64B4B00473BB8 /* Supporting Files */,
 			);
-			path = "iOS FormletsTests";
+			path = ReactiveFormletsTests;
 			sourceTree = "<group>";
 		};
-		FC648CF9157AC81E007E2872 /* Supporting Files */ = {
+		FCD30F5416F64B4B00473BB8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				FC648CFA157AC81E007E2872 /* ReactiveFormletsTests-Info.plist */,
-				FC648CFB157AC81E007E2872 /* InfoPlist.strings */,
+				FCD30F5516F64B4B00473BB8 /* ReactiveFormletsTests-Info.plist */,
+				FCD30F5616F64B4B00473BB8 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		FC648D27157AC914007E2872 /* Core */ = {
+		FCD30F6516F64C1500473BB8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				FC648D2B157AC924007E2872 /* RAFFormlet.h */,
-				FC648D2A157AC924007E2872 /* RAFFormlet.m */,
-				FCE11FFC1682587B001CFB13 /* RAFLens.h */,
-				FCE11FFD1682587C001CFB13 /* RAFLens.m */,
-				FCE11FF4168120C2001CFB13 /* RAFModel.h */,
-				FCC7F95E1587F4020008558B /* RAFOrderedDictionary.h */,
-				FCC7F95F1587F4020008558B /* RAFOrderedDictionary.m */,
-				FC8CA6DF1587FCF1002B6EEA /* RAFReifiedProtocol.h */,
-				FC8CA6E01587FCF1002B6EEA /* RAFReifiedProtocol.m */,
-				FCE11FF916813C0C001CFB13 /* RAFSignalSource.h */,
-				FCE11FFA16813C47001CFB13 /* RAFSignalSource.m */,
-				FC2EAA02168CC88B008EC3E4 /* Extensions */,
-				FCE1200716827723001CFB13 /* Value Transformers */,
+				FCD30F6D16F64C1500473BB8 /* ReactiveCocoa.framework */,
+				FCD30F6F16F64C1500473BB8 /* libReactiveCocoa-iOS.a */,
+				FCD30F7116F64C1500473BB8 /* ReactiveCocoaTests.octest */,
 			);
-			name = Core;
+			name = Products;
 			sourceTree = "<group>";
 		};
-		FCE1200716827723001CFB13 /* Value Transformers */ = {
+		FCD30FA916F64DF500473BB8 /* libextobjc */ = {
 			isa = PBXGroup;
 			children = (
-				FCE1200816827732001CFB13 /* RAFIdentityValueTransformer.h */,
-				FCE1200916827732001CFB13 /* RAFIdentityValueTransformer.m */,
-				FCE1200B16827790001CFB13 /* RAFNumberStringValueTransformer.h */,
-				FCE1200C16827790001CFB13 /* RAFNumberStringValueTransformer.m */,
+				FCD30FAC16F64E1C00473BB8 /* EXTScope.h */,
+				FCD30FAD16F64E2700473BB8 /* EXTScope.m */,
+				FCD30FAF16F64E3000473BB8 /* EXTConcreteProtocol.h */,
+				FCD30FB016F64E3000473BB8 /* EXTConcreteProtocol.m */,
+				FCD30FAA16F64E1000473BB8 /* metamacros.h */,
 			);
-			name = "Value Transformers";
+			name = libextobjc;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		FCD30FB216F6503700473BB8 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FCD30FB316F6505200473BB8 /* ReactiveFormlets.h in Headers */,
+				FCD30FB416F6505200473BB8 /* RAFFormlet.h in Headers */,
+				FCD30FB516F6505200473BB8 /* RAFLens.h in Headers */,
+				FCD30FB616F6505200473BB8 /* RAFModel.h in Headers */,
+				FCD30FB716F6505200473BB8 /* RAFOrderedDictionary.h in Headers */,
+				FCD30FB816F6505200473BB8 /* RAFReifiedProtocol.h in Headers */,
+				FCD30FB916F6505200473BB8 /* RAFSignalSource.h in Headers */,
+				FCD30FBA16F6505200473BB8 /* RAFObjCRuntime.h in Headers */,
+				FCD30FBB16F6505200473BB8 /* NSInvocation+RAFExtensions.h in Headers */,
+				FCD30FBC16F6505200473BB8 /* RAFIdentityValueTransformer.h in Headers */,
+				FCD30FBD16F6505200473BB8 /* RAFNumberStringValueTransformer.h in Headers */,
+				FCD30FBE16F6505200473BB8 /* RAFTableForm.h in Headers */,
+				FCD30FBF16F6505200473BB8 /* RAFTableSection.h in Headers */,
+				FCD30FC016F6505200473BB8 /* RAFInputRow.h in Headers */,
+				FCD30FC116F6505200473BB8 /* RAFValidator.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
-		FC648CCD157AC81D007E2872 /* ReactiveFormlets */ = {
+		FCD30F3816F64B4A00473BB8 /* ReactiveFormlets */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FC648D03157AC81E007E2872 /* Build configuration list for PBXNativeTarget "ReactiveFormlets" */;
+			buildConfigurationList = FCD30F5E16F64B4B00473BB8 /* Build configuration list for PBXNativeTarget "ReactiveFormlets" */;
 			buildPhases = (
-				FC648CCA157AC81D007E2872 /* Sources */,
-				FC648CCB157AC81D007E2872 /* Frameworks */,
-				FC648CCC157AC81D007E2872 /* Resources */,
+				FCD30F3516F64B4A00473BB8 /* Sources */,
+				FCD30F3616F64B4A00473BB8 /* Frameworks */,
+				FCD30FB216F6503700473BB8 /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				FC1386A7167FF6D30022A146 /* PBXTargetDependency */,
+				FCD30F7416F64C5D00473BB8 /* PBXTargetDependency */,
 			);
 			name = ReactiveFormlets;
-			productName = "iOS Formlets";
-			productReference = FC648CCE157AC81D007E2872 /* ReactiveFormlets.app */;
-			productType = "com.apple.product-type.application";
+			productName = ReactiveFormlets;
+			productReference = FCD30F3916F64B4A00473BB8 /* libReactiveFormlets.a */;
+			productType = "com.apple.product-type.library.static";
 		};
-		FC648CF0157AC81E007E2872 /* ReactiveFormletsTests */ = {
+		FCD30F4916F64B4B00473BB8 /* ReactiveFormletsTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FC648D06157AC81E007E2872 /* Build configuration list for PBXNativeTarget "ReactiveFormletsTests" */;
+			buildConfigurationList = FCD30F6116F64B4B00473BB8 /* Build configuration list for PBXNativeTarget "ReactiveFormletsTests" */;
 			buildPhases = (
-				FC648CEC157AC81E007E2872 /* Sources */,
-				FC648CED157AC81E007E2872 /* Frameworks */,
-				FC648CEE157AC81E007E2872 /* Resources */,
-				FC648CEF157AC81E007E2872 /* ShellScript */,
+				FCD30F4516F64B4B00473BB8 /* Sources */,
+				FCD30F4616F64B4B00473BB8 /* Frameworks */,
+				FCD30F4716F64B4B00473BB8 /* Resources */,
+				FCD30F4816F64B4B00473BB8 /* ShellScript */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				FC648CF7157AC81E007E2872 /* PBXTargetDependency */,
+				FCD30F5116F64B4B00473BB8 /* PBXTargetDependency */,
 			);
 			name = ReactiveFormletsTests;
-			productName = "iOS FormletsTests";
-			productReference = FC648CF1157AC81E007E2872 /* ReactiveFormletsTests.octest */;
+			productName = ReactiveFormletsTests;
+			productReference = FCD30F4A16F64B4B00473BB8 /* ReactiveFormletsTests.octest */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		FC648CC5157AC81D007E2872 /* Project object */ = {
+		FCD30F3116F64B4A00473BB8 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = RAF;
-				LastUpgradeCheck = 0440;
+				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = "Jon Sterling";
 			};
-			buildConfigurationList = FC648CC8157AC81D007E2872 /* Build configuration list for PBXProject "ReactiveFormlets" */;
+			buildConfigurationList = FCD30F3416F64B4A00473BB8 /* Build configuration list for PBXProject "ReactiveFormlets" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = FC648CC3157AC81D007E2872;
-			productRefGroup = FC648CCF157AC81D007E2872 /* Products */;
+			mainGroup = FCD30F3016F64B4A00473BB8;
+			productRefGroup = FCD30F3A16F64B4A00473BB8 /* Products */;
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = FC138689167FF6CE0022A146 /* Products */;
-					ProjectRef = FC138688167FF6CE0022A146 /* ReactiveCocoa.xcodeproj */;
+					ProductGroup = FCD30F6516F64C1500473BB8 /* Products */;
+					ProjectRef = FCD30F6416F64C1500473BB8 /* ReactiveCocoa.xcodeproj */;
 				},
 			);
 			projectRoot = "";
 			targets = (
-				FC648CCD157AC81D007E2872 /* ReactiveFormlets */,
-				FC648CF0157AC81E007E2872 /* ReactiveFormletsTests */,
+				FCD30F3816F64B4A00473BB8 /* ReactiveFormlets */,
+				FCD30F4916F64B4B00473BB8 /* ReactiveFormletsTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		FC13869A167FF6CF0022A146 /* ReactiveCocoa.framework */ = {
+		FCD30F6D16F64C1500473BB8 /* ReactiveCocoa.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = ReactiveCocoa.framework;
-			remoteRef = FC138699167FF6CF0022A146 /* PBXContainerItemProxy */;
+			remoteRef = FCD30F6C16F64C1500473BB8 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		FC13869C167FF6CF0022A146 /* libReactiveCocoa-iOS.a */ = {
+		FCD30F6F16F64C1500473BB8 /* libReactiveCocoa-iOS.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = "libReactiveCocoa-iOS.a";
-			remoteRef = FC13869B167FF6CF0022A146 /* PBXContainerItemProxy */;
+			remoteRef = FCD30F6E16F64C1500473BB8 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		FC13869E167FF6CF0022A146 /* ReactiveCocoaTests.octest */ = {
+		FCD30F7116F64C1500473BB8 /* ReactiveCocoaTests.octest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = ReactiveCocoaTests.octest;
-			remoteRef = FC13869D167FF6CF0022A146 /* PBXContainerItemProxy */;
+			remoteRef = FCD30F7016F64C1500473BB8 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
-		FC648CCC157AC81D007E2872 /* Resources */ = {
+		FCD30F4716F64B4B00473BB8 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FC648CDD157AC81D007E2872 /* InfoPlist.strings in Resources */,
-				FC648CE5157AC81D007E2872 /* iOS Formlets.entitlements in Resources */,
-				FC648CE8157AC81D007E2872 /* MainStoryboard.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		FC648CEE157AC81E007E2872 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				FC648CFD157AC81E007E2872 /* InfoPlist.strings in Resources */,
+				FCD30F5816F64B4B00473BB8 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		FC648CEF157AC81E007E2872 /* ShellScript */ = {
+		FCD30F4816F64B4B00473BB8 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -530,88 +431,57 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		FC648CCA157AC81D007E2872 /* Sources */ = {
+		FCD30F3516F64B4A00473BB8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FC648CDF157AC81D007E2872 /* main.m in Sources */,
-				FC648CE3157AC81D007E2872 /* JSAppDelegate.m in Sources */,
-				FC648CEB157AC81D007E2872 /* JSViewController.m in Sources */,
-				FC648D2D157AC924007E2872 /* RAFFormlet.m in Sources */,
-				FCC7F9601587F4020008558B /* RAFOrderedDictionary.m in Sources */,
-				FC8CA6E11587FCF1002B6EEA /* RAFReifiedProtocol.m in Sources */,
-				FC2511CA1588614700534933 /* RAFTableSection.m in Sources */,
-				FC2511CD158862F700534933 /* RAFTableForm.m in Sources */,
-				FC2511D01588649E00534933 /* RAFInputRow.m in Sources */,
-				FC9153F615888B7400C657D3 /* RAFTableFormViewController.m in Sources */,
-				FC3E5FB01596FDC3005F3F56 /* GHGitHubClient.m in Sources */,
-				FC3E5FB11596FDC3005F3F56 /* GHGitHubObject.m in Sources */,
-				FC3E5FB21596FDC3005F3F56 /* GHGitHubOrg.m in Sources */,
-				FC3E5FB31596FDC3005F3F56 /* GHGitHubTeam.m in Sources */,
-				FC3E5FB41596FDC3005F3F56 /* GHGitHubUser.m in Sources */,
-				FC3E60441596FE5C005F3F56 /* AFHTTPClient.m in Sources */,
-				FC3E60451596FE5C005F3F56 /* AFHTTPRequestOperation.m in Sources */,
-				FC3E60461596FE5C005F3F56 /* AFImageRequestOperation.m in Sources */,
-				FC3E60471596FE5C005F3F56 /* AFJSONRequestOperation.m in Sources */,
-				FC3E60481596FE5C005F3F56 /* AFJSONUtilities.m in Sources */,
-				FC3E60491596FE5C005F3F56 /* AFNetworkActivityIndicatorManager.m in Sources */,
-				FC3E604A1596FE5C005F3F56 /* AFPropertyListRequestOperation.m in Sources */,
-				FC3E604B1596FE5C005F3F56 /* AFURLConnectionOperation.m in Sources */,
-				FC3E604C1596FE5C005F3F56 /* AFXMLRequestOperation.m in Sources */,
-				FC3E60601596FECF005F3F56 /* JSGHLoginViewController.m in Sources */,
-				FCE11FFB16813C48001CFB13 /* RAFSignalSource.m in Sources */,
-				FCE11FFE1682587C001CFB13 /* RAFLens.m in Sources */,
-				FCE1200A16827732001CFB13 /* RAFIdentityValueTransformer.m in Sources */,
-				FCE1200D16827791001CFB13 /* RAFNumberStringValueTransformer.m in Sources */,
-				FC2EAA01168CC470008EC3E4 /* NSInvocation+RAFExtensions.m in Sources */,
-				FC2EAA05168D33C1008EC3E4 /* RAFObjCRuntime.m in Sources */,
+				FCD30F9B16F64D9D00473BB8 /* RAFFormlet.m in Sources */,
+				FCD30F9C16F64D9D00473BB8 /* RAFLens.m in Sources */,
+				FCD30F9D16F64D9D00473BB8 /* RAFModel.m in Sources */,
+				FCD30F9E16F64D9D00473BB8 /* RAFOrderedDictionary.m in Sources */,
+				FCD30F9F16F64D9D00473BB8 /* RAFReifiedProtocol.m in Sources */,
+				FCD30FA016F64D9D00473BB8 /* RAFSignalSource.m in Sources */,
+				FCD30FA116F64D9D00473BB8 /* RAFObjCRuntime.m in Sources */,
+				FCD30FA216F64D9D00473BB8 /* NSInvocation+RAFExtensions.m in Sources */,
+				FCD30FA316F64D9D00473BB8 /* RAFIdentityValueTransformer.m in Sources */,
+				FCD30FA416F64D9D00473BB8 /* RAFNumberStringValueTransformer.m in Sources */,
+				FCD30FA516F64D9D00473BB8 /* RAFTableForm.m in Sources */,
+				FCD30FA616F64D9D00473BB8 /* RAFTableSection.m in Sources */,
+				FCD30FA716F64D9D00473BB8 /* RAFInputRow.m in Sources */,
+				FCD30FA816F64D9D00473BB8 /* RAFValidator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FC648CEC157AC81E007E2872 /* Sources */ = {
+		FCD30F4516F64B4B00473BB8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FC648D00157AC81E007E2872 /* iOS_FormletsTests.m in Sources */,
+				FCD30F5B16F64B4B00473BB8 /* ReactiveFormletsTests.m in Sources */,
+				FCD30FAE16F64E2700473BB8 /* EXTScope.m in Sources */,
+				FCD30FB116F64E3000473BB8 /* EXTConcreteProtocol.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		FC1386A7167FF6D30022A146 /* PBXTargetDependency */ = {
+		FCD30F5116F64B4B00473BB8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FCD30F3816F64B4A00473BB8 /* ReactiveFormlets */;
+			targetProxy = FCD30F5016F64B4B00473BB8 /* PBXContainerItemProxy */;
+		};
+		FCD30F7416F64C5D00473BB8 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "ReactiveCocoa-iOS";
-			targetProxy = FC1386A6167FF6D30022A146 /* PBXContainerItemProxy */;
-		};
-		FC648CF7157AC81E007E2872 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = FC648CCD157AC81D007E2872 /* ReactiveFormlets */;
-			targetProxy = FC648CF6157AC81E007E2872 /* PBXContainerItemProxy */;
+			targetProxy = FCD30F7316F64C5D00473BB8 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		FC648CDB157AC81D007E2872 /* InfoPlist.strings */ = {
+		FCD30F5616F64B4B00473BB8 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				FC648CDC157AC81D007E2872 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		FC648CE6157AC81D007E2872 /* MainStoryboard.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FC648CE7157AC81D007E2872 /* en */,
-			);
-			name = MainStoryboard.storyboard;
-			sourceTree = "<group>";
-		};
-		FC648CFB157AC81E007E2872 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FC648CFC157AC81E007E2872 /* en */,
+				FCD30F5716F64B4B00473BB8 /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -619,14 +489,18 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		FC648D01157AC81E007E2872 /* Debug */ = {
+		FCD30F5C16F64B4B00473BB8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -636,106 +510,90 @@
 					"$(inherited)",
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
 		};
-		FC648D02157AC81E007E2872 /* Release */ = {
+		FCD30F5D16F64B4B00473BB8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
-				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
-		FC648D04157AC81E007E2872 /* Debug */ = {
+		FCD30F5F16F64B4B00473BB8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CODE_SIGN_ENTITLEMENTS = "iOS Formlets/iOS Formlets.entitlements";
-				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/lib/ReactiveCocoa/ReactiveCocoaFramework";
+				DSTROOT = /tmp/ReactiveFormlets.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "iOS Formlets/ReactiveFormlets-Prefix.pch";
-				HEADER_SEARCH_PATHS = (
-					"$(PROJECT_DIR)/lib/ReactiveCocoa/ReactiveCocoaFramework/",
-					"$(PROJECT_DIR)/lib/ReactiveCocoa/ReactiveCocoaFramework/ReactiveCocoa/libextobjc/extobjc/",
-				);
-				INFOPLIST_FILE = "iOS Formlets/ReactiveFormlets-Info.plist";
+				GCC_PREFIX_HEADER = "ReactiveFormlets/ReactiveFormlets-Prefix.pch";
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = ReactiveFormlets;
-				WRAPPER_EXTENSION = app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = include/ReactiveFormlets;
+				SKIP_INSTALL = YES;
 			};
 			name = Debug;
 		};
-		FC648D05157AC81E007E2872 /* Release */ = {
+		FCD30F6016F64B4B00473BB8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CODE_SIGN_ENTITLEMENTS = "iOS Formlets/iOS Formlets.entitlements";
-				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/lib/ReactiveCocoa/ReactiveCocoaFramework";
+				DSTROOT = /tmp/ReactiveFormlets.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "iOS Formlets/ReactiveFormlets-Prefix.pch";
-				HEADER_SEARCH_PATHS = (
-					"$(PROJECT_DIR)/lib/ReactiveCocoa/ReactiveCocoaFramework/",
-					"$(PROJECT_DIR)/lib/ReactiveCocoa/ReactiveCocoaFramework/ReactiveCocoa/libextobjc/extobjc/",
-				);
-				INFOPLIST_FILE = "iOS Formlets/ReactiveFormlets-Info.plist";
+				GCC_PREFIX_HEADER = "ReactiveFormlets/ReactiveFormlets-Prefix.pch";
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = ReactiveFormlets;
-				WRAPPER_EXTENSION = app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = include/ReactiveFormlets;
+				SKIP_INSTALL = YES;
 			};
 			name = Release;
 		};
-		FC648D07157AC81E007E2872 /* Debug */ = {
+		FCD30F6216F64B4B00473BB8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/iOS Formlets.app/iOS Formlets";
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "iOS Formlets/iOS Formlets-Prefix.pch";
-				INFOPLIST_FILE = "iOS FormletsTests/ReactiveFormletsTests-Info.plist";
-				PRODUCT_NAME = ReactiveFormletsTests;
-				TEST_HOST = "$(BUNDLE_LOADER)";
+				GCC_PREFIX_HEADER = "ReactiveFormlets/ReactiveFormlets-Prefix.pch";
+				INFOPLIST_FILE = "ReactiveFormletsTests/ReactiveFormletsTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = octest;
 			};
 			name = Debug;
 		};
-		FC648D08157AC81E007E2872 /* Release */ = {
+		FCD30F6316F64B4B00473BB8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/iOS Formlets.app/iOS Formlets";
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "iOS Formlets/iOS Formlets-Prefix.pch";
-				INFOPLIST_FILE = "iOS FormletsTests/ReactiveFormletsTests-Info.plist";
-				PRODUCT_NAME = ReactiveFormletsTests;
-				TEST_HOST = "$(BUNDLE_LOADER)";
+				GCC_PREFIX_HEADER = "ReactiveFormlets/ReactiveFormlets-Prefix.pch";
+				INFOPLIST_FILE = "ReactiveFormletsTests/ReactiveFormletsTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = octest;
 			};
 			name = Release;
@@ -743,34 +601,34 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		FC648CC8157AC81D007E2872 /* Build configuration list for PBXProject "ReactiveFormlets" */ = {
+		FCD30F3416F64B4A00473BB8 /* Build configuration list for PBXProject "ReactiveFormlets" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				FC648D01157AC81E007E2872 /* Debug */,
-				FC648D02157AC81E007E2872 /* Release */,
+				FCD30F5C16F64B4B00473BB8 /* Debug */,
+				FCD30F5D16F64B4B00473BB8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		FC648D03157AC81E007E2872 /* Build configuration list for PBXNativeTarget "ReactiveFormlets" */ = {
+		FCD30F5E16F64B4B00473BB8 /* Build configuration list for PBXNativeTarget "ReactiveFormlets" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				FC648D04157AC81E007E2872 /* Debug */,
-				FC648D05157AC81E007E2872 /* Release */,
+				FCD30F5F16F64B4B00473BB8 /* Debug */,
+				FCD30F6016F64B4B00473BB8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		FC648D06157AC81E007E2872 /* Build configuration list for PBXNativeTarget "ReactiveFormletsTests" */ = {
+		FCD30F6116F64B4B00473BB8 /* Build configuration list for PBXNativeTarget "ReactiveFormletsTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				FC648D07157AC81E007E2872 /* Debug */,
-				FC648D08157AC81E007E2872 /* Release */,
+				FCD30F6216F64B4B00473BB8 /* Debug */,
+				FCD30F6316F64B4B00473BB8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = FC648CC5157AC81D007E2872 /* Project object */;
+	rootObject = FCD30F3116F64B4A00473BB8 /* Project object */;
 }
