@@ -1,0 +1,100 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>ReactiveFormlets by jonsterling</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/respond.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="stylesheets/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  </head>
+  <body>
+      <div id="header">
+        <nav>
+          <li class="fork"><a href="https://github.com/jonsterling/ReactiveFormlets">View On GitHub</a></li>
+          <li class="downloads"><a href="https://github.com/jonsterling/ReactiveFormlets/zipball/master">ZIP</a></li>
+          <li class="downloads"><a href="https://github.com/jonsterling/ReactiveFormlets/tarball/master">TAR</a></li>
+          <li class="title">DOWNLOADS</li>
+        </nav>
+      </div><!-- end header -->
+
+    <div class="wrapper">
+
+      <section>
+        <div id="title">
+          <h1>ReactiveFormlets</h1>
+          <p>Reactive and composable forms for Cocoa Touch.</p>
+          <hr>
+          <span class="credits left">Project maintained by <a href="https://github.com/jonsterling">jonsterling</a></span>
+          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="http://twitter.com/#!/michigangraham">mattgraham</a></span>
+        </div>
+
+        <h3>Installing</h3>
+
+<p>Just add the following to your <code>Podfile</code>:</p>
+
+<pre><code>pod 'ReactiveFormlets', :git =&gt; 'git://github.com/jonsterling/ReactiveFormlets.git'
+</code></pre>
+
+<h3>An Example</h3>
+
+<div class="highlight"><pre><span class="k">@protocol</span> <span class="nc">LoginModel</span> <span class="o">&lt;</span><span class="n">RAFModel</span><span class="o">&gt;</span>
+<span class="o">-</span> <span class="p">(</span><span class="kt">id</span><span class="o">&lt;</span><span class="n">RAFText</span><span class="o">&gt;</span><span class="p">)</span><span class="n">emailAddress</span><span class="p">;</span>
+<span class="k">-</span> <span class="p">(</span><span class="kt">id</span><span class="o">&lt;</span><span class="n">RAFText</span><span class="o">&gt;</span><span class="p">)</span><span class="nf">password</span><span class="p">;</span>
+<span class="k">+</span> <span class="p">(</span><span class="n">instancetype</span><span class="p">)</span><span class="nf">emailAddress:</span><span class="p">(</span><span class="kt">id</span><span class="o">&lt;</span><span class="n">RAFText</span><span class="o">&gt;</span><span class="p">)</span><span class="nv">email</span> <span class="nf">password:</span><span class="p">(</span><span class="kt">id</span><span class="o">&lt;</span><span class="n">RAFText</span><span class="o">&gt;</span><span class="p">)</span><span class="nv">password</span><span class="p">;</span>
+<span class="k">@end</span>
+
+<span class="k">@implementation</span> <span class="nc">LoginTableViewController</span> <span class="p">{</span>
+    <span class="n">RAFTableForm</span><span class="o">&lt;</span><span class="n">LoginModel</span><span class="o">&gt;</span> <span class="o">*</span><span class="n">_form</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="o">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">loadView</span> <span class="p">{</span>
+    <span class="p">[</span><span class="n">super</span> <span class="n">loadView</span><span class="p">];</span>
+
+    <span class="kt">Class</span> <span class="n">LoginForm</span> <span class="o">=</span> <span class="p">[</span><span class="n">RAFSingleSectionTableForm</span> <span class="n">model</span><span class="o">:</span><span class="err">@</span><span class="n">protocol</span><span class="p">(</span><span class="n">LoginModel</span><span class="p">)];</span>
+    <span class="n">RAFTextFieldInputRow</span> <span class="o">*</span><span class="n">field</span> <span class="o">=</span> <span class="p">[</span><span class="n">RAFTextFieldInputRow</span> <span class="n">new</span><span class="p">];</span>
+
+    <span class="n">RAFInputRowValidator</span> <span class="n">emailAddressValidator</span> <span class="o">=</span> <span class="o">^</span><span class="kt">BOOL</span> <span class="p">(</span><span class="n">NSString</span> <span class="o">*</span><span class="n">input</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">NSString</span> <span class="o">*</span><span class="n">emailRegex</span> <span class="o">=</span> <span class="s">@"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+</span><span class="se">\\</span><span class="s">.[A-Za-z]{2,4}"</span><span class="p">;</span>
+        <span class="n">NSPredicate</span> <span class="o">*</span><span class="n">emailTest</span> <span class="o">=</span> <span class="p">[</span><span class="n">NSPredicate</span> <span class="n">predicateWithFormat</span><span class="o">:</span><span class="s">@"SELF MATCHES %@"</span><span class="p">,</span> <span class="n">emailRegex</span><span class="p">];</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">emailTest</span> <span class="n">evaluateWithObject</span><span class="o">:</span><span class="n">input</span><span class="p">];</span>
+    <span class="p">};</span>
+
+    <span class="n">RAFInputRowValidator</span> <span class="n">requiredTextValidator</span> <span class="o">=</span> <span class="o">^</span><span class="kt">BOOL</span> <span class="p">(</span><span class="n">NSString</span> <span class="o">*</span><span class="n">input</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">input</span><span class="p">.</span><span class="n">length</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="p">};</span>
+
+    <span class="kt">id</span><span class="o">&lt;</span><span class="n">RAFText</span><span class="o">&gt;</span> <span class="n">emailField</span> <span class="o">=</span> <span class="p">[[</span><span class="n">field</span> <span class="n">modifyTextField</span><span class="o">:^</span><span class="p">(</span><span class="n">UITextField</span> <span class="o">*</span><span class="n">textField</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">textField</span><span class="p">.</span><span class="n">keyboardType</span> <span class="o">=</span> <span class="n">UIKeyboardTypeEmailAddress</span><span class="p">;</span>
+    <span class="p">}]</span> <span class="n">validators</span><span class="o">:</span><span class="err">@</span><span class="p">[</span> <span class="n">emailAddressValidator</span> <span class="p">]]</span>
+
+    <span class="kt">id</span><span class="o">&lt;</span><span class="n">RAFText</span><span class="o">&gt;</span> <span class="n">passwordField</span> <span class="o">=</span> <span class="p">[[</span><span class="n">field</span> <span class="n">modifyTextField</span><span class="o">:^</span><span class="p">(</span><span class="n">UITextField</span> <span class="o">*</span><span class="n">textField</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">textField</span><span class="p">.</span><span class="n">secureTextEntry</span> <span class="o">=</span> <span class="nb">YES</span><span class="p">;</span>
+    <span class="p">}]</span> <span class="n">validators</span><span class="o">:</span><span class="err">@</span><span class="p">[</span> <span class="n">requiredTextValidator</span> <span class="p">]];</span>
+
+    <span class="n">_form</span> <span class="o">=</span> <span class="p">[</span><span class="n">LoginForm</span> <span class="n">emailAddress</span><span class="o">:</span><span class="p">[</span><span class="n">emailField</span> <span class="n">placeholder</span><span class="o">:</span><span class="s">@"snoop@dogg.com"</span><span class="p">]</span>
+                           <span class="nl">password:</span><span class="p">[</span><span class="n">passwordField</span> <span class="n">placeholder</span><span class="o">:</span><span class="s">@"password"</span><span class="p">]];</span>
+
+    <span class="n">self</span><span class="p">.</span><span class="n">view</span> <span class="o">=</span> <span class="p">[</span><span class="n">_form</span> <span class="n">buildView</span><span class="p">];</span>
+<span class="p">}</span>
+</pre></div>
+
+<h3>Authors and Contributors</h3>
+
+<p><a href="https://github.com/jonsterling" class="user-mention">@jonsterling</a> wrote this.</p>
+      </section>
+
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+    
+  </body>
+</html>
