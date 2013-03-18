@@ -48,7 +48,7 @@ typedef enum : BOOL {
 
 @implementation NSObject (RAFObjCRuntime)
 
-+ (Class)rf_subclassWithName:(NSString *)name adopting:(NSArray *)protocols {
++ (Class)raf_subclassWithName:(NSString *)name adopting:(NSArray *)protocols {
 	Class class = objc_getClass(name.UTF8String);
 	if (class != nil) return class;
 
@@ -62,19 +62,19 @@ typedef enum : BOOL {
 	return class;
 }
 
-- (id)rf_associatedObjectForKey:(void *)key {
+- (id)raf_associatedObjectForKey:(void *)key {
 	return objc_getAssociatedObject(self, key);
 }
 
-- (void)rf_setAssociatedObject:(id)value forKey:(void *)key policy:(objc_AssociationPolicy)policy {
+- (void)raf_setAssociatedObject:(id)value forKey:(void *)key policy:(objc_AssociationPolicy)policy {
 	objc_setAssociatedObject(self, key, value, policy);
 }
 
-+ (id)rf_associatedObjectForKey:(void *)key {
++ (id)raf_associatedObjectForKey:(void *)key {
 	return objc_getAssociatedObject(self, key);
 }
 
-+ (void)rf_setAssociatedObject:(id)value forKey:(void *)key policy:(objc_AssociationPolicy)policy {
++ (void)raf_setAssociatedObject:(id)value forKey:(void *)key policy:(objc_AssociationPolicy)policy {
 	objc_setAssociatedObject(self, key, value, policy);
 }
 

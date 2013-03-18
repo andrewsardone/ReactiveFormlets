@@ -14,7 +14,7 @@
 
 @implementation NSInvocation (RAFExtensions)
 
-- (RACSequence *)rf_keywords {
+- (RACSequence *)raf_keywords {
 	NSPredicate *notEmpty = [NSPredicate predicateWithBlock:^BOOL (NSString *string, id _) {
 		return string.length > 0;
 	}];
@@ -24,7 +24,7 @@
 	return [components filteredArrayUsingPredicate:notEmpty].rac_sequence;
 }
 
-- (RACSequence *)rf_arguments {
+- (RACSequence *)raf_arguments {
 	NSUInteger count = self.methodSignature.numberOfArguments;
 	NSMutableArray *arguments = [NSMutableArray arrayWithCapacity:count];
 
@@ -38,13 +38,13 @@
 }
 
 
-- (RACSequence *)rf_keywordPairs {
-	return [RACSequence zip:@[ self.rf_keywords, self.rf_arguments ]];
+- (RACSequence *)raf_keywordPairs {
+	return [RACSequence zip:@[ self.raf_keywords, self.raf_arguments ]];
 }
 
-- (RAFOrderedDictionary *)rf_argumentDictionary {
+- (RAFOrderedDictionary *)raf_argumentDictionary {
 	return [[RAFOrderedDictionary new] modify:^(id<RAFMutableOrderedDictionary> dict) {
-		for (RACTuple *pair in self.rf_keywordPairs) {
+		for (RACTuple *pair in self.raf_keywordPairs) {
 			dict[pair.first] = pair.second;
 		}
 	}];

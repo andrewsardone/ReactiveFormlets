@@ -23,20 +23,20 @@
 // protocols - the protocols which the subclass should adopt.
 //
 // Returns the subclass.
-+ (Class)rf_subclassWithName:(NSString *)name adopting:(NSArray *)protocols;
++ (Class)raf_subclassWithName:(NSString *)name adopting:(NSArray *)protocols;
 
 // Gets an associated object on the receiving object by key.
 //
 // key - the key at which object is associated to the receiver.
-- (id)rf_associatedObjectForKey:(void *)key;
-+ (id)rf_associatedObjectForKey:(void *)key;
+- (id)raf_associatedObjectForKey:(void *)key;
++ (id)raf_associatedObjectForKey:(void *)key;
 
 // Sets an associated object on the receiving object.
 //
 // value - the object to the associated to the receiver.
 // key - the key at which the value is to be associated to the receiver.
 // policy - the association policy by which the object is to be associated.
-- (void)rf_setAssociatedObject:(id)value forKey:(void *)key policy:(objc_AssociationPolicy)policy;
-+ (void)rf_setAssociatedObject:(id)value forKey:(void *)key policy:(objc_AssociationPolicy)policy;
+- (void)raf_setAssociatedObject:(id)value forKey:(void *)key policy:(objc_AssociationPolicy)policy;
++ (void)raf_setAssociatedObject:(id)value forKey:(void *)key policy:(objc_AssociationPolicy)policy;
 
 @end

@@ -20,14 +20,14 @@ static void *const kModelAssociatedObjectKey;
 + (Class)model:(Protocol *)model {
 	NSString *name = [NSString stringWithFormat:@"%@_%s", self, protocol_getName(model)];
 
-	Class class = [self rf_subclassWithName:name adopting:@[ model ]];
-	[class rf_setAssociatedObject:model forKey:kModelAssociatedObjectKey policy:OBJC_ASSOCIATION_ASSIGN];
+	Class class = [self raf_subclassWithName:name adopting:@[ model ]];
+	[class raf_setAssociatedObject:model forKey:kModelAssociatedObjectKey policy:OBJC_ASSOCIATION_ASSIGN];
 
 	return class;
 }
 
 + (Protocol *)model {
-	return [self rf_associatedObjectForKey:kModelAssociatedObjectKey];
+	return [self raf_associatedObjectForKey:kModelAssociatedObjectKey];
 }
 
 #pragma mark - Message Forwarding
@@ -39,7 +39,7 @@ static void *const kModelAssociatedObjectKey;
 + (void)forwardInvocation:(NSInvocation *)invocation {
 	[invocation retainArguments];
 
-	RAFOrderedDictionary *arguments = invocation.rf_argumentDictionary;
+	RAFOrderedDictionary *arguments = invocation.raf_argumentDictionary;
 	invocation.returnValue = &(__unsafe_unretained id){
 		[[self alloc] initWithOrderedDictionary:arguments]
 	};
