@@ -198,34 +198,11 @@
 			isa = PBXGroup;
 			children = (
 				FCD30F4116F64B4A00473BB8 /* ReactiveFormlets.h */,
-				FCD30F7F16F64D9D00473BB8 /* RAFFormlet.h */,
-				FCD30F8016F64D9D00473BB8 /* RAFFormlet.m */,
-				FCD30F8116F64D9D00473BB8 /* RAFLens.h */,
-				FCD30F8216F64D9D00473BB8 /* RAFLens.m */,
-				FCD30F8316F64D9D00473BB8 /* RAFModel.h */,
-				FCD30F8416F64D9D00473BB8 /* RAFModel.m */,
-				FCD30F8516F64D9D00473BB8 /* RAFOrderedDictionary.h */,
-				FCD30F8616F64D9D00473BB8 /* RAFOrderedDictionary.m */,
-				FCD30F8716F64D9D00473BB8 /* RAFReifiedProtocol.h */,
-				FCD30F8816F64D9D00473BB8 /* RAFReifiedProtocol.m */,
-				FCD30F8916F64D9D00473BB8 /* RAFSignalSource.h */,
-				FCD30F8A16F64D9D00473BB8 /* RAFSignalSource.m */,
-				FCD30F8B16F64D9D00473BB8 /* RAFObjCRuntime.h */,
-				FCD30F8C16F64D9D00473BB8 /* RAFObjCRuntime.m */,
-				FCD30F8D16F64D9D00473BB8 /* NSInvocation+RAFExtensions.h */,
-				FCD30F8E16F64D9D00473BB8 /* NSInvocation+RAFExtensions.m */,
-				FCD30F8F16F64D9D00473BB8 /* RAFIdentityValueTransformer.h */,
-				FCD30F9016F64D9D00473BB8 /* RAFIdentityValueTransformer.m */,
-				FCD30F9116F64D9D00473BB8 /* RAFNumberStringValueTransformer.h */,
-				FCD30F9216F64D9D00473BB8 /* RAFNumberStringValueTransformer.m */,
-				FCD30F9316F64D9D00473BB8 /* RAFTableForm.h */,
-				FCD30F9416F64D9D00473BB8 /* RAFTableForm.m */,
-				FCD30F9516F64D9D00473BB8 /* RAFTableSection.h */,
-				FCD30F9616F64D9D00473BB8 /* RAFTableSection.m */,
-				FCD30F9716F64D9D00473BB8 /* RAFInputRow.h */,
-				FCD30F9816F64D9D00473BB8 /* RAFInputRow.m */,
-				FCD30F9916F64D9D00473BB8 /* RAFValidator.h */,
-				FCD30F9A16F64D9D00473BB8 /* RAFValidator.m */,
+				FCF19B9016F6D34700111678 /* Core Interfaces */,
+				FCF19B8F16F6D33300111678 /* Machinery */,
+				FCF19B8E16F6D32000111678 /* Extensions */,
+				FCF19B8D16F6D31600111678 /* Value Transformers */,
+				FCF19B8A16F6D30500111678 /* Formlets */,
 				FCD30F3F16F64B4A00473BB8 /* Supporting Files */,
 			);
 			path = ReactiveFormlets;
@@ -278,6 +255,69 @@
 				FCD30FAA16F64E1000473BB8 /* metamacros.h */,
 			);
 			name = libextobjc;
+			sourceTree = "<group>";
+		};
+		FCF19B8A16F6D30500111678 /* Formlets */ = {
+			isa = PBXGroup;
+			children = (
+				FCD30F9316F64D9D00473BB8 /* RAFTableForm.h */,
+				FCD30F9416F64D9D00473BB8 /* RAFTableForm.m */,
+				FCD30F9516F64D9D00473BB8 /* RAFTableSection.h */,
+				FCD30F9616F64D9D00473BB8 /* RAFTableSection.m */,
+				FCD30F9716F64D9D00473BB8 /* RAFInputRow.h */,
+				FCD30F9816F64D9D00473BB8 /* RAFInputRow.m */,
+			);
+			name = Formlets;
+			sourceTree = "<group>";
+		};
+		FCF19B8D16F6D31600111678 /* Value Transformers */ = {
+			isa = PBXGroup;
+			children = (
+				FCD30F8F16F64D9D00473BB8 /* RAFIdentityValueTransformer.h */,
+				FCD30F9016F64D9D00473BB8 /* RAFIdentityValueTransformer.m */,
+				FCD30F9116F64D9D00473BB8 /* RAFNumberStringValueTransformer.h */,
+				FCD30F9216F64D9D00473BB8 /* RAFNumberStringValueTransformer.m */,
+			);
+			name = "Value Transformers";
+			sourceTree = "<group>";
+		};
+		FCF19B8E16F6D32000111678 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FCD30F8D16F64D9D00473BB8 /* NSInvocation+RAFExtensions.h */,
+				FCD30F8E16F64D9D00473BB8 /* NSInvocation+RAFExtensions.m */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		FCF19B8F16F6D33300111678 /* Machinery */ = {
+			isa = PBXGroup;
+			children = (
+				FCD30F8716F64D9D00473BB8 /* RAFReifiedProtocol.h */,
+				FCD30F8816F64D9D00473BB8 /* RAFReifiedProtocol.m */,
+				FCD30F8516F64D9D00473BB8 /* RAFOrderedDictionary.h */,
+				FCD30F8616F64D9D00473BB8 /* RAFOrderedDictionary.m */,
+				FCD30F8B16F64D9D00473BB8 /* RAFObjCRuntime.h */,
+				FCD30F8C16F64D9D00473BB8 /* RAFObjCRuntime.m */,
+			);
+			name = Machinery;
+			sourceTree = "<group>";
+		};
+		FCF19B9016F6D34700111678 /* Core Interfaces */ = {
+			isa = PBXGroup;
+			children = (
+				FCD30F7F16F64D9D00473BB8 /* RAFFormlet.h */,
+				FCD30F8016F64D9D00473BB8 /* RAFFormlet.m */,
+				FCD30F8116F64D9D00473BB8 /* RAFLens.h */,
+				FCD30F8216F64D9D00473BB8 /* RAFLens.m */,
+				FCD30F8316F64D9D00473BB8 /* RAFModel.h */,
+				FCD30F8416F64D9D00473BB8 /* RAFModel.m */,
+				FCD30F8916F64D9D00473BB8 /* RAFSignalSource.h */,
+				FCD30F8A16F64D9D00473BB8 /* RAFSignalSource.m */,
+				FCD30F9916F64D9D00473BB8 /* RAFValidator.h */,
+				FCD30F9A16F64D9D00473BB8 /* RAFValidator.m */,
+			);
+			name = "Core Interfaces";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
