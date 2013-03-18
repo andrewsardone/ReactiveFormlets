@@ -13,7 +13,7 @@
 #import <ReactiveCocoa/RACTuple.h>
 #import <ReactiveCocoa/RACSequence.h>
 
-static void *const kModelAssociatedObjectKey;
+static void *kModelAssociatedObjectKey = &kModelAssociatedObjectKey;
 
 @implementation RAFReifiedProtocol
 
