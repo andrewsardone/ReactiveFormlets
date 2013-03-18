@@ -45,7 +45,8 @@
 }
 
 - (void)updateInPlace:(id)value {
-	id transformed = (value && ![value isKindOfClass:[NSNull class]]) ? [self.valueTransformer reverseTransformedValue:value] : nil;
+	BOOL valueNotNull = value && ![value isKindOfClass:[NSNull class]];
+	id transformed = valueNotNull ? [self.valueTransformer reverseTransformedValue:value] : nil;
 	[self setValue:transformed forKeyPath:self.keyPathForLens];
 	[(RACBehaviorSubject *)self.hardUpdateSignal sendNext:self.extract];
 }
