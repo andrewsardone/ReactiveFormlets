@@ -15,7 +15,7 @@
 @implementation NSInvocation (RAFExtensions)
 
 - (RACSequence *)rf_keywords {
-	NSPredicate *notEmpty = [NSPredicate predicateWithBlock:^ BOOL (NSString *string, id _) {
+	NSPredicate *notEmpty = [NSPredicate predicateWithBlock:^BOOL (NSString *string, id _) {
 		return string.length > 0;
 	}];
 
@@ -28,7 +28,7 @@
 	NSUInteger count = self.methodSignature.numberOfArguments;
 	NSMutableArray *arguments = [NSMutableArray arrayWithCapacity:count];
 
-	for (int i = 2; i < count; ++i) {
+	for (NSUInteger i = 2; i < count; ++i) {
 		__unsafe_unretained id argument = nil;
 		[self getArgument:&argument atIndex:i];
 		[arguments addObject:argument ?: [NSNull null]];

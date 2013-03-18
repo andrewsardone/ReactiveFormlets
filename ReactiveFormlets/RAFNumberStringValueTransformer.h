@@ -10,6 +10,6 @@
 
 extern NSString *const RAFNumberStringValueTransformerName;
 
-// Provides a bijection between numbers and strings.
+// Injection from numbers to strings; partial function from strings to numbers.
 @interface RAFNumberStringValueTransformer : NSValueTransformer
 @end
