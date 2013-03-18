@@ -8,6 +8,7 @@
 
 #import <ReactiveFormlets/RAFSignalSource.h>
 #import <ReactiveCocoa/RACSignal.h>
+#import "EXTScope.h"
 
 @concreteprotocol(RAFSignalSource)
 
@@ -24,9 +25,9 @@
 }
 
 - (RACSignal *)raf_validation {
-	__weak id<RAFValidatedSignalSource> weakSelf = self;
+	@weakify(self);
 	return [self.raf_signal map:^id(id value) {
-		id<RAFValidatedSignalSource> self = weakSelf;
+		@strongify(self);
 		return @([self raf_isValid:value]);
 	}];
 }

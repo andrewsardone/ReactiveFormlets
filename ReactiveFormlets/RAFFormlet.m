@@ -8,6 +8,7 @@
 
 #import <ReactiveFormlets/RAFFormlet.h>
 #import <ReactiveCocoa/ReactiveCocoa.h>
+#import "EXTScope.h"
 
 @implementation RAFPrimitiveFormlet
 
@@ -46,9 +47,9 @@
 #pragma Validation
 
 - (RACSignal *)raf_validation {
-	__weak id weakSelf = self;
+	@weakify(self);
 	return [[RACSignal merge:@[ self.raf_signal, self.hardUpdateSignal ]] map:^id(id value) {
-		id self = weakSelf;
+		@strongify(self);
 		return @([self raf_isValid:value]);
 	}];
 }
